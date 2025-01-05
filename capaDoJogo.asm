@@ -2847,5 +2847,661 @@ test141: beq $20, $0, fimPart141
         addi $20, $20, -1
         j test141
         
-fimPart141: addi $2, $0, 10
-  	    syscall        
+fimPart141:     
+            ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 119
+            
+test142: beq $20, $0, fimPart142
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test142            
+        
+fimPart142: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 10
+            
+test143: beq $20, $0, fimPart143
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test143
+        
+fimPart143: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 33
+            
+test144: beq $20, $0, fimPart144
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test144            
+        
+fimPart144: ori $9, $0, 0x5E9172 #verde musgo
+	    addi $20, $0, 7
+            
+test145: beq $20, $0, fimPart145
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test145
+        
+fimPart145: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 77
+            
+test146: beq $20, $0, fimPart146
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test146            
+        
+fimPart146: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 12
+            
+test147: beq $20, $0, fimPart147
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test147
+ 
+fimPart147: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 29
+            
+test148: beq $20, $0, fimPart148
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test148            
+        
+fimPart148: ori $9, $0, 0x5E9172 #verde musgo
+	    addi $20, $0, 13
+            
+test149: beq $20, $0, fimPart149
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test149
+        
+fimPart149: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 73
+            
+test150: beq $20, $0, fimPart150
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test150            
+        
+fimPart150: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 14
+            
+test151: beq $20, $0, fimPart151
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test151
+ 
+fimPart151: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 27
+            
+test152: beq $20, $0, fimPart152
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test152            
+        
+fimPart152: ori $9, $0, 0x5E9172 #verde musgo
+	    addi $20, $0, 20
+            
+test153: beq $20, $0, fimPart153
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test153
+
+fimPart153: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 67
+            
+test154: beq $20, $0, fimPart154
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test154            
+        
+fimPart154: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 15
+            
+test155: beq $20, $0, fimPart155
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test155
+ 
+fimPart155:  ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 15
+            
+test156: beq $20, $0, fimPart156
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test156            
+        
+fimPart156: ori $9, $0, 0x5E9172 #verde musgo
+	    addi $20, $0, 37
+            
+test157: beq $20, $0, fimPart157
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test157
+
+fimPart157: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 60
+            
+test158: beq $20, $0, fimPart158
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test158            
+        
+fimPart158: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 16
+            
+test159: beq $20, $0, fimPart159
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test159
+ 
+fimPart159:  ori $9, $0, 0x5E9172 #verde musgo
+	    addi $20, $0, 57
+            
+test160: beq $20, $0, fimPart160
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test160
+
+fimPart160: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 55
+                      
+test161: beq $20, $0, fimPart161
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test161            
+        
+fimPart161: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 16
+            
+test162: beq $20, $0, fimPart162
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test162
+ 
+fimPart162: ori $9, $0, 0x6CA57A #verde claro
+	    addi $20, $0, 18
+            
+test163: beq $20, $0, fimPart163
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test163
+        
+fimPart163: ori $9, $0, 0x5E9172 #verde musgo
+	    addi $20, $0, 50
+            
+test164: beq $20, $0, fimPart164
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test164
+
+fimPart164: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 44
+                      
+test165: beq $20, $0, fimPart165
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test165            
+        
+fimPart165: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 10
+            
+test166: beq $20, $0, fimPart166
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test166
+ 
+fimPart166: ori $9, $0, 0x025B90 #azul asa
+            sw $9, 0($8)
+            addi $8, $8, 4
+            
+            ori $9, $0, 0x0085BB #azul do blue
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            
+            ori $9, $0, 0x6CA57A #verde claro
+	    addi $20, $0, 25
+            
+test167: beq $20, $0, fimPart167
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test167
+        
+fimPart167:ori $9, $0, 0x5E9172 #verde musgo
+	    addi $20, $0, 44
+            
+test168: beq $20, $0, fimPart168
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test168
+
+fimPart168: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 43
+                      
+test169: beq $20, $0, fimPart169
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test169            
+        
+fimPart169: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 9
+            
+test170: beq $20, $0, fimPart170
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test170
+ 
+fimPart170: ori $9, $0, 0x025B90 #azul asa
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            
+            
+            ori $9, $0, 0x0085BB #azul do blue
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            
+            ori $9, $0, 0x6CA57A #verde claro
+	    addi $20, $0, 40
+            
+test171: beq $20, $0, fimPart171
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test171
+        
+fimPart171:ori $9, $0, 0x5E9172 #verde musgo
+	    addi $20, $0, 34
+            
+test172: beq $20, $0, fimPart172
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test172
+
+fimPart172: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 38
+                      
+test173: beq $20, $0, fimPart173
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test173            
+        
+fimPart173: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 9
+            
+test174: beq $20, $0, fimPart174
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test174
+ 
+fimPart174: ori $9, $0, 0x025B90 #azul asa
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            
+            ori $9, $0, 0x0085BB #azul do blue
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            
+            ori $9, $0, 0xBDC4AB #amarelo areia
+            addi $20, $0, 9
+            
+test175: beq $20, $0, fimPart175
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test175
+ 
+fimPart175: ori $9, $0, 0x6CA57A #verde claro
+	    addi $20, $0, 20
+            
+test176: beq $20, $0, fimPart176
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test176
+        
+fimPart176:ori $9, $0, 0x5E9172 #verde musgo
+	    addi $20, $0, 20
+            
+test177: beq $20, $0, fimPart177
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test177
+
+fimPart177: ori $9, $0, 0xBDC4AB #amarelo areia
+            addi $20, $0, 9
+            
+test178: beq $20, $0, fimPart178
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test178
+ 
+fimPart178: ori $9, $0, 0x5E9172 #verde musgo
+            addi $20, $0, 14
+            
+test179: beq $20, $0, fimPart179
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test179
+ 
+fimPart179: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 39
+                      
+test180: beq $20, $0, fimPart180
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test180            
+        
+fimPart180: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 9
+            
+test181: beq $20, $0, fimPart181
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test181
+ 
+fimPart181: ori $9, $0, 0x025B90 #azul asa
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            
+            ori $9, $0, 0x0085BB #azul do blue
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+
+            ori $9, $0, 0xBDC4AB #amarelo areia
+            addi $20, $0, 50
+            
+test182: beq $20, $0, fimPart182
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test182
+ 
+fimPart182: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 61
+                      
+test183: beq $20, $0, fimPart183
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test183            
+        
+fimPart183: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 9
+            
+test184: beq $20, $0, fimPart184
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test184
+ 
+fimPart184: ori $9, $0, 0x025B90 #azul asa
+            sw $9, 0($8)
+            addi $8, $8, 4
+
+            ori $9, $0, 0x0085BB #azul do blue
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+	    sw $9, 0($8)
+            addi $8, $8, 4
+            
+            ori $9, $0, 0x025B90 #azul asa
+            sw $9, 0($8)
+            addi $8, $8, 4
+
+            ori $9, $0, 0x0085BB #azul do blue
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+
+            ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 111
+            
+test185: beq $20, $0, fimPart185
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test185
+ 
+fimPart185: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 8
+            
+test186: beq $20, $0, fimPart186
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test186
+ 
+fimPart186: ori $9, $0, 0x025B90 #azul asa
+            sw $9, 0($8)
+            addi $8, $8, 4
+
+            ori $9, $0, 0x0085BB #azul do blue
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+	    sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            sw $9, 0($8)
+            addi $8, $8, 4
+            
+            ori $9, $0, 0x025B90 #azul asa
+            sw $9, 0($8)
+            addi $8, $8, 4
+
+            ori $9, $0, 0x0085BB #azul do blue
+            sw $9, 0($8)
+            addi $8, $8, 4
+
+            ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 111
+            
+test187: beq $20, $0, fimPart187
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test187
+ 
+fimPart187: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 17
+            
+test188: beq $20, $0, fimPart188
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test188
+ 
+fimPart188: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 112
+            
+test189: beq $20, $0, fimPart189
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test189
+ 
+fimPart189: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 16
+            
+test190: beq $20, $0, fimPart190
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test190
+ 
+fimPart190: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 113
+            
+test191: beq $20, $0, fimPart191
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test191
+ 
+fimPart191: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 15
+            
+test192: beq $20, $0, fimPart192
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test192
+ 
+fimPart192: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 114
+            
+test193: beq $20, $0, fimPart193
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test193
+ 
+fimPart193: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 14
+            
+test194: beq $20, $0, fimPart194
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test194
+ 
+fimPart194: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 114
+            
+test195: beq $20, $0, fimPart195
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test195
+ 
+fimPart195: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 14
+            
+test196: beq $20, $0, fimPart196
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test196
+ 
+fimPart196: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 115
+            
+test197: beq $20, $0, fimPart197
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test197
+ 
+fimPart197: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 13
+            
+test198: beq $20, $0, fimPart198
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test198
+ 
+fimPart198: ori $9, $0, 0x53B7E6 #azul escuro
+            addi $20, $0, 115
+            
+test199: beq $20, $0, fimPart199
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test199
+ 
+fimPart199: ori $9, $0, 0x0085BB #azul do blue
+            addi $20, $0, 13
+            
+test200: beq $20, $0, fimPart200
+        sw $9, 0($8)
+        addi $8, $8, 4
+        addi $20, $20, -1
+        j test200
+ 
+fimPart200:
+       addi $2, $0, 10
+  	    syscall
