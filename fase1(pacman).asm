@@ -3,21 +3,28 @@
 # Preto das paredes: 0x000000
 # salva o fundo em outro lugar da memoria: 131084($8) 
 # Cinza grades: 0xb4b4b4
-#
-#
-#
-#
-
+# Registradores sendo usados:
+#			    $15 -> variaveis para loops
+#			    $9 até $14, $16 -> cores
+#			    $8, $7 e $6 -> espaço na memoria
+#			    $20 -> tamanho da tela
+#                           
 .text
 # O passáro branco tem que ser do tamanho do espaço entre as paredes verdes, pra ele poder se locomover atrás do blue
 # pq o blue é menor que o passáro branco no filme
 
 main:lui $8, 0x1001	   # fundo
-     lui $7, 0x1001	   # muros
-     ori $9, $0, 0x2f3699  # Azul escuro
-     ori $10, $0, 0x000000 # Preto
-     ori $11, $0, 0xb4b4b4 # Preto
-    
+     lui $7, 0x1001	   # muros e gaiolas com passaros
+     # lui $6, 0x1001	   # gaiola com passaros
+     ori $9, $0, 0x141d29  # Azul escuro
+     ori $10, $0, 0x546d8f # Preto
+     ori $11, $0, 0xb4b4b4 # Cinza da gaiola
+     ori $12, $0, 0xfea3b1 # passaro da gaiola (rosa)
+     ori $13, $0, 0xfff201 # passaro da gaiola (amarelo)
+     ori $14, $0, 0xa8e61d # passaro da gaiola (verde)
+     ori $16, $0, 0xfffffe # branco
+     ori $17, $0, 0x474647 # bicos
+     
      addi $20, $0, 8192    # Tamanho da tela toda
      addi $15 $0 16
 FundoAzul: # Pinta todo o fundo azul
@@ -138,15 +145,63 @@ murinho_frente_da_entrada_saida:
 	fim_murinho:
 		lui $7, 0x1001
 		addi $15 $0 8
-	quadrados_superior:
+	quadrados:
 		parte_superior_quadrado:
 			beq $15 $0 parte_laterais_quadrado
-			sw $10 3636($7)  
-			sw $10 4012($7) 
-			sw $10 28212($7)  
+			sw $10 3636($7) # Q1
+			sw $10 5684($7)
+			sw $10 4012($7) # Q2
+			sw $10 6060($7)
+			sw $10 28212($7)# Q3
+			sw $10 26164($7)
+			sw $10 26540($7)# Q4
 			sw $10 28588($7) 
+		
 			addi $15 $15 -1
 			addi $7 $7 4
 			j parte_superior_quadrado
-		parte_laterais_quadrado:
+	parte_laterais_quadrado:
+		lui $7, 0x1001
+		addi $15 $0 4
+		for_laterais_quadrado:
+			beq $15 $0 fim_quadrados
+			sw $10 4148($7) # Q1
+			sw $10 4176($7)
 			
+			sw $10 4524($7) # Q2
+			sw $10 4552($7)
+			
+			sw $10 26164($7)# Q3
+			sw $10 26192($7)
+			
+			sw $10 27052($7)# Q4
+			sw $10 27080($7)
+			
+			addi $7 $7 512
+			addi $15 $15 -1
+			j for_laterais_quadrado
+		fim_quadrados:
+		lui $7, 0x1001
+		addi $15 $0 24
+		meio_superior:
+			beq $15 $0 ffim_meio
+			sw $10 4304($7)
+			sw $10 26320($7)
+			addi $7 $7 4
+			addi $15 $15 -1
+			j meio_superior
+		ffim_meio:
+#######################################################
+# Gaiolas dentro da parte ccentral
+	passaros_da_gaiola:
+			sw $12 10804($7)
+			sw $12 10808($7)
+			sw $12 10812($7)
+			sw $12 10816($7)
+			sw $12 10820($7)
+			
+			sw $12 11320($7)
+			sw $16 11324($7)
+			sw $12 11332($7)
+			
+		
