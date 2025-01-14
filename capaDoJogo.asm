@@ -1,31 +1,35 @@
 .text
+#Parte 1 - Capa 
+#Nome dos laços: capaTest, fimPart, fimCapaTest, capaTestAzul e fimAzul
+#Registradores usados: $8 (endereço de memória), $9 (cores), $20 (contador)
+
 main: lui $8, 0x1001
       ori $9, $0, 0xA7E0F0 #azul claro
       addi $20, $0, 1310
      
-test: beq $20, $0, fimAzul1
+capaTest: beq $20, $0, fimAzul1
       sw $9, 0($8)
       addi $8, $8, 4
       addi $20, $20, -1
-      j test
+      j capaTest
        
 fimAzul1: ori $9, $0, 0x53B7E6 #azul escuro
           addi $20, $0, 6 #A
    
-test1: beq $20, $0, fimPart1
+capaTest1: beq $20, $0, fimPart1
        sw $9, 0($8)
        addi $8, $8, 4
        addi $20, $20, -1
-       j test1
+       j capaTest1
 
 fimPart1: ori $9, $0, 0xA7E0F0 #azul claro
           addi $20, $0, 123
      
-testAzul2: beq $20, $0, fimAzul2
+capaTestAzul2: beq $20, $0, fimAzul2
            sw $9, 0($8)
            addi $8, $8, 4
            addi $20, $20, -1
-           j testAzul2
+           j capaTestAzul2
        
 fimAzul2: ori $9, $0, 0x53B7E6 #azul escuro
           sw $9, 0($8)
@@ -34,13 +38,13 @@ fimAzul2: ori $9, $0, 0x53B7E6 #azul escuro
           ori $9, $0, 0xA7E0F0 #azul claro
           addi $20, $0, 3
      
-test2: beq $20, $0, fimtest2
+capaTest2: beq $20, $0, fimcapaTest2
        sw $9, 0($8)
        addi $8, $8, 4
        addi $20, $20, -1
-       j test2
+       j capaTest2
         
-fimtest2: ori $9, $0, 0x53B7E6 #azul escuro
+fimcapaTest2: ori $9, $0, 0x53B7E6 #azul escuro
           sw $9, 0($8)
           addi $8, $8, 4
           
@@ -51,29 +55,29 @@ fimtest2: ori $9, $0, 0x53B7E6 #azul escuro
           ori $9, $0, 0x53B7E6 #azul escuro
           addi $20, $0, 5 #P
    
-test3: beq $20, $0, fimPart3
+capaTest3: beq $20, $0, fimPart3
        sw $9, 0($8)
        addi $8, $8, 4
        addi $20, $20, -1
-       j test3
+       j capaTest3
        
 fimPart3: ori $9, $0, 0xA7E0F0 #azul claro
 	  addi $20, $0, 9 
 
-testAzul3: beq $20, $0, fimAzul3
+capaTestAzul3: beq $20, $0, fimAzul3
            sw $9, 0($8)
            addi $8, $8, 4
            addi $20, $20, -1
-           j testAzul3
+           j capaTestAzul3
            
 fimAzul3: ori $9, $0, 0x53B7E6 #azul escuro
           addi $20, $0, 5 #R
           
-test4: beq $20, $0, fimPart4
+capaTest4: beq $20, $0, fimPart4
        sw $9, 0($8)
        addi $8, $8, 4
        addi $20, $20, -1
-       j test4
+       j capaTest4
 
 fimPart4: ori $9, $0, 0xA7E0F0 #azul claro
 	  sw $9, 0($8)
@@ -82,11 +86,11 @@ fimPart4: ori $9, $0, 0xA7E0F0 #azul claro
 	  ori $9, $0, 0x53B7E6 #azul escuro
           addi $20, $0, 9 #T
           
-test5: beq $20, $0, fimPart5
+capaTest5: beq $20, $0, fimPart5
        sw $9, 0($8)
        addi $8, $8, 4
        addi $20, $20, -1
-       j test5     
+       j capaTest5     
            
 fimPart5: ori $9, $0, 0xA7E0F0 #azul claro
 	  sw $9, 0($8)
@@ -95,20 +99,20 @@ fimPart5: ori $9, $0, 0xA7E0F0 #azul claro
 	  ori $9, $0, 0x53B7E6 #azul escuro
           addi $20, $0, 9 #E                                
           
-test6: beq $20, $0, fimPart6
+capaTest6: beq $20, $0, fimPart6
        sw $9, 0($8)
        addi $8, $8, 4
        addi $20, $20, -1
-       j test6   
+       j capaTest6   
      
 fimPart6: ori $9, $0, 0xA7E0F0 #azul claro
           addi $20, $0, 83
           
-testAzul4: beq $20, $0, fimAzul4
+capaTestAzul4: beq $20, $0, fimAzul4
            sw $9, 0($8)
            addi $8, $8, 4
            addi $20, $20, -1
-           j testAzul4
+           j capaTestAzul4
            
 fimAzul4: ori $9, $0, 0x53B7E6 #azul escuro
           sw $9, 0($8)
@@ -117,11 +121,11 @@ fimAzul4: ori $9, $0, 0x53B7E6 #azul escuro
           ori $9, $0, 0xA7E0F0 #azul claro  
           addi $20, $0, 3 #A
           
-testAzul5: beq $20, $0, fimAzul5
+capaTestAzul5: beq $20, $0, fimAzul5
            sw $9, 0($8)
            addi $8, $8, 4
            addi $20, $20, -1
-           j testAzul5
+           j capaTestAzul5
            
 fimAzul5: ori $9, $0, 0x53B7E6 #azul escuro
           sw $9, 0($8)
@@ -138,11 +142,11 @@ fimAzul5: ori $9, $0, 0x53B7E6 #azul escuro
           ori $9, $0, 0xA7E0F0 #azul claro  
           addi $20, $0, 3 #P
           
-testAzul6: beq $20, $0, fimAzul6
+capaTestAzul6: beq $20, $0, fimAzul6
            sw $9, 0($8)
            addi $8, $8, 4
            addi $20, $20, -1
-           j testAzul6
+           j capaTestAzul6
            
 fimAzul6: ori $9, $0, 0x53B7E6 #azul escuro
           sw $9, 0($8)
@@ -155,11 +159,11 @@ fimAzul6: ori $9, $0, 0x53B7E6 #azul escuro
 	  ori $9, $0, 0x53B7E6 #azul escuro
 	  addi $20, $0, 7 #E
 
-test7: beq $20, $0, fimPart7
+capaTest7: beq $20, $0, fimPart7
        sw $9, 0($8)
        addi $8, $8, 4 #E
        addi $20, $20, -1
-       j test7
+       j capaTest7
        
 fimPart7: ori $9, $0, 0xA7E0F0 #azul claro
 	  sw $9, 0($8)
@@ -172,11 +176,11 @@ fimPart7: ori $9, $0, 0xA7E0F0 #azul claro
           ori $9, $0, 0xA7E0F0 #azul claro
           addi $20, $0, 3
           
-testAzul7: beq $20, $0, fimAzul7
+capaTestAzul7: beq $20, $0, fimAzul7
            sw $9, 0($8)
            addi $8, $8, 4
            addi $20, $20, -1
-           j testAzul7	  
+           j capaTestAzul7	  
 	  
 fimAzul7: ori $9, $0, 0x53B7E6 #azul escuro
           sw $9, 0($8)
@@ -185,11 +189,11 @@ fimAzul7: ori $9, $0, 0x53B7E6 #azul escuro
 	  ori $9, $0, 0xA7E0F0 #azul claro
           addi $20, $0, 5 #T
           
-testAzul8: beq $20, $0, fimAzul8
+capaTestAzul8: beq $20, $0, fimAzul8
            sw $9, 0($8)
            addi $8, $8, 4
            addi $20, $20, -1
-           j testAzul8
+           j capaTestAzul8
            
 fimAzul8: ori $9, $0, 0x53B7E6 #azul escuro
           sw $9, 0($8)
@@ -198,11 +202,11 @@ fimAzul8: ori $9, $0, 0x53B7E6 #azul escuro
 	  ori $9, $0, 0xA7E0F0 #azul claro
           addi $20, $0, 5 #T
           
-testAzul9: beq $20, $0, fimAzul9
+capaTestAzul9: beq $20, $0, fimAzul9
            sw $9, 0($8)
            addi $8, $8, 4
            addi $20, $20, -1
-           j testAzul9
+           j capaTestAzul9
            
 fimAzul9: ori $9, $0, 0x53B7E6 #azul escuro
           sw $9, 0($8)
@@ -211,11 +215,11 @@ fimAzul9: ori $9, $0, 0x53B7E6 #azul escuro
 	  ori $9, $0, 0xA7E0F0 #azul claro
           addi $20, $0, 91
           
-testAzul10: beq $20, $0, fimAzul10
+capaTestAzul10: beq $20, $0, fimAzul10
            sw $9, 0($8)
            addi $8, $8, 4
            addi $20, $20, -1
-           j testAzul10
+           j capaTestAzul10
 	  
 fimAzul10: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -224,11 +228,11 @@ fimAzul10: ori $9, $0, 0x53B7E6 #azul escuro
 	  ori $9, $0, 0xA7E0F0 #azul claro
           addi $20, $0, 3 #A
           
-testAzul11: beq $20, $0, fimAzul11
+capaTestAzul11: beq $20, $0, fimAzul11
            sw $9, 0($8)
            addi $8, $8, 4
            addi $20, $20, -1
-           j testAzul11
+           j capaTestAzul11
 
 fimAzul11: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -245,11 +249,11 @@ fimAzul11: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 3 #P
              
-testAzul12: beq $20, $0, fimAzul12
+capaTestAzul12: beq $20, $0, fimAzul12
            sw $9, 0($8)
            addi $8, $8, 4
            addi $20, $20, -1
-           j testAzul12
+           j capaTestAzul12
            
 fimAzul12: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -266,11 +270,11 @@ fimAzul12: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 7 #E
              
-testAzul13: beq $20, $0, fimAzul13
+capaTestAzul13: beq $20, $0, fimAzul13
            sw $9, 0($8)
            addi $8, $8, 4
            addi $20, $20, -1
-           j testAzul13                   
+           j capaTestAzul13                   
 	    
 fimAzul13: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -279,11 +283,11 @@ fimAzul13: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 3 #R
            
-testAzul14: beq $20, $0, fimAzul14
+capaTestAzul14: beq $20, $0, fimAzul14
            sw $9, 0($8)
            addi $8, $8, 4
            addi $20, $20, -1
-           j testAzul14
+           j capaTestAzul14
            
 fimAzul14: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -292,11 +296,11 @@ fimAzul14: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 5 #T
            
-testAzul15: beq $20, $0, fimAzul15
+capaTestAzul15: beq $20, $0, fimAzul15
             sw $9, 0($8)
             addi $8, $8, 4
             addi $20, $20, -1
-            j testAzul15  
+            j capaTestAzul15  
            
 fimAzul15: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -305,11 +309,11 @@ fimAzul15: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 5 #T
            
-testAzul16: beq $20, $0, fimAzul16
+capaTestAzul16: beq $20, $0, fimAzul16
             sw $9, 0($8)
             addi $8, $8, 4
             addi $20, $20, -1
-            j testAzul16
+            j capaTestAzul16
            
 fimAzul16: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -318,20 +322,20 @@ fimAzul16: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 91
            
-testAzul17: beq $20, $0, fimAzul17
+capaTestAzul17: beq $20, $0, fimAzul17
             sw $9, 0($8)
             addi $8, $8, 4
             addi $20, $20, -1
-            j testAzul17                                                                                                                                                
+            j capaTestAzul17                                                                                                                                                
 	
 fimAzul17: ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 5
            
-test8: beq $20, $0, fimPart8
+capaTest8: beq $20, $0, fimPart8
        sw $9, 0($8)
        addi $8, $8, 4 #A
        addi $20, $20, -1
-       j test8
+       j capaTest8
        
 fimPart8: ori $9, $0, 0xA7E0F0 #azul claro
           sw $9, 0($8)
@@ -340,11 +344,11 @@ fimPart8: ori $9, $0, 0xA7E0F0 #azul claro
           ori $9, $0, 0x53B7E6 #azul escuro
           addi $20, $0, 5
            
-test9: beq $20, $0, fimPart9
+capaTest9: beq $20, $0, fimPart9
        sw $9, 0($8)
        addi $8, $8, 4 #P
        addi $20, $20, -1
-       j test9
+       j capaTest9
        
 fimPart9: ori $9, $0, 0xA7E0F0 #azul claro
           sw $9, 0($8)
@@ -357,29 +361,29 @@ fimPart9: ori $9, $0, 0xA7E0F0 #azul claro
 	  ori $9, $0, 0xA7E0F0 #azul claro
           addi $20, $0, 7
            
-test10: beq $20, $0, fimPart10
+capaTest10: beq $20, $0, fimPart10
         sw $9, 0($8)
         addi $8, $8, 4 #E
         addi $20, $20, -1
-        j test10
+        j capaTest10
        
 fimPart10:ori $9, $0, 0x53B7E6 #azul escuro
           addi $20, $0, 5 
           
-test11: beq $20, $0, fimPart11
+capaTest11: beq $20, $0, fimPart11
         sw $9, 0($8)
         addi $8, $8, 4 #R
         addi $20, $20, -1
-        j test11
+        j capaTest11
                  
 fimPart11: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 5
           
-test12: beq $20, $0, fimPart12
+capaTest12: beq $20, $0, fimPart12
         sw $9, 0($8)
         addi $8, $8, 4 #R
         addi $20, $20, -1
-        j test12
+        j capaTest12
         
 fimPart12: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -388,29 +392,29 @@ fimPart12: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 5#T
            
-test13: beq $20, $0, fimPart13
+capaTest13: beq $20, $0, fimPart13
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test13
+        j capaTest13
         
 fimPart13: ori $9, $0, 0x53B7E6 #azul escuro
 	   addi $20, $0, 7#E
 	
-test14: beq $20, $0, fimPart14
+capaTest14: beq $20, $0, fimPart14
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test14
+        j capaTest14
 
 fimPart14: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 85
            
-test15: beq $20, $0, fimPart15
+capaTest15: beq $20, $0, fimPart15
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test15
+        j capaTest15
         
 fimPart15: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -419,11 +423,11 @@ fimPart15: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 3 #A
            
-test16: beq $20, $0, fimPart16
+capaTest16: beq $20, $0, fimPart16
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test16
+        j capaTest16
  
 fimPart16: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -440,20 +444,20 @@ fimPart16: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 5 #P
            
-test17: beq $20, $0, fimPart17
+capaTest17: beq $20, $0, fimPart17
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test17
+        j capaTest17
         
 fimPart17: ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 7 #E
            
-test18: beq $20, $0, fimPart18
+capaTest18: beq $20, $0, fimPart18
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test18
+        j capaTest18
 
 fimPart18: ori $9, $0, 0xA7E0F0 #azul claro
 	   sw $9, 0($8)
@@ -474,11 +478,11 @@ fimPart18: ori $9, $0, 0xA7E0F0 #azul claro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 7 #R
 
-test19: beq $20, $0, fimPart19
+capaTest19: beq $20, $0, fimPart19
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test19
+        j capaTest19
         
 fimPart19: ori $9, $0, 0x53B7E6 #azul escuro  
 	   sw $9, 0($8)
@@ -487,11 +491,11 @@ fimPart19: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 5 #T
            
-test20: beq $20, $0, fimPart20
+capaTest20: beq $20, $0, fimPart20
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test20
+        j capaTest20
         
 fimPart20: ori $9, $0, 0x53B7E6 #azul escuro  
 	   sw $9, 0($8)
@@ -500,11 +504,11 @@ fimPart20: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 91 #E
            
-test21: beq $20, $0, fimPart21
+capaTest21: beq $20, $0, fimPart21
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test21
+        j capaTest21
                                 
 fimPart21: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -513,11 +517,11 @@ fimPart21: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 3 #A
            
-test22: beq $20, $0, fimPart22
+capaTest22: beq $20, $0, fimPart22
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test22
+        j capaTest22
  
 fimPart22: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -534,11 +538,11 @@ fimPart22: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 5 #P
            
-test23: beq $20, $0, fimPart23
+capaTest23: beq $20, $0, fimPart23
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test23
+        j capaTest23
         
 fimPart23: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -547,11 +551,11 @@ fimPart23: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 6 #E
            
-test24: beq $20, $0, fimPart24
+capaTest24: beq $20, $0, fimPart24
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test24
+        j capaTest24
 
 fimPart24: ori $9, $0, 0xA7E0F0 #azul claro
 	   sw $9, 0($8)
@@ -574,11 +578,11 @@ fimPart24: ori $9, $0, 0xA7E0F0 #azul claro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 6 #R
 
-test25: beq $20, $0, fimPart25
+capaTest25: beq $20, $0, fimPart25
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test25
+        j capaTest25
         
 fimPart25: ori $9, $0, 0x53B7E6 #azul escuro  
 	   sw $9, 0($8)
@@ -587,11 +591,11 @@ fimPart25: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 5 #T
            
-test26: beq $20, $0, fimPart26
+capaTest26: beq $20, $0, fimPart26
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test26
+        j capaTest26
         
 fimPart26: ori $9, $0, 0x53B7E6 #azul escuro  
 	   sw $9, 0($8)
@@ -600,11 +604,11 @@ fimPart26: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 91 #E
            
-test27: beq $20, $0, fimPart27
+capaTest27: beq $20, $0, fimPart27
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test27
+        j capaTest27
         
 fimPart27: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -613,11 +617,11 @@ fimPart27: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 3 #A
            
-test28: beq $20, $0, fimPart28
+capaTest28: beq $20, $0, fimPart28
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test28
+        j capaTest28
  
 fimPart28: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -634,20 +638,20 @@ fimPart28: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 5 #P
            
-test29: beq $20, $0, fimPart29
+capaTest29: beq $20, $0, fimPart29
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test29
+        j capaTest29
         
 fimPart29: ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 7 #E
            
-test30: beq $20, $0, fimPart30
+capaTest30: beq $20, $0, fimPart30
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test30
+        j capaTest30
 
 fimPart30: ori $9, $0, 0xA7E0F0 #azul claro
 	   sw $9, 0($8)
@@ -672,11 +676,11 @@ fimPart30: ori $9, $0, 0xA7E0F0 #azul claro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 5 #R
 
-test31: beq $20, $0, fimPart31
+capaTest31: beq $20, $0, fimPart31
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test31
+        j capaTest31
         
 fimPart31: ori $9, $0, 0x53B7E6 #azul escuro  
 	   sw $9, 0($8)
@@ -685,47 +689,47 @@ fimPart31: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 5 #T
            
-test32: beq $20, $0, fimPart32
+capaTest32: beq $20, $0, fimPart32
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test32
+        j capaTest32
         
 fimPart32: ori $9, $0, 0x53B7E6 #azul escuro  
 	   addi $20, $0, 9 #E
 	
-test33: beq $20, $0, fimPart33
+capaTest33: beq $20, $0, fimPart33
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test33
+        j capaTest33
         
 fimPart33: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 210
  
-test34: beq $20, $0, fimPart34
+capaTest34: beq $20, $0, fimPart34
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test34         
+        j capaTest34         
           
 fimPart34:ori $9, $0, 0x53B7E6 #azul escuro  
 	  addi $20, $0, 49
 	  
-test35: beq $20, $0, fimPart35
+capaTest35: beq $20, $0, fimPart35
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test35
+        j capaTest35
         
 fimPart35: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 79
            
-test36: beq $20, $0, fimPart36
+capaTest36: beq $20, $0, fimPart36
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test36
+        j capaTest36
         
 fimPart36: ori $9, $0, 0x53B7E6 #azul escuro
 	   sw $9, 0($8)
@@ -738,29 +742,29 @@ fimPart36: ori $9, $0, 0x53B7E6 #azul escuro
 	   ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 6 #E
 
-test37: beq $20, $0, fimPart37
+capaTest37: beq $20, $0, fimPart37
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test37       
+        j capaTest37       
                   
 fimPart37: ori $9, $0, 0x53B7E6 #azul escuro
 	   addi $20, $0, 9 #S
 	   
-test38: beq $20, $0, fimPart38
+capaTest38: beq $20, $0, fimPart38
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test38
+        j capaTest38
         
 fimPart38: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 6 #P
 
-test39: beq $20, $0, fimPart39
+capaTest39: beq $20, $0, fimPart39
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test39
+        j capaTest39
         
 fimPart39: ori $9, $0, 0x53B7E6 #azul escuro
    	   sw $9, 0($8)
@@ -769,11 +773,11 @@ fimPart39: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 6 #A
            
-test40: beq $20, $0, fimPart40
+capaTest40: beq $20, $0, fimPart40
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test40
+        j capaTest40
        
 fimPart40: ori $9, $0, 0x53B7E6 #azul escuro
    	   sw $9, 0($8)
@@ -784,11 +788,11 @@ fimPart40: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 6 #Ç
            
-test41: beq $20, $0, fimPart41
+capaTest41: beq $20, $0, fimPart41
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test41    
+        j capaTest41    
                      
 fimPart41:ori $9, $0, 0x53B7E6 #azul escuro
    	   sw $9, 0($8)
@@ -797,11 +801,11 @@ fimPart41:ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 6 #O
            
-test42: beq $20, $0, fimPart42
+capaTest42: beq $20, $0, fimPart42
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test42   
+        j capaTest42   
         
 fimPart42: ori $9, $0, 0x53B7E6 #azul escuro
    	   sw $9, 0($8)
@@ -814,11 +818,11 @@ fimPart42: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 79
                     
-test43: beq $20, $0, fimPart43
+capaTest43: beq $20, $0, fimPart43
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test43            
+        j capaTest43            
        
 fimPart43: ori $9, $0, 0x53B7E6 #azul escuro
    	   sw $9, 0($8)
@@ -833,20 +837,20 @@ fimPart43: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 8 #E
            
-test44: beq $20, $0, fimPart44
+capaTest44: beq $20, $0, fimPart44
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test44     
+        j capaTest44     
         
 fimPart44: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 6 #S
            
-test45: beq $20, $0, fimPart45
+capaTest45: beq $20, $0, fimPart45
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test45  
+        j capaTest45  
         
 fimPart45: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -859,11 +863,11 @@ fimPart45: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #P
       
-test46: beq $20, $0, fimPart46
+capaTest46: beq $20, $0, fimPart46
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test46 
+        j capaTest46 
 
 fimPart46: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -880,11 +884,11 @@ fimPart46: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #A
            
-test47: beq $20, $0, fimPart47
+capaTest47: beq $20, $0, fimPart47
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test47
+        j capaTest47
 
 fimPart47: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -901,11 +905,11 @@ fimPart47: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 7 #Ç
 
-test48: beq $20, $0, fimPart48
+capaTest48: beq $20, $0, fimPart48
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test48  
+        j capaTest48  
         
 fimPart48: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -914,11 +918,11 @@ fimPart48: ori $9, $0, 0xA7E0F0 #azul claro
 	   ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 5 #O
            
-test49: beq $20, $0, fimPart49
+capaTest49: beq $20, $0, fimPart49
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test49
+        j capaTest49
         
 fimPart49: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -933,11 +937,11 @@ fimPart49: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 79
            
-test50: beq $20, $0, fimPart50
+capaTest50: beq $20, $0, fimPart50
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test50
+        j capaTest50
                                                                                                                                                                                                                                                                                                                                                                    
 fimPart50: ori $9, $0, 0x53B7E6 #azul escuro
    	   sw $9, 0($8)
@@ -952,11 +956,11 @@ fimPart50: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 8 #E
            
-test51: beq $20, $0, fimPart51
+capaTest51: beq $20, $0, fimPart51
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test51    
+        j capaTest51    
         
 fimPart51: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -965,11 +969,11 @@ fimPart51: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 6 #S
                       
-test52: beq $20, $0, fimPart52
+capaTest52: beq $20, $0, fimPart52
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test52  
+        j capaTest52  
 
 fimPart52: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -978,11 +982,11 @@ fimPart52: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #P
                       
-test53: beq $20, $0, fimPart53
+capaTest53: beq $20, $0, fimPart53
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test53
+        j capaTest53
         
 fimPart53: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -999,11 +1003,11 @@ fimPart53: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #A
                       
-test54: beq $20, $0, fimPart54
+capaTest54: beq $20, $0, fimPart54
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test54
+        j capaTest54
         
 fimPart54: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1020,11 +1024,11 @@ fimPart54: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 6 #Ç
            
-test55: beq $20, $0, fimPart55
+capaTest55: beq $20, $0, fimPart55
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test55
+        j capaTest55
 
 fimPart55: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -1037,11 +1041,11 @@ fimPart55: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 5 #O
            
-test56: beq $20, $0, fimPart56
+capaTest56: beq $20, $0, fimPart56
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test56 
+        j capaTest56 
         
 fimPart56: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1056,11 +1060,11 @@ fimPart56: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 79
            
-test57: beq $20, $0, fimPart57
+capaTest57: beq $20, $0, fimPart57
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test57            
+        j capaTest57            
             
 fimPart57: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -1071,11 +1075,11 @@ fimPart57: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 7 #E
            
-test58: beq $20, $0, fimPart58
+capaTest58: beq $20, $0, fimPart58
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test58         
+        j capaTest58         
 
 fimPart58: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -1086,11 +1090,11 @@ fimPart58: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 6 #S
            
-test59: beq $20, $0, fimPart59
+capaTest59: beq $20, $0, fimPart59
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test59
+        j capaTest59
         
 fimPart59: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -1099,11 +1103,11 @@ fimPart59: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 6 #P
            
-test60: beq $20, $0, fimPart60
+capaTest60: beq $20, $0, fimPart60
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test60
+        j capaTest60
         
 fimPart60: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -1112,11 +1116,11 @@ fimPart60: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 6 #A
            
-test61: beq $20, $0, fimPart61
+capaTest61: beq $20, $0, fimPart61
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test61  
+        j capaTest61  
         
 fimPart61: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -1129,11 +1133,11 @@ fimPart61: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0x53B7E6 #azul escuro                  
            addi $20, $0, 7 #Ç
            
-test62: beq $20, $0, fimPart62
+capaTest62: beq $20, $0, fimPart62
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test62
+        j capaTest62
 
 fimPart62: 
            ori $9, $0, 0xA7E0F0 #azul claro
@@ -1143,11 +1147,11 @@ fimPart62:
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 5 #O
            
-test63: beq $20, $0, fimPart63
+capaTest63: beq $20, $0, fimPart63
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test63 
+        j capaTest63 
         
 fimPart63: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1162,11 +1166,11 @@ fimPart63: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 79
            
-test64: beq $20, $0, fimPart64
+capaTest64: beq $20, $0, fimPart64
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test64
+        j capaTest64
                     
 fimPart64: ori $9, $0, 0x53B7E6 #azul escuro
    	   sw $9, 0($8)
@@ -1181,11 +1185,11 @@ fimPart64: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 13 #E
            
-test65: beq $20, $0, fimPart65
+capaTest65: beq $20, $0, fimPart65
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test65   
+        j capaTest65   
         
 fimPart65: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1202,11 +1206,11 @@ fimPart65: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 6 #S
 
-test66: beq $20, $0, fimPart66
+capaTest66: beq $20, $0, fimPart66
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test66  
+        j capaTest66  
         
 fimPart66: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1215,11 +1219,11 @@ fimPart66: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #P
 
-test67: beq $20, $0, fimPart67
+capaTest67: beq $20, $0, fimPart67
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test67   
+        j capaTest67   
                           
 fimPart67: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1236,11 +1240,11 @@ fimPart67: ori $9, $0, 0xA7E0F0 #azul claro
 	   ori $9, $0, 0x53B7E6 #azul escuro                  
            addi $20, $0, 7 #Ç
            
-test68: beq $20, $0, fimPart68
+capaTest68: beq $20, $0, fimPart68
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test68
+        j capaTest68
 
 fimPart68: 
            ori $9, $0, 0xA7E0F0 #azul claro
@@ -1250,11 +1254,11 @@ fimPart68:
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 5 #O
            
-test69: beq $20, $0, fimPart69
+capaTest69: beq $20, $0, fimPart69
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test69 
+        j capaTest69 
         
 fimPart69: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1269,11 +1273,11 @@ fimPart69: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 79
            
-test70: beq $20, $0, fimPart70
+capaTest70: beq $20, $0, fimPart70
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test70
+        j capaTest70
                     
 fimPart70: ori $9, $0, 0x53B7E6 #azul escuro
    	   sw $9, 0($8)
@@ -1288,11 +1292,11 @@ fimPart70: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 13 #E
            
-test71: beq $20, $0, fimPart71
+capaTest71: beq $20, $0, fimPart71
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test71
+        j capaTest71
         
 fimPart71: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1309,11 +1313,11 @@ fimPart71: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 6 #S
 
-test72: beq $20, $0, fimPart72
+capaTest72: beq $20, $0, fimPart72
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test72  
+        j capaTest72  
         
 fimPart72: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1322,11 +1326,11 @@ fimPart72: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #P
 
-test73: beq $20, $0, fimPart73
+capaTest73: beq $20, $0, fimPart73
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test73  
+        j capaTest73  
                           
 fimPart73: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1343,11 +1347,11 @@ fimPart73: ori $9, $0, 0xA7E0F0 #azul claro
 	   ori $9, $0, 0x53B7E6 #azul escuro                  
            addi $20, $0, 7 #Ç
            
-test74: beq $20, $0, fimPart74
+capaTest74: beq $20, $0, fimPart74
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test74
+        j capaTest74
 
 fimPart74: 
            ori $9, $0, 0xA7E0F0 #azul claro
@@ -1357,11 +1361,11 @@ fimPart74:
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 5 #O
            
-test75: beq $20, $0, fimPart75
+capaTest75: beq $20, $0, fimPart75
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test75 
+        j capaTest75 
         
 fimPart75: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1376,11 +1380,11 @@ fimPart75: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 79
            
-test76: beq $20, $0, fimPart76
+capaTest76: beq $20, $0, fimPart76
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test76
+        j capaTest76
   
 fimPart76: ori $9, $0, 0x53B7E6 #azul escuro
    	   sw $9, 0($8)
@@ -1391,11 +1395,11 @@ fimPart76: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 7 #E
 
-test77: beq $20, $0, fimPart77
+capaTest77: beq $20, $0, fimPart77
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test77           
+        j capaTest77           
            
 fimPart77: ori $9, $0, 0x53B7E6 #azul escuro
    	   sw $9, 0($8)
@@ -1406,11 +1410,11 @@ fimPart77: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 6 #S
 
-test78: beq $20, $0, fimPart78
+capaTest78: beq $20, $0, fimPart78
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test78
+        j capaTest78
         
 fimPart78: ori $9, $0, 0x53B7E6 #azul escuro
    	   sw $9, 0($8)
@@ -1422,11 +1426,11 @@ fimPart78: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 6 #P
 
-test79: beq $20, $0, fimPart79
+capaTest79: beq $20, $0, fimPart79
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test79 
+        j capaTest79 
                           
 fimPart79:
            ori $9, $0, 0xA7E0F0 #azul claro
@@ -1436,11 +1440,11 @@ fimPart79:
 	   ori $9, $0, 0x53B7E6 #azul escuro                  
            addi $20, $0, 4 #A
            
-test80: beq $20, $0, fimPart80
+capaTest80: beq $20, $0, fimPart80
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test80
+        j capaTest80
 
 fimPart80: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1453,11 +1457,11 @@ fimPart80: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 7 #Ç
            
-test81: beq $20, $0, fimPart81
+capaTest81: beq $20, $0, fimPart81
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test81 
+        j capaTest81 
            
 fimPart81: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -1466,11 +1470,11 @@ fimPart81: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 7 #O
            
-test82: beq $20, $0, fimPart82
+capaTest82: beq $20, $0, fimPart82
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test82 
+        j capaTest82 
 
 fimPart82: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -1481,20 +1485,20 @@ fimPart82: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 79
            
-test83: beq $20, $0, fimPart83
+capaTest83: beq $20, $0, fimPart83
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test83
+        j capaTest83
         
 fimPart83:  ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 35
             
-test84: beq $20, $0, fimPart84
+capaTest84: beq $20, $0, fimPart84
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test84
+        j capaTest84
 
 fimPart84: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1503,29 +1507,29 @@ fimPart84: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 13
             
-test85: beq $20, $0, fimPart85
+capaTest85: beq $20, $0, fimPart85
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test85  
+        j capaTest85  
         
 fimPart85: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 209
            
-test86: beq $20, $0, fimPart86
+capaTest86: beq $20, $0, fimPart86
         sw $9, 0($8)
         addi $8, $8, 4 
         addi $20, $20, -1
-        j test86
+        j capaTest86
         
 fimPart86: ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #P
            
-test87: beq $20, $0, fimPart87
+capaTest87: beq $20, $0, fimPart87
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test87
+        j capaTest87
         
 fimPart87: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1534,11 +1538,11 @@ fimPart87: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #A
            
-test88: beq $20, $0, fimPart88
+capaTest88: beq $20, $0, fimPart88
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test88
+        j capaTest88
 
 fimPart88: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1547,11 +1551,11 @@ fimPart88: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #R
            
-test89: beq $20, $0, fimPart89
+capaTest89: beq $20, $0, fimPart89
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test89         
+        j capaTest89         
         
 fimPart89: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1560,11 +1564,11 @@ fimPart89: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #A
            
-test90: beq $20, $0, fimPart90
+capaTest90: beq $20, $0, fimPart90
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test90     
+        j capaTest90     
    
 fimPart90: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1575,11 +1579,11 @@ fimPart90: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #J
            
-test91: beq $20, $0, fimPart91
+capaTest91: beq $20, $0, fimPart91
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test91
+        j capaTest91
         
 fimPart91: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1588,11 +1592,11 @@ fimPart91: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #O
            
-test92: beq $20, $0, fimPart92
+capaTest92: beq $20, $0, fimPart92
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test92       
+        j capaTest92       
 
 fimPart92: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1601,11 +1605,11 @@ fimPart92: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #G
            
-test93: beq $20, $0, fimPart93
+capaTest93: beq $20, $0, fimPart93
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test93                
+        j capaTest93                
         
 fimPart93: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1614,11 +1618,11 @@ fimPart93: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #A
            
-test94: beq $20, $0, fimPart94
+capaTest94: beq $20, $0, fimPart94
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test94       
+        j capaTest94       
         
 fimPart94: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1627,20 +1631,20 @@ fimPart94: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #R
            
-test95: beq $20, $0, fimPart95
+capaTest95: beq $20, $0, fimPart95
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test95         
+        j capaTest95         
         
 fimPart95: ori $9, $0, 0xA7E0F0 #azul claro
 	   addi $20, $0, 44
 
-test96: beq $20, $0, fimPart96
+capaTest96: beq $20, $0, fimPart96
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test96 
+        j capaTest96 
 	   
 fimPart96: ori $9, $0, 0x0085BB #azul do blue
            sw $9, 0($8)
@@ -1649,11 +1653,11 @@ fimPart96: ori $9, $0, 0x0085BB #azul do blue
            ori $9, $0, 0xA7E0F0 #azul claro
 	   addi $20, $0, 38
 
-test97: beq $20, $0, fimPart97
+capaTest97: beq $20, $0, fimPart97
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test97 
+        j capaTest97 
 	   
 fimPart97: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -1814,11 +1818,11 @@ fimPart97: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
 	   addi $20, $0, 44
 
-test98: beq $20, $0, fimPart98
+capaTest98: beq $20, $0, fimPart98
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test98 
+        j capaTest98 
 	   
 fimPart98: ori $9, $0, 0x0085BB #azul do blue
            sw $9, 0($8)
@@ -1828,20 +1832,20 @@ fimPart98: ori $9, $0, 0x0085BB #azul do blue
            ori $9, $0, 0xA7E0F0 #azul claro
 	   addi $20, $0, 38
 
-test99: beq $20, $0, fimPart99
+capaTest99: beq $20, $0, fimPart99
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test99 
+        j capaTest99 
 
 fimPart99: ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #P
            
-test100: beq $20, $0, fimPart100
+capaTest100: beq $20, $0, fimPart100
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test100
+        j capaTest100
         
 fimPart100: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1850,11 +1854,11 @@ fimPart100: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #A
            
-test101: beq $20, $0, fimPart101
+capaTest101: beq $20, $0, fimPart101
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test101
+        j capaTest101
 
 fimPart101: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1863,11 +1867,11 @@ fimPart101: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #R
            
-test102: beq $20, $0, fimPart102
+capaTest102: beq $20, $0, fimPart102
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test102         
+        j capaTest102         
         
 fimPart102: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1876,11 +1880,11 @@ fimPart102: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #A
            
-test103: beq $20, $0, fimPart103
+capaTest103: beq $20, $0, fimPart103
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test103
+        j capaTest103
         
 fimPart103: ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1939,11 +1943,11 @@ fimPart103: ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #A
            
-test104: beq $20, $0, fimPart104
+capaTest104: beq $20, $0, fimPart104
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test104
+        j capaTest104
 
 fimPart104:ori $9, $0, 0xA7E0F0 #azul claro
            sw $9, 0($8)
@@ -1952,20 +1956,20 @@ fimPart104:ori $9, $0, 0xA7E0F0 #azul claro
            ori $9, $0, 0x53B7E6 #azul escuro
            addi $20, $0, 4 #R
            
-test105: beq $20, $0, fimPart105
+capaTest105: beq $20, $0, fimPart105
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test105 
+        j capaTest105 
 
 fimPart105: ori $9, $0, 0xA7E0F0 #azul claro
 	   addi $20, $0, 39
 
-test106: beq $20, $0, fimPart106
+capaTest106: beq $20, $0, fimPart106
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test106 
+        j capaTest106 
 	   
 fimPart106: ori $9, $0, 0x0085BB #azul do blue
            sw $9, 0($8)
@@ -1992,11 +1996,11 @@ fimPart106: ori $9, $0, 0x0085BB #azul do blue
            ori $9, $0, 0xA7E0F0 #azul claro
 	   addi $20, $0, 37
 
-test107: beq $20, $0, fimPart107
+capaTest107: beq $20, $0, fimPart107
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test107
+        j capaTest107
         
 fimPart107:ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -2005,11 +2009,11 @@ fimPart107:ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 4 
 
-test108: beq $20, $0, fimPart108
+capaTest108: beq $20, $0, fimPart108
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test108           
+        j capaTest108           
 
 fimPart108: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -2140,30 +2144,30 @@ fimPart108: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 40
 
-test109: beq $20, $0, fimPart109
+capaTest109: beq $20, $0, fimPart109
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test109
+        j capaTest109
 	   
 fimPart109: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 10
             
-test110: beq $20, $0, fimPart110
+capaTest110: beq $20, $0, fimPart110
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test110
+        j capaTest110
           
           
 fimPart110:  ori $9, $0, 0xA7E0F0 #azul claro
 	   addi $20, $0, 35
 
-test111: beq $20, $0, fimPart111
+capaTest111: beq $20, $0, fimPart111
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test111
+        j capaTest111
 
 fimPart111: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -2172,11 +2176,11 @@ fimPart111: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 4 
 
-test112: beq $20, $0, fimPart112
+capaTest112: beq $20, $0, fimPart112
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test112         
+        j capaTest112         
 
 fimPart112: ori $9, $0, 0x53B7E6 #azul escuro
            sw $9, 0($8)
@@ -2309,29 +2313,29 @@ fimPart112: ori $9, $0, 0x53B7E6 #azul escuro
            ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 37
 
-test113: beq $20, $0, fimPart113
+capaTest113: beq $20, $0, fimPart113
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test113
+        j capaTest113
 	   
 fimPart113: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 11
             
-test114: beq $20, $0, fimPart114
+capaTest114: beq $20, $0, fimPart114
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test114            
+        j capaTest114            
 
 fimPart114: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 116
            
-test115: beq $20, $0, fimPart115
+capaTest115: beq $20, $0, fimPart115
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test115  
+        j capaTest115  
         
 fimPart115: ori $9, $0, 0x676B5E #cinza
             sw $9, 0($8)
@@ -2356,20 +2360,20 @@ fimPart115: ori $9, $0, 0x676B5E #cinza
             ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 4
             
-test116: beq $20, $0, fimPart116
+capaTest116: beq $20, $0, fimPart116
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test116 
+        j capaTest116 
 
 fimPart116: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 116
            
-test117: beq $20, $0, fimPart117
+capaTest117: beq $20, $0, fimPart117
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test117 
+        j capaTest117 
         
 fimPart117: ori $9, $0, 0x676B5E #cinza
             sw $9, 0($8)
@@ -2400,20 +2404,20 @@ fimPart117: ori $9, $0, 0x676B5E #cinza
             ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 5
             
-test118: beq $20, $0, fimPart118
+capaTest118: beq $20, $0, fimPart118
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test118 
+        j capaTest118 
 
 fimPart118: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 114
            
-test119: beq $20, $0, fimPart119
+capaTest119: beq $20, $0, fimPart119
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test119 
+        j capaTest119 
         
 fimPart119: ori $9, $0, 0x676B5E #cinza
             sw $9, 0($8)
@@ -2450,20 +2454,20 @@ fimPart119: ori $9, $0, 0x676B5E #cinza
             ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 5
             
-test120: beq $20, $0, fimPart120
+capaTest120: beq $20, $0, fimPart120
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test120
+        j capaTest120
 
 fimPart120: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 113
            
-test121: beq $20, $0, fimPart121
+capaTest121: beq $20, $0, fimPart121
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test121 
+        j capaTest121 
         
 fimPart121: ori $9, $0, 0x676B5E #cinza
             sw $9, 0($8)
@@ -2496,20 +2500,20 @@ fimPart121: ori $9, $0, 0x676B5E #cinza
             ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 5
             
-test122: beq $20, $0, fimPart122
+capaTest122: beq $20, $0, fimPart122
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test122
+        j capaTest122
         
 fimPart122: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 113
            
-test123: beq $20, $0, fimPart123
+capaTest123: beq $20, $0, fimPart123
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test123 
+        j capaTest123 
         
 fimPart123: ori $9, $0, 0x676B5E #cinza
             sw $9, 0($8)
@@ -2540,20 +2544,20 @@ fimPart123: ori $9, $0, 0x676B5E #cinza
             ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 6
             
-test124: beq $20, $0, fimPart124
+capaTest124: beq $20, $0, fimPart124
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test124
+        j capaTest124
         
 fimPart124: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 112
            
-test125: beq $20, $0, fimPart125
+capaTest125: beq $20, $0, fimPart125
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test125 
+        j capaTest125 
         
 fimPart125: ori $9, $0, 0x676B5E #cinza
             sw $9, 0($8)
@@ -2586,20 +2590,20 @@ fimPart125: ori $9, $0, 0x676B5E #cinza
             ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 6
             
-test126: beq $20, $0, fimPart126
+capaTest126: beq $20, $0, fimPart126
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test126
+        j capaTest126
         
 fimPart126: ori $9, $0, 0xA7E0F0 #azul claro
            addi $20, $0, 112
            
-test127: beq $20, $0, fimPart127
+capaTest127: beq $20, $0, fimPart127
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test127 
+        j capaTest127 
         
 fimPart127: ori $9, $0, 0x676B5E #cinza
             sw $9, 0($8)
@@ -2628,11 +2632,11 @@ fimPart127: ori $9, $0, 0x676B5E #cinza
             ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 5
             
-test128: beq $20, $0, fimPart128
+capaTest128: beq $20, $0, fimPart128
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test128
+        j capaTest128
         
 fimPart128: ori $9, $0, 0xA7E0F0 #azul claro
             sw $9, 0($8)
@@ -2645,38 +2649,38 @@ fimPart128: ori $9, $0, 0xA7E0F0 #azul claro
             ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 20
             
-test129: beq $20, $0, fimPart129
+capaTest129: beq $20, $0, fimPart129
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test129 
+        j capaTest129 
         
 fimPart129:  ori $9, $0, 0xA7E0F0 #azul claro
 	     addi $20, $0, 60
 	  
-test130: beq $20, $0, fimPart130
+capaTest130: beq $20, $0, fimPart130
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test130                   
+        j capaTest130                   
 
 fimPart130: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 20
             
-test131: beq $20, $0, fimPart131
+capaTest131: beq $20, $0, fimPart131
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test131       
+        j capaTest131       
         
 fimPart131:  ori $9, $0, 0xA7E0F0 #azul claro
 	     addi $20, $0, 10 
 	    
-test132: beq $20, $0, fimPart132
+capaTest132: beq $20, $0, fimPart132
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test132  
+        j capaTest132  
         
 fimPart132: ori $9, $0, 0x676B5E #cinza
             sw $9, 0($8)
@@ -2693,11 +2697,11 @@ fimPart132: ori $9, $0, 0x676B5E #cinza
             ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 10
             
-test133: beq $20, $0, fimPart133
+capaTest133: beq $20, $0, fimPart133
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test133
+        j capaTest133
         
 fimPart133: ori $9, $0, 0xA7E0F0 #azul claro
             sw $9, 0($8)
@@ -2710,29 +2714,29 @@ fimPart133: ori $9, $0, 0xA7E0F0 #azul claro
             ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 40
             
-test134: beq $20, $0, fimPart134
+capaTest134: beq $20, $0, fimPart134
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test134
+        j capaTest134
     
 fimPart134: ori $9, $0, 0xA7E0F0 #azul claro
 	     addi $20, $0, 35 
 	    
-test135: beq $20, $0, fimPart135
+capaTest135: beq $20, $0, fimPart135
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test135
+        j capaTest135
         
 fimPart135: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 30
             
-test136: beq $20, $0, fimPart136
+capaTest136: beq $20, $0, fimPart136
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test136       
+        j capaTest136       
         
 fimPart136: ori $9, $0, 0xA7E0F0 #azul claro
             sw $9, 0($8)
@@ -2767,11 +2771,11 @@ fimPart136: ori $9, $0, 0xA7E0F0 #azul claro
             ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 8
             
-test137: beq $20, $0, fimPart137
+capaTest137: beq $20, $0, fimPart137
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test137
+        j capaTest137
 
 fimPart137: ori $9, $0, 0xA7E0F0 #azul claro
             sw $9, 0($8)
@@ -2786,11 +2790,11 @@ fimPart137: ori $9, $0, 0xA7E0F0 #azul claro
             ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 110
             
-test138: beq $20, $0, fimPart138
+capaTest138: beq $20, $0, fimPart138
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test138          
+        j capaTest138          
 
 fimPart138: ori $9, $0, 0x676B5E #cinza
             sw $9, 0($8)
@@ -2813,11 +2817,11 @@ fimPart138: ori $9, $0, 0x676B5E #cinza
             ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 8
             
-test139: beq $20, $0, fimPart139
+capaTest139: beq $20, $0, fimPart139
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test139
+        j capaTest139
         
 fimPart139:  ori $9, $0, 0xA7E0F0 #azul claro
             sw $9, 0($8)
@@ -2832,246 +2836,246 @@ fimPart139:  ori $9, $0, 0xA7E0F0 #azul claro
             ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 116
             
-test140: beq $20, $0, fimPart140
+capaTest140: beq $20, $0, fimPart140
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test140            
+        j capaTest140            
         
 fimPart140: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 8
             
-test141: beq $20, $0, fimPart141
+capaTest141: beq $20, $0, fimPart141
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test141
+        j capaTest141
         
 fimPart141:     
             ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 119
             
-test142: beq $20, $0, fimPart142
+capaTest142: beq $20, $0, fimPart142
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test142            
+        j capaTest142            
         
 fimPart142: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 10
             
-test143: beq $20, $0, fimPart143
+capaTest143: beq $20, $0, fimPart143
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test143
+        j capaTest143
         
 fimPart143: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 33
             
-test144: beq $20, $0, fimPart144
+capaTest144: beq $20, $0, fimPart144
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test144            
+        j capaTest144            
         
 fimPart144: ori $9, $0, 0x5E9172 #verde musgo
 	    addi $20, $0, 7
             
-test145: beq $20, $0, fimPart145
+capaTest145: beq $20, $0, fimPart145
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test145
+        j capaTest145
         
 fimPart145: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 77
             
-test146: beq $20, $0, fimPart146
+capaTest146: beq $20, $0, fimPart146
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test146            
+        j capaTest146            
         
 fimPart146: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 12
             
-test147: beq $20, $0, fimPart147
+capaTest147: beq $20, $0, fimPart147
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test147
+        j capaTest147
  
 fimPart147: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 29
             
-test148: beq $20, $0, fimPart148
+capaTest148: beq $20, $0, fimPart148
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test148            
+        j capaTest148            
         
 fimPart148: ori $9, $0, 0x5E9172 #verde musgo
 	    addi $20, $0, 13
             
-test149: beq $20, $0, fimPart149
+capaTest149: beq $20, $0, fimPart149
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test149
+        j capaTest149
         
 fimPart149: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 73
             
-test150: beq $20, $0, fimPart150
+capaTest150: beq $20, $0, fimPart150
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test150            
+        j capaTest150            
         
 fimPart150: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 14
             
-test151: beq $20, $0, fimPart151
+capaTest151: beq $20, $0, fimPart151
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test151
+        j capaTest151
  
 fimPart151: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 27
             
-test152: beq $20, $0, fimPart152
+capaTest152: beq $20, $0, fimPart152
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test152            
+        j capaTest152            
         
 fimPart152: ori $9, $0, 0x5E9172 #verde musgo
 	    addi $20, $0, 20
             
-test153: beq $20, $0, fimPart153
+capaTest153: beq $20, $0, fimPart153
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test153
+        j capaTest153
 
 fimPart153: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 67
             
-test154: beq $20, $0, fimPart154
+capaTest154: beq $20, $0, fimPart154
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test154            
+        j capaTest154            
         
 fimPart154: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 15
             
-test155: beq $20, $0, fimPart155
+capaTest155: beq $20, $0, fimPart155
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test155
+        j capaTest155
  
 fimPart155:  ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 15
             
-test156: beq $20, $0, fimPart156
+capaTest156: beq $20, $0, fimPart156
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test156            
+        j capaTest156            
         
 fimPart156: ori $9, $0, 0x5E9172 #verde musgo
 	    addi $20, $0, 37
             
-test157: beq $20, $0, fimPart157
+capaTest157: beq $20, $0, fimPart157
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test157
+        j capaTest157
 
 fimPart157: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 60
             
-test158: beq $20, $0, fimPart158
+capaTest158: beq $20, $0, fimPart158
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test158            
+        j capaTest158            
         
 fimPart158: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 16
             
-test159: beq $20, $0, fimPart159
+capaTest159: beq $20, $0, fimPart159
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test159
+        j capaTest159
  
 fimPart159:  ori $9, $0, 0x5E9172 #verde musgo
 	    addi $20, $0, 57
             
-test160: beq $20, $0, fimPart160
+capaTest160: beq $20, $0, fimPart160
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test160
+        j capaTest160
 
 fimPart160: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 55
                       
-test161: beq $20, $0, fimPart161
+capaTest161: beq $20, $0, fimPart161
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test161            
+        j capaTest161            
         
 fimPart161: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 16
             
-test162: beq $20, $0, fimPart162
+capaTest162: beq $20, $0, fimPart162
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test162
+        j capaTest162
  
 fimPart162: ori $9, $0, 0x6CA57A #verde claro
 	    addi $20, $0, 18
             
-test163: beq $20, $0, fimPart163
+capaTest163: beq $20, $0, fimPart163
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test163
+        j capaTest163
         
 fimPart163: ori $9, $0, 0x5E9172 #verde musgo
 	    addi $20, $0, 50
             
-test164: beq $20, $0, fimPart164
+capaTest164: beq $20, $0, fimPart164
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test164
+        j capaTest164
 
 fimPart164: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 44
                       
-test165: beq $20, $0, fimPart165
+capaTest165: beq $20, $0, fimPart165
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test165            
+        j capaTest165            
         
 fimPart165: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 10
             
-test166: beq $20, $0, fimPart166
+capaTest166: beq $20, $0, fimPart166
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test166
+        j capaTest166
  
 fimPart166: ori $9, $0, 0x025B90 #azul asa
             sw $9, 0($8)
@@ -3092,38 +3096,38 @@ fimPart166: ori $9, $0, 0x025B90 #azul asa
             ori $9, $0, 0x6CA57A #verde claro
 	    addi $20, $0, 25
             
-test167: beq $20, $0, fimPart167
+capaTest167: beq $20, $0, fimPart167
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test167
+        j capaTest167
         
 fimPart167:ori $9, $0, 0x5E9172 #verde musgo
 	    addi $20, $0, 44
             
-test168: beq $20, $0, fimPart168
+capaTest168: beq $20, $0, fimPart168
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test168
+        j capaTest168
 
 fimPart168: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 43
                       
-test169: beq $20, $0, fimPart169
+capaTest169: beq $20, $0, fimPart169
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test169            
+        j capaTest169            
         
 fimPart169: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 9
             
-test170: beq $20, $0, fimPart170
+capaTest170: beq $20, $0, fimPart170
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test170
+        j capaTest170
  
 fimPart170: ori $9, $0, 0x025B90 #azul asa
             sw $9, 0($8)
@@ -3147,38 +3151,38 @@ fimPart170: ori $9, $0, 0x025B90 #azul asa
             ori $9, $0, 0x6CA57A #verde claro
 	    addi $20, $0, 40
             
-test171: beq $20, $0, fimPart171
+capaTest171: beq $20, $0, fimPart171
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test171
+        j capaTest171
         
 fimPart171:ori $9, $0, 0x5E9172 #verde musgo
 	    addi $20, $0, 34
             
-test172: beq $20, $0, fimPart172
+capaTest172: beq $20, $0, fimPart172
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test172
+        j capaTest172
 
 fimPart172: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 38
                       
-test173: beq $20, $0, fimPart173
+capaTest173: beq $20, $0, fimPart173
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test173            
+        j capaTest173            
         
 fimPart173: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 9
             
-test174: beq $20, $0, fimPart174
+capaTest174: beq $20, $0, fimPart174
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test174
+        j capaTest174
  
 fimPart174: ori $9, $0, 0x025B90 #azul asa
             sw $9, 0($8)
@@ -3201,65 +3205,65 @@ fimPart174: ori $9, $0, 0x025B90 #azul asa
             ori $9, $0, 0xBDC4AB #amarelo areia
             addi $20, $0, 9
             
-test175: beq $20, $0, fimPart175
+capaTest175: beq $20, $0, fimPart175
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test175
+        j capaTest175
  
 fimPart175: ori $9, $0, 0x6CA57A #verde claro
 	    addi $20, $0, 20
             
-test176: beq $20, $0, fimPart176
+capaTest176: beq $20, $0, fimPart176
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test176
+        j capaTest176
         
 fimPart176:ori $9, $0, 0x5E9172 #verde musgo
 	    addi $20, $0, 20
             
-test177: beq $20, $0, fimPart177
+capaTest177: beq $20, $0, fimPart177
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test177
+        j capaTest177
 
 fimPart177: ori $9, $0, 0xBDC4AB #amarelo areia
             addi $20, $0, 9
             
-test178: beq $20, $0, fimPart178
+capaTest178: beq $20, $0, fimPart178
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test178
+        j capaTest178
  
 fimPart178: ori $9, $0, 0x5E9172 #verde musgo
             addi $20, $0, 14
             
-test179: beq $20, $0, fimPart179
+capaTest179: beq $20, $0, fimPart179
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test179
+        j capaTest179
  
 fimPart179: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 39
                       
-test180: beq $20, $0, fimPart180
+capaTest180: beq $20, $0, fimPart180
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test180            
+        j capaTest180            
         
 fimPart180: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 9
             
-test181: beq $20, $0, fimPart181
+capaTest181: beq $20, $0, fimPart181
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test181
+        j capaTest181
  
 fimPart181: ori $9, $0, 0x025B90 #azul asa
             sw $9, 0($8)
@@ -3284,29 +3288,29 @@ fimPart181: ori $9, $0, 0x025B90 #azul asa
             ori $9, $0, 0xBDC4AB #amarelo areia
             addi $20, $0, 50
             
-test182: beq $20, $0, fimPart182
+capaTest182: beq $20, $0, fimPart182
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test182
+        j capaTest182
  
 fimPart182: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 61
                       
-test183: beq $20, $0, fimPart183
+capaTest183: beq $20, $0, fimPart183
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test183            
+        j capaTest183            
         
 fimPart183: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 9
             
-test184: beq $20, $0, fimPart184
+capaTest184: beq $20, $0, fimPart184
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test184
+        j capaTest184
  
 fimPart184: ori $9, $0, 0x025B90 #azul asa
             sw $9, 0($8)
@@ -3335,20 +3339,20 @@ fimPart184: ori $9, $0, 0x025B90 #azul asa
             ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 111
             
-test185: beq $20, $0, fimPart185
+capaTest185: beq $20, $0, fimPart185
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test185
+        j capaTest185
  
 fimPart185: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 8
             
-test186: beq $20, $0, fimPart186
+capaTest186: beq $20, $0, fimPart186
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test186
+        j capaTest186
  
 fimPart186: ori $9, $0, 0x025B90 #azul asa
             sw $9, 0($8)
@@ -3379,129 +3383,128 @@ fimPart186: ori $9, $0, 0x025B90 #azul asa
             ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 111
             
-test187: beq $20, $0, fimPart187
+capaTest187: beq $20, $0, fimPart187
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test187
+        j capaTest187
  
 fimPart187: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 17
             
-test188: beq $20, $0, fimPart188
+capaTest188: beq $20, $0, fimPart188
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test188
+        j capaTest188
  
 fimPart188: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 112
             
-test189: beq $20, $0, fimPart189
+capaTest189: beq $20, $0, fimPart189
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test189
+        j capaTest189
  
 fimPart189: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 16
             
-test190: beq $20, $0, fimPart190
+capaTest190: beq $20, $0, fimPart190
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test190
+        j capaTest190
  
 fimPart190: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 113
             
-test191: beq $20, $0, fimPart191
+capaTest191: beq $20, $0, fimPart191
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test191
+        j capaTest191
  
 fimPart191: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 15
             
-test192: beq $20, $0, fimPart192
+capaTest192: beq $20, $0, fimPart192
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test192
+        j capaTest192
  
 fimPart192: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 114
             
-test193: beq $20, $0, fimPart193
+capaTest193: beq $20, $0, fimPart193
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test193
+        j capaTest193
  
 fimPart193: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 14
             
-test194: beq $20, $0, fimPart194
+capaTest194: beq $20, $0, fimPart194
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test194
+        j capaTest194
  
 fimPart194: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 114
             
-test195: beq $20, $0, fimPart195
+capaTest195: beq $20, $0, fimPart195
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test195
+        j capaTest195
  
 fimPart195: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 14
             
-test196: beq $20, $0, fimPart196
+capaTest196: beq $20, $0, fimPart196
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test196
+        j capaTest196
  
 fimPart196: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 115
             
-test197: beq $20, $0, fimPart197
+capaTest197: beq $20, $0, fimPart197
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test197
+        j capaTest197
  
 fimPart197: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 13
             
-test198: beq $20, $0, fimPart198
+capaTest198: beq $20, $0, fimPart198
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test198
+        j capaTest198
  
 fimPart198: ori $9, $0, 0x53B7E6 #azul escuro
             addi $20, $0, 115
             
-test199: beq $20, $0, fimPart199
+capaTest199: beq $20, $0, fimPart199
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test199
+        j capaTest199
  
 fimPart199: ori $9, $0, 0x0085BB #azul do blue
             addi $20, $0, 13
             
-test200: beq $20, $0, fimPart200
+capaTest200: beq $20, $0, fimPart200
         sw $9, 0($8)
         addi $8, $8, 4
         addi $20, $20, -1
-        j test200
+        j capaTest200
  
-fimPart200:
-       addi $2, $0, 10
-  	    syscall
+fimPart200:addi $2, $0, 10
+  	   syscall
