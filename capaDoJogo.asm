@@ -1,8 +1,7 @@
 .text
 #Parte 1 - Capa 
-#Nome dos laços: capaTest, fimPart, fimCapaTest, capaTestAzul e fimAzul
-#Registradores usados: $8 (endereço de memória), $9 (cores), $20 (contador)
-
+#Nome dos laços: capaTest, fimPart, fimCapaTest, capaTestAzul, fimAzul, tecladoCapa, voltaTecladoCapa, testTelaPreta, fimTelaPreta
+#Registradores usados: $8 (endereço de memória), $9 (cores), $10 (espaço), $20 (contador), $21 (endereço do teclado), $22 (estado do teclado)
 main: lui $8, 0x1001
       ori $9, $0, 0xA7E0F0 #azul claro
       addi $20, $0, 1310
@@ -3506,5 +3505,27 @@ capaTest200: beq $20, $0, fimPart200
         addi $20, $20, -1
         j capaTest200
  
-fimPart200:addi $2, $0, 10
+fimPart200: lui $21, 0xffff #ler teclado
+	    addi $10, $0, 32 #guardar espaço
+	    lui $8, 0x1001 #reinicar posição da memória
+	    lui $9, 0x0 #preto
+	    addi $20, $0, 8192 #quantidade de vezes que vai pintar o fundo
+	    
+tecladoCapa:
+	    lw $22, 0($21)
+	    beq $22, $0, voltaTecladoCapa
+	    lw $22, 4($21)
+	    beq $22, $10, testTelaPreta
+	    j voltaTecladoCapa
+	   
+testTelaPreta: beq $20, $0, fimTelaPreta
+	       sw $9, 0($8)
+	       addi $8, $8, 4
+	       addi $20, $20, -1 
+	       j testTelaPreta
+	       
+voltaTecladoCapa: j tecladoCapa
+	       
+fimTelaPreta:addi $2, $0, 10
   	   syscall
+  	  
