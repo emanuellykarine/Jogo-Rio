@@ -1,7 +1,7 @@
 .text
 #Parte 4 - Etapa 3 - Flappy Bird
 #Nome dos laços: flappyCeu, fimFlappyCeu, flappyNuvem, fimFlappyNuvem, flappyMontlado, fimFlappyMontlado, flappyAreia, fimflappyArea
-#Registradores usados: $8 (endereço de memória), $9 (cores), $10 (letra v), $11 (cores passáro), $12 (endereço temporário), $13 (valor da diferença entre endereços), $20 (contador), $21 (endereço do teclado), $22 (estado do teclado)
+#Registradores usados: $8 (endereço de memória), $9 (cores), $10 (letra v), $11 (cores passáro), $12 (endereço temporário), $13 (valor da diferença entre endereços), $14(cor do passáro), $15 (cor da colisão), $16 (timer), $17 (cor do passáro), $18 (cor do passáro), $19 (cor do passáro), $20 (contador), $21 (endereço do teclado), $22 (estado do teclado), $29 (timer)
 #Cores: Azul 1: 0x62ABD3 - Azul 2: 0x71AED0 - Azul 3: 0x79B1D0 - Verde 1: 0x398426 - Verde 2: 0x92D027 - Verde 3: 0x77BE68 - Verde 4: 0x67B72C - Verde 5: 0x307C71 - Branco: 0xFBF1CE
 #Marrom 1: 0xAF5F24 - Marrom 2: 0xDF9E44 - Marrom 3: 0xD28F42 - Areia 1: 0xFEE1A2 - Areia 2: 0xF1BD75 - Areia 3: 0xDF9E44 - Areia 4: 0xD28F42
 main: lui $8, 0x1001
@@ -4955,7 +4955,7 @@ fimDesenho: addi $2, $0, 10
 
 timer: sw $16, 0($29)
        addi $29, $29, -4
-       addi $16, $0, 30000
+       addi $16, $0, 50000
 forT:  beq $16, $0, fimT
        nop
        nop
