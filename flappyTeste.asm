@@ -4696,138 +4696,52 @@ fimflappyAreia4: ori $11, $0, 0x546CF0 #azul do passáro
 		 addi $23, $23, 100 #endereço da colisão 
 		  
 flappyCaindo:  #desenho do passáro
-	       sw $11, 0($8)
-	       sw $11, 4($8)
-	       sw $11, 8($8)
-	       sw $11, 12($8)
- 
-	       sw $11, 516($8)
-	       sw $14, 520($8)#branco
-	       sw $14, 524($8) #branco
-	       sw $18, 528($8) #cinza
+	       jal desenhoFlappy
 	       
-	       sw $11, 1028($8)
-	       sw $14, 1032($8) #branco
-	       sw $17, 1036($8) #preto
-	       sw $18, 1040($8) #cinza
-	       
-	       sw $11, 1540($8)
-	       sw $14, 1544($8)#branco
-	       sw $14, 1548($8) #branco
-	       sw $18, 1552($8) #cinza
-	       
-	       sw $19, 2044($8)#azul escuro
-	       sw $19, 2048($8)#azul escuro
-	       sw $11, 2052($8)
-	       sw $11, 2056($8)
-	       sw $11, 2060($8)
-	       
-	       sw $11, 2552($8)
-	       sw $11, 2556($8)
-	       sw $11, 2560($8)
-	       sw $19, 2564($8) #azul escuro
-	       sw $11, 2568($8)
-	       sw $11, 2572($8)
-	       jal timer
+	       jal timerFlappy
 		
 	       #cópia e print do cenário
-	       lw $12, 32768($8) #0($8)
-	       sw $12, 0($8) 
-
-	       lw $12, 32772($8) #4($8)
-	       sw $12, 4($8)
+	       jal copiaFundoFlappy
+	       beq $12, $15, fimDesenhoFlappy #se a cópia do cenario naquela posição for da cor da areia ele finaliza  
+	
 	       
-	       lw $12, 32776($8) #8($8)
-	       sw $12, 8($8) 
 	       
-	       lw $12, 32780($8) #12($8)
-	       sw $12, 12($8)
-	        
-	       lw $12, 33284($8) #516($8)
-	       sw $12, 516($8)
 	       
-	       lw $12, 33288($8) #520($8)
-	       sw $12, 520($8)
-	       
-	       lw $12, 33292($8) #524($8)
-	       sw $12, 524($8)
-	       
-	       lw $12, 33296($8) #528($8)
-	       sw $12, 528($8)
-	       
-	       lw $12, 33796($8) #1028($8)
-	       sw $12, 1028($8)
-	       
-	       lw $12, 33800($8) #1032($8)
-	       sw $12, 1032($8) 
-	       
-	       lw $12, 33804($8) #1036($8)
-	       sw $12, 1036($8)  
-	       
-	       lw $12, 33808($8) #1040($8)
-	       sw $12, 1040($8) 
-	       
-	       lw $12, 34308($8) #1540($8)
-	       sw $12, 1540($8)
-	       
-	       lw $12, 34312($8) #1544($8)
-	       sw $12, 1544($8)
-	       
-	       lw $12, 34316($8) #1548($8)
-	       sw $12, 1548($8) 
-	       
-	       lw $12, 34320($8) #1552($8)
-	       sw $12, 1552($8)
-	       
-	       lw $12, 34812($8) #2044($8)
-	       sw $12, 2044($8)
-	       
-	       lw $12, 34816($8) #2048($8)
-	       sw $12, 2048($8)
-	       
-	       lw $12, 34820($8) #2052($8)
-	       sw $12, 2052($8)
-	       
-	       lw $12, 34824($8) #2056($8)
-	       sw $12, 2056($8)
-	       
-	       lw $12, 34828($8) #2060($8)
-	       sw $12, 2060($8)
-	       
-	       lw $12, 35320($8) #2552($8)
-	       sw $12, 2552($8)
-	       
-	       lw $12, 35324($8) #2556($8)
-	       sw $12, 2556($8)
-	       
-	       lw $12, 35328($8) #2560($8)
-	       sw $12, 2560($8)
-	       
-	       lw $12, 35332($8) #2564($8)
-	       sw $12, 2564($8)
-	       
-	       lw $12, 35336($8) #2568($8)
-	       sw $12, 2568($8)
-	       
-	       lw $12, 35340($8) #2572($8)
-	       sw $12, 2572($8)
-	       beq $12, $15, fimDesenho #se a cópia do cenario naquela posição for da cor da areia ele finaliz  
 	       #------------------------
 	       add $8, $8, $13 #diferença entre os endereços
 	       
 	       lw $22, 0($21) #estado do teclado
-	       beq $22, $0, continuacaoPassaro
+	       beq $22, $0, continuacaoFlappy
 	       lw $22, 4($21)
-	       beq $22, $10, passaroVoar
+	       beq $22, $10, flappyVoar
 	       
-	       j continuacaoPassaro
+	       j continuacaoFlappy
 
-passaroVoar: addi $13, $0, -1024 # voltar o passáro dois endereços
+flappyVoar: addi $13, $0, -1024 # voltar o passáro dois endereços
 
 	     add $8, $8, $13 #diminui do endereço
 	     
 	       #desenho do passáro
-	       sw $11, 0($8)
+	       jal desenhoFlappy
+	       
+	    
+	       #cópia e print do cenário
+	       jal copiaFundoFlappy
+	       
+	     #------------------
+	     addi $13, $0, 512 #volta a somar o endereço
+	     j continuacaoFlappy
+
+continuacaoFlappy: j flappyCaindo
+
+fimDesenhoFlappy: jal desenhoFlappy
+	    
+	    addi $2, $0, 10
+            syscall
+
+
+#função desenho do passáro
+desenhoFlappy: sw $11, 0($8)
 	       sw $11, 4($8)
 	       sw $11, 8($8)
 	       sw $11, 12($8)
@@ -4859,10 +4773,11 @@ passaroVoar: addi $13, $0, -1024 # voltar o passáro dois endereços
 	       sw $19, 2564($8) #azul escuro
 	       sw $11, 2568($8)
 	       sw $11, 2572($8)
-	       jal timer
-		
-	       #cópia e print do cenário
-	       lw $12, 32768($8) #0($8)
+	       
+	       jr $31
+	       
+#desenho do fundo com as cópias 
+copiaFundoFlappy: lw $12, 32768($8) #0($8)
 	       sw $12, 0($8) 
   
 	       lw $12, 32772($8) #4($8)
@@ -4943,27 +4858,16 @@ passaroVoar: addi $13, $0, -1024 # voltar o passáro dois endereços
 	       lw $12, 35340($8) #2572($8)
 	       sw $12, 2572($8)
 	       
-	      	
-	       beq $8, $23, fimDesenho #colisão superior
-	     #------------------
-	     addi $13, $0, 512 #volta a somar o endereço
-	     j continuacaoPassaro
-
-continuacaoPassaro: j flappyCaindo
-
-fimDesenho: addi $2, $0, 10
-      syscall
-
+	       jr $31	       	       
 # função Timer
-
-timer: sw $16, 0($29)
+timerFlappy: sw $16, 0($29)
        addi $29, $29, -4
        addi $16, $0, 50000
-forT:  beq $16, $0, fimT
+forTimerFlappy:  beq $16, $0, fimTimerFlappy
        nop
        nop
        addi $16, $16, -1      
-       j forT                  
-fimT:  addi $29, $29, 4                                                    
+       j forTimerFlappy                  
+fimTimerFlappy:  addi $29, $29, 4                                                    
        lw $16, 0($29)          
        jr $31
