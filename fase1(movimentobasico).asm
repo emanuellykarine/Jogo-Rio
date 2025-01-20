@@ -510,8 +510,22 @@ gaiolas_passaros:
      		addi $8 $8 -4
      		sw $9 14352($8)     # rastro dir
      		j desenho_blue
-     	
-     	
+     		
+     	baixo:	lw $24 15372($8)    # colisao atras
+		beq $24 $20 colisao # detalhe bordas
+	   	beq $24 $10 colisao # colisao paredes
+		beq $24 $27 colisao # colisao jaulas
+     		addi $8 $8 +512
+     		sw $9 13836($8) # rastro baixo
+     		j desenho_blue
+     		
+     	cima:	lw $24 13324($8)    # colisao atras
+		beq $24 $20 colisao # detalhe bordas
+	   	beq $24 $10 colisao # colisao paredes
+		beq $24 $27 colisao # colisao jaulas
+     		addi $8 $8 -512
+     		sw $9 14860($8)  # rastro cima
+     		j desenho_blue
      	fim:
      		addi $2 $0 10
 		syscall
