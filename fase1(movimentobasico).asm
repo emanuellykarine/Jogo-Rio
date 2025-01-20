@@ -469,6 +469,7 @@ gaiolas_passaros:
      		ori $17, $0, 0x5353ec # bicos
      		ori $27, $0, 0xb4b4b5 # Cinza da gaiola
      		ori $9, $0,  0x141d29 # Cor de fundo para rastros
+     		ori $20, $0, 0x2a3340 # azul escuro para detalhes
      		
      		ori $11, $0, 0x0073ff  # Azul claro blue
      		ori $12, $0, 0x333597 # Azul escuro blue
@@ -494,44 +495,29 @@ gaiolas_passaros:
 		beq $23 $22 fim
 		# addi $8 $8 +4
 		j desenho_blue
-	dir:
-		lw $24 14352($8)  # colisao frente
-	   	beq $24 $10 colisao
+	dir:	lw $24 14356($8)  # colisao frente
 		beq $24 $20 colisao
+	   	beq $24 $10 colisao
 		beq $24 $27 colisao
      		addi $8 $8 +4
      		sw $9 14344($8)  # rastro esq
      		j desenho_blue
      		
-     	esq:	lw $24 14344($8)  # colisao atras
-	   	beq $24 $10 colisao
-		beq $24 $20 colisao
-		beq $24 $27 colisao
+     	esq:	lw $24 14340($8)    # colisao atras
+		beq $24 $20 colisao # detalhe bordas
+	   	beq $24 $10 colisao # colisao paredes
+		beq $24 $27 colisao # colisao jaulas
      		addi $8 $8 -4
-     		sw $9 14352($8)  # rastro dir
+     		sw $9 14352($8)     # rastro dir
      		j desenho_blue
-     		
-     	cima:	lw $24 14860($8)  # colisao acima
-	   	beq $24 $10 colisao
-		beq $24 $20 colisao
-		beq $24 $27 colisao
-     		addi $8 $8 -512
-     		sw $9 14860($8)  # rastro baixo
-     		j desenho_blue
-     		
-     	baixo:	
-		lw $24 13836($8)  # colisao abajo
-	   	beq $24 $10 colisao
-		beq $24 $20 colisao
-		beq $24 $27 colisao
-     		addi $8 $8 +512
-     		sw $9 13836($8)  # rastro baixo
-     		j desenho_blue
+     	
+     	
      	fim:
      		addi $2 $0 10
 		syscall
 colisao:
 	add $23 $0 $0
+	# lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
 	j desenho_blue
 ##############################################################
 # função timer
