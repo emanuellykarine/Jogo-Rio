@@ -21,7 +21,7 @@ main:lui $8, 0x1001	   # fundo
      # lui $6, 0x1001	   # gaiola com passaros
      ori $9, $0, 0x141d29  # Azul escuro
      ori $10, $0, 0x546d8f # muros
-     ori $11, $0, 0xb4b4b4 # Cinza da gaiola
+     ori $11, $0, 0x0000 # Cinza da gaiola
      ori $12, $0, 0xfea3b1 # passaro da gaiola (rosa)
      ori $13, $0, 0xfff201 # passaro da gaiola (amarelo)
      ori $14, $0, 0xa8e61d # passaro da gaiola (verde)
@@ -329,7 +329,7 @@ fim_muros:
 	
 gaiolas_passaros:
 	lui $8, 0x1001
-	ori $11, $0, 0xb4b4b4 # Cinza da gaiola
+	ori $11, $0, 0xb4b4b5 # Cinza da gaiola
 	gaiola_1: # GAIOLA 1
 		addi $15 $0 9
 	for_gaiola1h:
@@ -466,15 +466,14 @@ gaiolas_passaros:
 			sw $19 29720($8)
 # MOVIMENTO DO BLUE
 	dados_blue:
-     		ori $17, $0, 0xb4b4b4 # bicos
-     		ori $19, $0, 0xb4b4b4 # Cinza da gaiola
+     		ori $17, $0, 0x5353ec # bicos
+     		ori $27, $0, 0xb4b4b5 # Cinza da gaiola
      		ori $9, $0,  0x141d29 # Cor de fundo para rastros
      		
-     		ori $11, $0, 0x54cf0  # Azul claro blue
+     		ori $11, $0, 0x0073ff  # Azul claro blue
      		ori $12, $0, 0x333597 # Azul escuro blue
      		lui $8, 0x1001        # memoria do blue
      		lui $21 0xffff
-     		
      		
      		addi $13 $0 'a' # move para a esquerda
      		addi $14 $0 's' # move para baixo
@@ -483,29 +482,9 @@ gaiolas_passaros:
      		addi $22 $0 ' ' # pausa temporária
      		
      	desenho_blue:
-     		sw $12 14348($8) # ponto azul
+     		sw $11 14348($8) # ponto azul
      		jal timerf1
-		cv:lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
-		
-	   	lw $24 14352($8)  # colisao frente
-	   	beq $24 $10 colisao
-		beq $24 $20 colisao
-		beq $24 $19 colisao
-		
-		lw $24 14340($8)  # colisao atras
-	   	beq $24 $10 colisao
-		beq $24 $20 colisao
-		beq $24 $19 colisao
-		
-		lw $24 13836($8)  # colisao abajo
-	   	beq $24 $10 colisao
-		beq $24 $20 colisao
-		beq $24 $19 colisao
-		
-		lw $24 14860($8)  # colisao acima
-	   	beq $24 $10 colisao
-		beq $24 $20 colisao
-		beq $24 $19 colisao
+	 	lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
 		
 		lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
 		beq $23 $19 dir
@@ -516,24 +495,35 @@ gaiolas_passaros:
 		# addi $8 $8 +4
 		j desenho_blue
 	dir:
-		
+		lw $24 14352($8)  # colisao frente
+	   	beq $24 $10 colisao
+		beq $24 $20 colisao
+		beq $24 $27 colisao
      		addi $8 $8 +4
      		sw $9 14344($8)  # rastro esq
      		j desenho_blue
      		
-     	esq:	
+     	esq:	lw $24 14344($8)  # colisao atras
+	   	beq $24 $10 colisao
+		beq $24 $20 colisao
+		beq $24 $27 colisao
      		addi $8 $8 -4
      		sw $9 14352($8)  # rastro dir
      		j desenho_blue
      		
-     	cima:	
-		
+     	cima:	lw $24 14860($8)  # colisao acima
+	   	beq $24 $10 colisao
+		beq $24 $20 colisao
+		beq $24 $27 colisao
      		addi $8 $8 -512
      		sw $9 14860($8)  # rastro baixo
      		j desenho_blue
      		
      	baixo:	
-		
+		lw $24 13836($8)  # colisao abajo
+	   	beq $24 $10 colisao
+		beq $24 $20 colisao
+		beq $24 $27 colisao
      		addi $8 $8 +512
      		sw $9 13836($8)  # rastro baixo
      		j desenho_blue
@@ -541,7 +531,8 @@ gaiolas_passaros:
      		addi $2 $0 10
 		syscall
 colisao:
-	j cv
+	add $23 $0 $0
+	j desenho_blue
 ##############################################################
 # função timer
 timerf1:
