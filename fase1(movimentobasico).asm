@@ -5,16 +5,16 @@
 # Cinza grades: 0xb4b4b4
 # Registradores sendo usados cenario:
 #			    $15 -> variaveis para loops
-#			    $9 atÈ $14, $16 ate $20 -> cores
-#			    $8, $7 e $6 -> espaÁo na memoria
+#			    $9 at√© $14, $16 ate $20 -> cores
+#			    $8, $7 e $6 -> espa√ßo na memoria
 #			    $21 -> tamanho da tela
-# Registradores utilizados pÛs cen·rio:
+# Registradores utilizados p√≥s cen√°rio:
 #			    $16, $17, $18, $11, $12 --> cores blue
 #			    $9 -> fundo/rastro
 #			    $19, $20, $13, $14 -> teclas do jogo   		
 .text
-# O pass·ro branco tem que ser do tamanho do espaÁo entre as paredes verdes, pra ele poder se locomover atr·s do blue
-# pq o blue È menor que o pass·ro branco no filme
+# O pass√°ro branco tem que ser do tamanho do espa√ßo entre as paredes verdes, pra ele poder se locomover atr√°s do blue
+# pq o blue √© menor que o pass√°ro branco no filme
 
 main:lui $8, 0x1001	   # fundo
      lui $7, 0x1001	   # muros e gaiolas com passaros
@@ -200,27 +200,27 @@ fim_muros:
 	lui $8, 0x1001
 # PASSARO ROSA
 	ori $14, $0, 0xf77287 # detalhe passaro rosa
-	sw $14 12424($8)# parte rosa da cabeÁa1
-	sw $12 12428($8)# parte rosa da cabeÁa1
-	sw $12 12432($8)# parte rosa da cabeÁa1
-	sw $12 12436($8)# parte rosa da cabeÁa1
-	sw $12 12440($8)# parte rosa da cabeÁa1
-	sw $12 12444($8)# parte rosa da cabeÁa1
-	sw $14 12940($8)# parte rosa da cabeÁa2
-	sw $12 12944($8)# parte rosa da cabeÁa2
-	sw $16 12948($8)# parte rosa da cabeÁa2
-	sw $17 12956($8)# parte rosa da cabeÁa2
-	sw $17 12960($8)# parte rosa da cabeÁa2
-	sw $14 13456($8)# parte rosa da cabeÁa3
-	sw $12 13460($8)# parte rosa da cabeÁa3
-	sw $12 13464($8)# parte rosa da cabeÁa3
-	sw $12 13468($8)# parte rosa da cabeÁa3
-	sw $17 13468($8)# parte rosa da cabeÁa3
-	sw $17 13472($8)# parte rosa da cabeÁa3
-	sw $14 13968($8)# parte rosa da cabeÁa4
-	sw $12 13972($8)# parte rosa da cabeÁa4
-	sw $12 13976($8)# parte rosa da cabeÁa4
-	sw $12 13980($8)# parte rosa da cabeÁa4
+	sw $14 12424($8)# parte rosa da cabe√ßa1
+	sw $12 12428($8)# parte rosa da cabe√ßa1
+	sw $12 12432($8)# parte rosa da cabe√ßa1
+	sw $12 12436($8)# parte rosa da cabe√ßa1
+	sw $12 12440($8)# parte rosa da cabe√ßa1
+	sw $12 12444($8)# parte rosa da cabe√ßa1
+	sw $14 12940($8)# parte rosa da cabe√ßa2
+	sw $12 12944($8)# parte rosa da cabe√ßa2
+	sw $16 12948($8)# parte rosa da cabe√ßa2
+	sw $17 12956($8)# parte rosa da cabe√ßa2
+	sw $17 12960($8)# parte rosa da cabe√ßa2
+	sw $14 13456($8)# parte rosa da cabe√ßa3
+	sw $12 13460($8)# parte rosa da cabe√ßa3
+	sw $12 13464($8)# parte rosa da cabe√ßa3
+	sw $12 13468($8)# parte rosa da cabe√ßa3
+	sw $17 13468($8)# parte rosa da cabe√ßa3
+	sw $17 13472($8)# parte rosa da cabe√ßa3
+	sw $14 13968($8)# parte rosa da cabe√ßa4
+	sw $12 13972($8)# parte rosa da cabe√ßa4
+	sw $12 13976($8)# parte rosa da cabe√ßa4
+	sw $12 13980($8)# parte rosa da cabe√ßa4
 	sw $14 14476($8)# parte rosa 5
 	sw $12 14480($8)# parte rosa 5
 	sw $12 14484($8)# parte rosa 5
@@ -241,10 +241,10 @@ fim_muros:
 	sw $18 16024($8)# pata
 # PASSARO AMARELO
 	ori $14, $0, 0xd19a02 # detalhe passaro amarelo
-	sw $13 17556($8)# parte cabeÁa1
-	sw $14 18064($8)# parte cabeÁa1
-	sw $13 18068($8)# parte cabeÁa1
-	sw $13 18072($8)# parte cabeÁa1
+	sw $13 17556($8)# parte cabe√ßa1
+	sw $14 18064($8)# parte cabe√ßa1
+	sw $13 18068($8)# parte cabe√ßa1
+	sw $13 18072($8)# parte cabe√ßa1
 	
 	sw $14 18576($8)# parte amarela 2
 	sw $16 18580($8)# parte branca olho
@@ -480,7 +480,7 @@ gaiolas_passaros:
      		addi $14 $0 's' # move para baixo
      		addi $20 $0 'w' # move para cima
      		addi $19 $0 'd' # move para a direita
-     		addi $22 $0 ' ' # pausa tempor·ria
+     		addi $22 $0 ' ' # pausa tempor√°ria
      		
      	desenho_blue:
      		sw $12 14348($8) # ponto azul
@@ -543,7 +543,7 @@ gaiolas_passaros:
 colisao:
 	j cv
 ##############################################################
-# funÁ„o timer
+# fun√ß√£o timer
 timerf1:
 	addi $15 $15 20000
 	forT_f1:beq $15 $0 fimT_f1
