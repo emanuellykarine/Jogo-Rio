@@ -6611,7 +6611,7 @@ flappyAreia4:beq $20, $0, fimflappyAreia4
 
 fimflappyAreia4: 
 	         lui $8, 0x1001 #reg do passáro com o endereço inicial
-	         addi $8, $8, 12412 # mover o passáro pro meio da tela
+	         addi $8, $8, 12380 # mover o passáro pro meio da tela
 	 	 
 	 	 lui $6, 0x1001 #endereço do obstaculo
 	       	 addi $6, $6, 452 #final da tela 		
@@ -6623,7 +6623,7 @@ fimflappyAreia4:
 		 ori $15, $0, 0xFEE1A2 #cor da areia para colisão
 		 ori $9, $0, 0xEB34B4 #cor do obstaculo 
 		 
-		 lui $24, 0x1001
+		 lui $24, 0x1001 #endereço de colisão do obstaculo
 		 
 		 jal flappyRandomico
 flappyCaindo:  #desenho do passáro
@@ -6636,10 +6636,15 @@ flappyCaindo:  #desenho do passáro
 	       #cópia e print do cenário
 	       jal copiaFundoFlappy
 	       
+	       addi $8, $8, 4 #move o blue pra frente
 	       beq $12, $15, fimDesenhoFlappy #se a cópia do cenario naquela posição for da cor da areia ele finaliza  
 	       beq $6, $24, flappyDistanciaObstaculos #se chegar em certa posição gera outro obstaculo
-	       beq $6, $8, fimDesenhoFlappy #se o blue tiver no mesmo endereço que o obstaculo
+	        
+	       lw $27, 20($8)
+	       beq $27, $9, fimDesenhoFlappy #se o endereço do blue a frente for da cor do obstaculo ele para
+	       
 	       #------------------------
+	     
 	       add $8, $8, $13 #diferença entre os endereços do passaro
 	       add $6, $6, -4 #diferença entre os endereços do obstaculo
 	       
@@ -6686,9 +6691,10 @@ flappyRandomico: addi $5, $0, 35 #limite do intervalo
 	         j flappyObstaculoTopo
 
 #função distancia dos obstaculos
-flappyDistanciaObstaculos: lui $6, 0x1001
-			   addi $6, $6, 452
-			   j flappyRandomico 
+flappyDistanciaObstaculos: 
+ 			 lui $6, 0x1001
+			 addi $6, $6, 452
+			 j flappyRandomico 
 			  	         
 #função desenhar obstaculo no topo
 flappyObstaculoTopo:beq $23, $20, flappyEspacoObstaculos
@@ -6893,7 +6899,7 @@ fimTimerFlappy:  addi $29, $29, 4
 # função Timer do obstaculo
 timerFlappyObstaculo: sw $16, 0($29)
        	     addi $29, $29, -4
-       	     addi $16, $0, 30
+       	     addi $16, $0, 20
 forTimerFlappyObstaculo:  beq $16, $0, fimTimerFlappyObstaculo
        		 nop
        		 nop
