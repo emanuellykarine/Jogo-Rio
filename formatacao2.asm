@@ -1,7 +1,7 @@
 .text
 #Parte 4 - Etapa 3 - Flappy Bird
-#Nome dos la鏾s: flappyCeu, fimFlappyCeu, flappyNuvem, fimFlappyNuvem, flappyMontlado, fimFlappyMontlado, flappyAreia, fimflappyArea
-#Registradores usados: $8 (endere鏾 de mem髍ia), $9 (cores), $10 (letra v), $11 (cores pass醨o), $12 (endere鏾 tempor醨io), $13 (valor da diferen鏰 entre endere鏾s), $14(cor do pass醨o), $15 (cor da colis鉶), $16 (timer), $17 (cor do pass醨o), $18 (cor do pass醨o), $19 (cor do pass醨o), $20 (contador), $21 (endere鏾 do teclado), $22 (estado do teclado), $29 (timer)
+#Nome dos la莽os: flappyCeu, fimFlappyCeu, flappyNuvem, fimFlappyNuvem, flappyMontlado, fimFlappyMontlado, flappyAreia, fimflappyArea
+#Registradores usados: $8 (endere莽o de mem贸ria), $9 (cores), $10 (letra v), $11 (cores pass谩ro), $12 (endere莽o tempor谩rio), $13 (valor da diferen莽a entre endere莽os), $14(cor do pass谩ro), $15 (cor da colis茫o), $16 (timer), $17 (cor do pass谩ro), $18 (cor do pass谩ro), $19 (cor do pass谩ro), $20 (contador), $21 (endere莽o do teclado), $22 (estado do teclado), $29 (timer)
 #Cores: Azul 1: 0x62ABD3 - Azul 2: 0x71AED0 - Azul 3: 0x79B1D0 - Verde 1: 0x398426 - Verde 2: 0x92D027 - Verde 3: 0x77BE68 - Verde 4: 0x67B72C - Verde 5: 0x307C71 - Branco: 0xFBF1CE
 #Marrom 1: 0xAF5F24 - Marrom 2: 0xDF9E44 - Marrom 3: 0xD28F42 - Areia 1: 0xFEE1A2 - Areia 2: 0xF1BD75 - Areia 3: 0xDF9E44 - Areia 4: 0xD28F42
 main: lui $8, 0x1001
@@ -11,7 +11,7 @@ main: lui $8, 0x1001
       
 flappyCeu: beq $20, $0, fimFlappyCeu
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 	   sw $9, 32768($6)
 	   addi $6, $6, 4
            addi $8, $8, 4
@@ -23,7 +23,7 @@ fimFlappyCeu: ori $9, $0, 0x71AED0 #azul 2
               
 flappyCeu2: beq $20, $0, fimFlappyCeu2
             sw $9, 0($8)
-            sw $9, 32768($8) #c髉ia do cen醨io
+            sw $9, 32768($8) #c贸pia do cen谩rio
 	    sw $9, 32768($6)
 	    addi $6, $6, 4
             addi $8, $8, 4
@@ -35,7 +35,7 @@ fimFlappyCeu2: ori $9, $0, 0x79B1D0 #azul 3
 
 flappyCeu3: beq $20, $0, fimFlappyCeu3
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 	   sw $9, 32768($6)
 	   addi $6, $6, 4
            addi $8, $8, 4
@@ -44,47 +44,47 @@ flappyCeu3: beq $20, $0, fimFlappyCeu3
        
 fimFlappyCeu3:  ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4                      
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -94,7 +94,7 @@ fimFlappyCeu3:  ori $9, $0, 0x398426 #verde 1
 		
 flappyCeu4: beq $20, $0, fimFlappyCeu4
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 	   sw $9, 32768($6)
 	  addi $6, $6, 4
            addi $8, $8, 4
@@ -103,47 +103,47 @@ flappyCeu4: beq $20, $0, fimFlappyCeu4
            
 fimFlappyCeu4: ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4                      
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -153,7 +153,7 @@ fimFlappyCeu4: ori $9, $0, 0x398426 #verde 1
 		
 flappyCeu5: beq $20, $0, fimFlappyCeu5
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 	   sw $9, 32768($6)
 	   addi $6, $6, 4
            addi $8, $8, 4
@@ -162,47 +162,47 @@ flappyCeu5: beq $20, $0, fimFlappyCeu5
            
 fimFlappyCeu5: ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4                      
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -212,7 +212,7 @@ fimFlappyCeu5: ori $9, $0, 0x398426 #verde 1
 		
 flappyCeu6: beq $20, $0, fimFlappyCeu6
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 	   sw $9, 32768($6)
 	   addi $6, $6, 4
            addi $8, $8, 4
@@ -221,47 +221,47 @@ flappyCeu6: beq $20, $0, fimFlappyCeu6
            
 fimFlappyCeu6: ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4                      
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -271,7 +271,7 @@ fimFlappyCeu6: ori $9, $0, 0x398426 #verde 1
 		
 flappyCeu7: beq $20, $0, fimFlappyCeu7
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 	   sw $9, 32768($6)
 	   addi $6, $6, 4
            addi $8, $8, 4
@@ -280,33 +280,33 @@ flappyCeu7: beq $20, $0, fimFlappyCeu7
            
 fimFlappyCeu7: ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
 		
 		ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -316,7 +316,7 @@ fimFlappyCeu7: ori $9, $0, 0x398426 #verde 1
 		
 flappyCeu8: beq $20, $0, fimFlappyCeu8
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -325,33 +325,33 @@ flappyCeu8: beq $20, $0, fimFlappyCeu8
            
 fimFlappyCeu8:  ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
 		
 		ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -361,7 +361,7 @@ fimFlappyCeu8:  ori $9, $0, 0x398426 #verde 1
 		
 flappyCeu9: beq $20, $0, fimFlappyCeu9
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -370,33 +370,33 @@ flappyCeu9: beq $20, $0, fimFlappyCeu9
            
 fimFlappyCeu9: ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
 		
 		ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -406,7 +406,7 @@ fimFlappyCeu9: ori $9, $0, 0x398426 #verde 1
 		
 flappyCeu10: beq $20, $0, fimFlappyCeu10
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -415,33 +415,33 @@ flappyCeu10: beq $20, $0, fimFlappyCeu10
            
 fimFlappyCeu10: ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
 		
 		ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -451,7 +451,7 @@ fimFlappyCeu10: ori $9, $0, 0x398426 #verde 1
 		
 flappyCeu11: beq $20, $0, fimFlappyCeu11
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -460,33 +460,33 @@ flappyCeu11: beq $20, $0, fimFlappyCeu11
            
 fimFlappyCeu11: ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
 		
 		ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -496,7 +496,7 @@ fimFlappyCeu11: ori $9, $0, 0x92D027 #verde 2
 		
 flappyCeu12: beq $20, $0, fimFlappyCeu12
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -505,33 +505,33 @@ flappyCeu12: beq $20, $0, fimFlappyCeu12
            
 fimFlappyCeu12:  ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
 		
 		ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -541,7 +541,7 @@ fimFlappyCeu12:  ori $9, $0, 0x92D027 #verde 2
 		
 flappyCeu13: beq $20, $0, fimFlappyCeu13
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -550,33 +550,33 @@ flappyCeu13: beq $20, $0, fimFlappyCeu13
            
 fimFlappyCeu13: ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
 		
 		ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -586,7 +586,7 @@ fimFlappyCeu13: ori $9, $0, 0x92D027 #verde 2
 		
 flappyCeu14: beq $20, $0, fimFlappyCeu14
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -595,33 +595,33 @@ flappyCeu14: beq $20, $0, fimFlappyCeu14
            
 fimFlappyCeu14: ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
 		
 		ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -631,7 +631,7 @@ fimFlappyCeu14: ori $9, $0, 0x92D027 #verde 2
 		
 flappyCeu15: beq $20, $0, fimFlappyCeu15
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -640,49 +640,49 @@ flappyCeu15: beq $20, $0, fimFlappyCeu15
            
 fimFlappyCeu15: ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4                      
 
 		ori $9, $0, 0xAF5F24 #marrom
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -692,7 +692,7 @@ fimFlappyCeu15: ori $9, $0, 0x398426 #verde 1
 		
 flappyCeu16: beq $20, $0, fimFlappyCeu16
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -701,7 +701,7 @@ flappyCeu16: beq $20, $0, fimFlappyCeu16
            
 fimFlappyCeu16: ori $9, $0, 0xFBF1CE #branco
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
@@ -711,7 +711,7 @@ fimFlappyCeu16: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu17: beq $20, $0, fimFlappyCeu17
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -720,49 +720,49 @@ flappyCeu17: beq $20, $0, fimFlappyCeu17
            
 fimFlappyCeu17:  ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4                      
 
 		ori $9, $0, 0xAF5F24 #marrom
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -772,7 +772,7 @@ fimFlappyCeu17:  ori $9, $0, 0x398426 #verde 1
 		
 flappyCeu18: beq $20, $0, fimFlappyCeu18
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -781,49 +781,49 @@ flappyCeu18: beq $20, $0, fimFlappyCeu18
            
 fimFlappyCeu18: ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4                      
 
 		ori $9, $0, 0xAF5F24 #marrom
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -833,7 +833,7 @@ fimFlappyCeu18: ori $9, $0, 0x398426 #verde 1
 		
 flappyCeu19: beq $20, $0, fimFlappyCeu19
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -842,49 +842,49 @@ flappyCeu19: beq $20, $0, fimFlappyCeu19
            
 fimFlappyCeu19: ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
              	
              	ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
                 
                 ori $9, $0, 0x77BE68 #verde 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4                      
 
 		ori $9, $0, 0xAF5F24 #marrom
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x92D027 #verde 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x398426 #verde 1
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -894,7 +894,7 @@ fimFlappyCeu19: ori $9, $0, 0x398426 #verde 1
 		
 flappyCeu20: beq $20, $0, fimFlappyCeu20
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -903,12 +903,12 @@ flappyCeu20: beq $20, $0, fimFlappyCeu20
            
 fimFlappyCeu20: ori $9, $0, 0xFBF1CE #branco
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
@@ -918,7 +918,7 @@ fimFlappyCeu20: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu21: beq $20, $0, fimFlappyCeu21
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -927,12 +927,12 @@ flappyCeu21: beq $20, $0, fimFlappyCeu21
            
 fimFlappyCeu21: ori $9, $0, 0xFBF1CE #branco
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
@@ -942,7 +942,7 @@ fimFlappyCeu21: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu22: beq $20, $0, fimFlappyCeu22
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -951,7 +951,7 @@ flappyCeu22: beq $20, $0, fimFlappyCeu22
            
 fimFlappyCeu22: ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -961,7 +961,7 @@ fimFlappyCeu22: ori $9, $0, 0xDF9E44 #marrom 2
 		
 flappyCeu23: beq $20, $0, fimFlappyCeu23
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -970,17 +970,17 @@ flappyCeu23: beq $20, $0, fimFlappyCeu23
            
 fimFlappyCeu23: ori $9, $0, 0xFBF1CE #branco
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
@@ -990,7 +990,7 @@ fimFlappyCeu23: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu24: beq $20, $0, fimFlappyCeu24
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -999,7 +999,7 @@ flappyCeu24: beq $20, $0, fimFlappyCeu24
            
 fimFlappyCeu24:  ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1009,7 +1009,7 @@ fimFlappyCeu24:  ori $9, $0, 0xDF9E44 #marrom 2
 		
 flappyCeu25: beq $20, $0, fimFlappyCeu25
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1018,7 +1018,7 @@ flappyCeu25: beq $20, $0, fimFlappyCeu25
            
 fimFlappyCeu25: ori $9, $0, 0xFBF1CE #branco
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
@@ -1028,7 +1028,7 @@ fimFlappyCeu25: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu26: beq $20, $0, fimFlappyCeu26
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1037,7 +1037,7 @@ flappyCeu26: beq $20, $0, fimFlappyCeu26
            
 fimFlappyCeu26: ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1047,7 +1047,7 @@ fimFlappyCeu26: ori $9, $0, 0xDF9E44 #marrom 2
 		
 flappyCeu27: beq $20, $0, fimFlappyCeu27
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1056,14 +1056,14 @@ flappyCeu27: beq $20, $0, fimFlappyCeu27
            
 fimFlappyCeu27: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1073,7 +1073,7 @@ fimFlappyCeu27: ori $9, $0, 0x67B72C #verde 4
 		
 flappyCeu28: beq $20, $0, fimFlappyCeu28
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1082,7 +1082,7 @@ flappyCeu28: beq $20, $0, fimFlappyCeu28
            
 fimFlappyCeu28: ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1092,7 +1092,7 @@ fimFlappyCeu28: ori $9, $0, 0xDF9E44 #marrom 2
 		
 flappyCeu29: beq $20, $0, fimFlappyCeu29
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1101,32 +1101,32 @@ flappyCeu29: beq $20, $0, fimFlappyCeu29
            
 fimFlappyCeu29: ori $9, $0, 0xFBF1CE #branco
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
@@ -1136,7 +1136,7 @@ fimFlappyCeu29: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu30: beq $20, $0, fimFlappyCeu30
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1145,32 +1145,32 @@ flappyCeu30: beq $20, $0, fimFlappyCeu30
            
 fimFlappyCeu30: ori $9, $0, 0xFBF1CE #branco
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
@@ -1180,7 +1180,7 @@ fimFlappyCeu30: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu31: beq $20, $0, fimFlappyCeu31
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1189,7 +1189,7 @@ flappyCeu31: beq $20, $0, fimFlappyCeu31
            
 fimFlappyCeu31: ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1199,7 +1199,7 @@ fimFlappyCeu31: ori $9, $0, 0xD28F42 #marrom 3
 		
 flappyCeu32: beq $20, $0, fimFlappyCeu32
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1208,32 +1208,32 @@ flappyCeu32: beq $20, $0, fimFlappyCeu32
            
 fimFlappyCeu32: ori $9, $0, 0xFBF1CE #branco
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
@@ -1243,7 +1243,7 @@ fimFlappyCeu32: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu33: beq $20, $0, fimFlappyCeu33
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1252,7 +1252,7 @@ flappyCeu33: beq $20, $0, fimFlappyCeu33
            
 fimFlappyCeu33: ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1262,7 +1262,7 @@ fimFlappyCeu33: ori $9, $0, 0xD28F42 #marrom 3
 		
 flappyCeu34: beq $20, $0, fimFlappyCeu34
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1271,17 +1271,17 @@ flappyCeu34: beq $20, $0, fimFlappyCeu34
            
 fimFlappyCeu34: ori $9, $0, 0xFBF1CE #branco
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
 	        sw $9, 0($8)
-	        sw $9, 32768($8) #c髉ia do cen醨io
+	        sw $9, 32768($8) #c贸pia do cen谩rio
 			sw $9, 32768($6)
 			addi $6, $6, 4
 	        addi $8, $8, 4
@@ -1291,7 +1291,7 @@ fimFlappyCeu34: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu35: beq $20, $0, fimFlappyCeu35
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1300,7 +1300,7 @@ flappyCeu35: beq $20, $0, fimFlappyCeu35
            
 fimFlappyCeu35: ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1310,7 +1310,7 @@ fimFlappyCeu35: ori $9, $0, 0xD28F42 #marrom 3
 		
 flappyCeu36: beq $20, $0, fimFlappyCeu36
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1319,19 +1319,19 @@ flappyCeu36: beq $20, $0, fimFlappyCeu36
            
 fimFlappyCeu36: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1341,7 +1341,7 @@ fimFlappyCeu36: ori $9, $0, 0x67B72C #verde 4
 		
 flappyCeu37: beq $20, $0, fimFlappyCeu37
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1350,7 +1350,7 @@ flappyCeu37: beq $20, $0, fimFlappyCeu37
            
 fimFlappyCeu37: ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1360,7 +1360,7 @@ fimFlappyCeu37: ori $9, $0, 0xD28F42 #marrom 3
 		
 flappyCeu38: beq $20, $0, fimFlappyCeu38
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1372,7 +1372,7 @@ fimFlappyCeu38: ori $9, $0, 0xFBF1CE #branco
 		 
 flappyNuvem: beq $20, $0, fimFlappyNuvem
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1384,7 +1384,7 @@ fimFlappyNuvem:	ori $9, $0, 0x79B1D0 #azul 3
 		
 flappyCeu39: beq $20, $0, fimFlappyCeu39
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1396,7 +1396,7 @@ fimFlappyCeu39:	ori $9, $0, 0xFBF1CE #branco
 		 
 flappyNuvem2: beq $20, $0, fimFlappyNuvem2
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1408,7 +1408,7 @@ fimFlappyNuvem2: ori $9, $0, 0x79B1D0 #azul 3
 		
 flappyCeu40: beq $20, $0, fimFlappyCeu40
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1417,7 +1417,7 @@ flappyCeu40: beq $20, $0, fimFlappyCeu40
            
 fimFlappyCeu40: ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1427,7 +1427,7 @@ fimFlappyCeu40: ori $9, $0, 0xDF9E44 #marrom 2
 		
 flappyCeu41: beq $20, $0, fimFlappyCeu41
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1439,7 +1439,7 @@ fimFlappyCeu41: ori $9, $0, 0xFBF1CE #branco
 		 
 flappyNuvem3: beq $20, $0, fimFlappyNuvem3
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1451,7 +1451,7 @@ fimFlappyNuvem3: ori $9, $0, 0x79B1D0 #azul 3
 		
 flappyCeu42: beq $20, $0, fimFlappyCeu42
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1460,7 +1460,7 @@ flappyCeu42: beq $20, $0, fimFlappyCeu42
            
 fimFlappyCeu42:  ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1470,7 +1470,7 @@ fimFlappyCeu42:  ori $9, $0, 0xDF9E44 #marrom 2
 		
 flappyCeu43: beq $20, $0, fimFlappyCeu43
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1482,7 +1482,7 @@ fimFlappyCeu43: ori $9, $0, 0xFBF1CE #branco
 		 
 flappyNuvem4: beq $20, $0, fimFlappyNuvem4
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1494,7 +1494,7 @@ fimFlappyNuvem4:  ori $9, $0, 0x79B1D0 #azul 3
 		
 flappyCeu44: beq $20, $0, fimFlappyCeu44
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1503,7 +1503,7 @@ flappyCeu44: beq $20, $0, fimFlappyCeu44
            
 fimFlappyCeu44:  ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1513,7 +1513,7 @@ fimFlappyCeu44:  ori $9, $0, 0xDF9E44 #marrom 2
 		
 flappyCeu45: beq $20, $0, fimFlappyCeu45
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1522,36 +1522,36 @@ flappyCeu45: beq $20, $0, fimFlappyCeu45
            
 fimFlappyCeu45: ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1561,7 +1561,7 @@ fimFlappyCeu45: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu46: beq $20, $0, fimFlappyCeu46
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1570,7 +1570,7 @@ flappyCeu46: beq $20, $0, fimFlappyCeu46
            
 fimFlappyCeu46: ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1580,7 +1580,7 @@ fimFlappyCeu46: ori $9, $0, 0xDF9E44 #marrom 2
 		
 flappyCeu47: beq $20, $0, fimFlappyCeu47
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1589,24 +1589,24 @@ flappyCeu47: beq $20, $0, fimFlappyCeu47
            
 fimFlappyCeu47: ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1616,7 +1616,7 @@ fimFlappyCeu47: ori $9, $0, 0xFBF1CE #branco
 		 
 flappyNuvem5: beq $20, $0, fimFlappyNuvem5
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1628,7 +1628,7 @@ fimFlappyNuvem5: ori $9, $0, 0x79B1D0 #azul 3
 		
 flappyCeu48: beq $20, $0, fimFlappyCeu48
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1640,7 +1640,7 @@ fimFlappyCeu48: ori $9, $0, 0xFBF1CE #branco
 		 
 flappyNuvem6: beq $20, $0, fimFlappyNuvem6
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1649,61 +1649,61 @@ flappyNuvem6: beq $20, $0, fimFlappyNuvem6
            
 fimFlappyNuvem6: ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1713,7 +1713,7 @@ fimFlappyNuvem6: ori $9, $0, 0x79B1D0 #azul 3
 		 
 flappyNuvem7: beq $20, $0, fimFlappyNuvem7
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1725,7 +1725,7 @@ fimFlappyNuvem7: ori $9, $0, 0x79B1D0 #azul 3
 		
 flappyCeu49: beq $20, $0, fimFlappyCeu49
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1734,7 +1734,7 @@ flappyCeu49: beq $20, $0, fimFlappyCeu49
            
 fimFlappyCeu49: ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1744,7 +1744,7 @@ fimFlappyCeu49: ori $9, $0, 0xD28F42 #marrom 3
 		
 flappyCeu50: beq $20, $0, fimFlappyCeu50
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1756,7 +1756,7 @@ fimFlappyCeu50: ori $9, $0, 0xFBF1CE #branco
 		 
 flappyNuvem8: beq $20, $0, fimFlappyNuvem8
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1768,7 +1768,7 @@ fimFlappyNuvem8: ori $9, $0, 0x79B1D0 #azul 3
 		
 flappyCeu51: beq $20, $0, fimFlappyCeu51
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1777,14 +1777,14 @@ flappyCeu51: beq $20, $0, fimFlappyCeu51
            
 fimFlappyCeu51: ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
                 addi $8, $8, 4
                 
                 ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1794,7 +1794,7 @@ fimFlappyCeu51: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu52: beq $20, $0, fimFlappyCeu52
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1803,46 +1803,46 @@ flappyCeu52: beq $20, $0, fimFlappyCeu52
            
 fimFlappyCeu52: ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
                 addi $8, $8, 4
                 
                 ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1852,7 +1852,7 @@ fimFlappyCeu52: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu53: beq $20, $0, fimFlappyCeu53
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1861,53 +1861,53 @@ flappyCeu53: beq $20, $0, fimFlappyCeu53
            
 fimFlappyCeu53: ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
                 addi $8, $8, 4
                 sw $9, 0($8)
-                sw $9, 32768($8) #c髉ia do cen醨io
+                sw $9, 32768($8) #c贸pia do cen谩rio
 				sw $9, 32768($6)
 				addi $6, $6, 4
                 addi $8, $8, 4
                 sw $9, 0($8)
-                sw $9, 32768($8) #c髉ia do cen醨io
+                sw $9, 32768($8) #c贸pia do cen谩rio
 				sw $9, 32768($6)
 				addi $6, $6, 4
                 addi $8, $8, 4
                 
                 ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1917,7 +1917,7 @@ fimFlappyCeu53: ori $9, $0, 0xD28F42 #marrom 3
 		 
 flappyNuvem9: beq $20, $0, fimFlappyNuvem9
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1926,45 +1926,45 @@ flappyNuvem9: beq $20, $0, fimFlappyNuvem9
            
 fimFlappyNuvem9: ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -1974,7 +1974,7 @@ fimFlappyNuvem9: ori $9, $0, 0x79B1D0 #azul 3
 		 
 flappyNuvem10: beq $20, $0, fimFlappyNuvem10
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1986,7 +1986,7 @@ fimFlappyNuvem10: ori $9, $0, 0x79B1D0 #azul 3
 		
 flappyCeu54: beq $20, $0, fimFlappyCeu54
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -1995,7 +1995,7 @@ flappyCeu54: beq $20, $0, fimFlappyCeu54
            
 fimFlappyCeu54: ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2005,7 +2005,7 @@ fimFlappyCeu54: ori $9, $0, 0xDF9E44 #marrom 2
 		
 flappyCeu55: beq $20, $0, fimFlappyCeu55
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2017,7 +2017,7 @@ fimFlappyCeu55: ori $9, $0, 0xFBF1CE #branco
 		 
 flappyNuvem11: beq $20, $0, fimFlappyNuvem11
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2029,7 +2029,7 @@ fimFlappyNuvem11: ori $9, $0, 0x79B1D0 #azul 3
 		
 flappyCeu56: beq $20, $0, fimFlappyCeu56
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2038,19 +2038,19 @@ flappyCeu56: beq $20, $0, fimFlappyCeu56
            
 fimFlappyCeu56: ori $9, $0, 0xFBF1CE #branco
                 sw $9, 0($8)
-                sw $9, 32768($8) #c髉ia do cen醨io
+                sw $9, 32768($8) #c贸pia do cen谩rio
 				sw $9, 32768($6)
 				addi $6, $6, 4
                 addi $8, $8, 4
                 sw $9, 0($8)
-                sw $9, 32768($8) #c髉ia do cen醨io
+                sw $9, 32768($8) #c贸pia do cen谩rio
 				sw $9, 32768($6)
 				addi $6, $6, 4
                 addi $8, $8, 4
                 
                 ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2060,7 +2060,7 @@ fimFlappyCeu56: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu57: beq $20, $0, fimFlappyCeu57
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2069,56 +2069,56 @@ flappyCeu57: beq $20, $0, fimFlappyCeu57
            
 fimFlappyCeu57: ori $9, $0, 0xFBF1CE #branco
                 sw $9, 0($8)
-                sw $9, 32768($8) #c髉ia do cen醨io
+                sw $9, 32768($8) #c贸pia do cen谩rio
 				sw $9, 32768($6)
 				addi $6, $6, 4
                 addi $8, $8, 4
                 
                 ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2128,7 +2128,7 @@ fimFlappyCeu57: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu58: beq $20, $0, fimFlappyCeu58
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2137,24 +2137,24 @@ flappyCeu58: beq $20, $0, fimFlappyCeu58
            
 fimFlappyCeu58: ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2164,7 +2164,7 @@ fimFlappyCeu58: ori $9, $0, 0xDF9E44 #marrom 2
                 
 flappyNuvem12: beq $20, $0, fimFlappyNuvem12
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2173,36 +2173,36 @@ flappyNuvem12: beq $20, $0, fimFlappyNuvem12
            
 fimFlappyNuvem12:  ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4  
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2212,7 +2212,7 @@ fimFlappyNuvem12:  ori $9, $0, 0xD28F42 #marrom 3
                 
 flappyNuvem13: beq $20, $0, fimFlappyNuvem13
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2224,7 +2224,7 @@ fimFlappyNuvem13: ori $9, $0, 0x79B1D0 #azul 3
 		
 flappyCeu59: beq $20, $0, fimFlappyCeu59
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2233,7 +2233,7 @@ flappyCeu59: beq $20, $0, fimFlappyCeu59
            
 fimFlappyCeu59: ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4  
@@ -2243,7 +2243,7 @@ fimFlappyCeu59: ori $9, $0, 0xD28F42 #marrom 3
 		
 flappyCeu60: beq $20, $0, fimFlappyCeu60
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2255,7 +2255,7 @@ fimFlappyCeu60: ori $9, $0, 0xFBF1CE #branco
                 
 flappyNuvem14: beq $20, $0, fimFlappyNuvem14
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2264,53 +2264,53 @@ flappyNuvem14: beq $20, $0, fimFlappyNuvem14
            
 fimFlappyNuvem14: ori $9, $0, 0x79B1D0 #azul 3
 		  sw $9, 0($8)
-		  sw $9, 32768($8) #c髉ia do cen醨io
+		  sw $9, 32768($8) #c贸pia do cen谩rio
 		  sw $9, 32768($6)
 		  addi $6, $6, 4
                   addi $8, $8, 4
                   sw $9, 0($8)
-                  sw $9, 32768($8) #c髉ia do cen醨io
+                  sw $9, 32768($8) #c贸pia do cen谩rio
 				  sw $9, 32768($6)
 				  addi $6, $6, 4
                   addi $8, $8, 4
                   sw $9, 0($8)
-                  sw $9, 32768($8) #c髉ia do cen醨io
+                  sw $9, 32768($8) #c贸pia do cen谩rio
 				  sw $9, 32768($6)
 				  addi $6, $6, 4
                   addi $8, $8, 4
                   sw $9, 0($8)
-                  sw $9, 32768($8) #c髉ia do cen醨io
+                  sw $9, 32768($8) #c贸pia do cen谩rio
 				  sw $9, 32768($6)
 				  addi $6, $6, 4
                   addi $8, $8, 4
                   
                   ori $9, $0, 0xFBF1CE #branco
                   sw $9, 0($8)
-                  sw $9, 32768($8) #c髉ia do cen醨io
+                  sw $9, 32768($8) #c贸pia do cen谩rio
 				  sw $9, 32768($6)
 				  addi $6, $6, 4
                   addi $8, $8, 4
                   sw $9, 0($8)
-                  sw $9, 32768($8) #c髉ia do cen醨io
+                  sw $9, 32768($8) #c贸pia do cen谩rio
 				  sw $9, 32768($6)
 				  addi $6, $6, 4
                   addi $8, $8, 4
                   sw $9, 0($8)
-                  sw $9, 32768($8) #c髉ia do cen醨io
+                  sw $9, 32768($8) #c贸pia do cen谩rio
 				  sw $9, 32768($6)
 				  addi $6, $6, 4
                   addi $8, $8, 4
                   
                   ori $9, $0, 0xD28F42 #marrom 3
 		  sw $9, 0($8)
-		  sw $9, 32768($8) #c髉ia do cen醨io
+		  sw $9, 32768($8) #c贸pia do cen谩rio
 		  sw $9, 32768($6)
 		  addi $6, $6, 4
 		  addi $8, $8, 4 
 		  
 		  ori $9, $0, 0xFBF1CE #branco
                   sw $9, 0($8)
-                  sw $9, 32768($8) #c髉ia do cen醨io
+                  sw $9, 32768($8) #c贸pia do cen谩rio
 				  sw $9, 32768($6)
 				  addi $6, $6, 4
                   addi $8, $8, 4 
@@ -2320,7 +2320,7 @@ fimFlappyNuvem14: ori $9, $0, 0x79B1D0 #azul 3
 		
 flappyCeu61: beq $20, $0, fimFlappyCeu61
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2329,66 +2329,66 @@ flappyCeu61: beq $20, $0, fimFlappyCeu61
            
 fimFlappyCeu61: ori $9, $0, 0xFBF1CE #branco
                 sw $9, 0($8)
-                sw $9, 32768($8) #c髉ia do cen醨io
+                sw $9, 32768($8) #c贸pia do cen谩rio
 				sw $9, 32768($6)
 				addi $6, $6, 4
                 addi $8, $8, 4
                 
                 ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2398,7 +2398,7 @@ fimFlappyCeu61: ori $9, $0, 0xFBF1CE #branco
 		
 flappyCeu62: beq $20, $0, fimFlappyCeu62
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2407,19 +2407,19 @@ flappyCeu62: beq $20, $0, fimFlappyCeu62
            
 fimFlappyCeu62: ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4 
@@ -2429,7 +2429,7 @@ fimFlappyCeu62: ori $9, $0, 0xD28F42 #marrom 3
 		
 flappyNuvem15: beq $20, $0, fimFlappyNuvem15
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2438,14 +2438,14 @@ flappyNuvem15: beq $20, $0, fimFlappyNuvem15
            
 fimFlappyNuvem15: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2455,7 +2455,7 @@ fimFlappyNuvem15: ori $9, $0, 0x67B72C #verde 4
 		
 flappyNuvem16: beq $20, $0, fimFlappyNuvem16
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2464,48 +2464,48 @@ flappyNuvem16: beq $20, $0, fimFlappyNuvem16
 
 fimFlappyNuvem16: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2515,7 +2515,7 @@ fimFlappyNuvem16: ori $9, $0, 0x67B72C #verde 4
 		
 flappyNuvem17: beq $20, $0, fimFlappyNuvem17
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2524,62 +2524,62 @@ flappyNuvem17: beq $20, $0, fimFlappyNuvem17
 
 fimFlappyNuvem17: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2589,7 +2589,7 @@ fimFlappyNuvem17: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem18: beq $20, $0, fimFlappyNuvem18
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2598,89 +2598,89 @@ flappyNuvem18: beq $20, $0, fimFlappyNuvem18
 
 fimFlappyNuvem18: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4	
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2690,7 +2690,7 @@ fimFlappyNuvem18: ori $9, $0, 0x67B72C #verde 4
 		
 flappyMontlado51:beq $20, $0, fimFlappyMontlado51
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2702,7 +2702,7 @@ fimFlappyMontlado51: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado52: beq $20, $0, fimflappyMontlado52
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2711,34 +2711,34 @@ flappyMontlado52: beq $20, $0, fimflappyMontlado52
 
 fimflappyMontlado52: ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2748,7 +2748,7 @@ fimflappyMontlado52: ori $9, $0, 0x79B1D0 #azul 3
 
 flappyNuvem19: beq $20, $0, fimFlappyNuvem19
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2757,24 +2757,24 @@ flappyNuvem19: beq $20, $0, fimFlappyNuvem19
 
 fimFlappyNuvem19:ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2784,7 +2784,7 @@ fimFlappyNuvem19:ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem20: beq $20, $0, fimFlappyNuvem20
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2793,58 +2793,58 @@ flappyNuvem20: beq $20, $0, fimFlappyNuvem20
 
 fimFlappyNuvem20: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2854,7 +2854,7 @@ fimFlappyNuvem20: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem21: beq $20, $0, fimFlappyNuvem21
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2863,60 +2863,60 @@ flappyNuvem21: beq $20, $0, fimFlappyNuvem21
 
 fimFlappyNuvem21: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -2926,7 +2926,7 @@ fimFlappyNuvem21: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem22: beq $20, $0, fimFlappyNuvem22
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -2935,89 +2935,89 @@ flappyNuvem22: beq $20, $0, fimFlappyNuvem22
 
 fimFlappyNuvem22: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -3027,7 +3027,7 @@ fimFlappyNuvem22: ori $9, $0, 0x67B72C #verde 4
 		
 flappyMontlado511:beq $20, $0, fimFlappyMontlado511
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3039,7 +3039,7 @@ fimFlappyMontlado511: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado521: beq $20, $0, fimflappyMontlado521
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3048,31 +3048,31 @@ flappyMontlado521: beq $20, $0, fimflappyMontlado521
 
 fimflappyMontlado521: ori $9, $0, 0x79B1D0 #azul 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -3082,7 +3082,7 @@ fimflappyMontlado521: ori $9, $0, 0x79B1D0 #azul 3
 
 flappyNuvem23: beq $20, $0, fimFlappyNuvem23
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3091,34 +3091,34 @@ flappyNuvem23: beq $20, $0, fimFlappyNuvem23
 
 fimFlappyNuvem23: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -3128,7 +3128,7 @@ fimFlappyNuvem23: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem24: beq $20, $0, fimFlappyNuvem24
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3137,68 +3137,68 @@ flappyNuvem24: beq $20, $0, fimFlappyNuvem24
 
 fimFlappyNuvem24: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -3208,7 +3208,7 @@ fimFlappyNuvem24: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem25: beq $20, $0, fimFlappyNuvem25
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3217,48 +3217,48 @@ flappyNuvem25: beq $20, $0, fimFlappyNuvem25
 
 fimFlappyNuvem25: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -3268,7 +3268,7 @@ fimFlappyNuvem25: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem26: beq $20, $0, fimFlappyNuvem26
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3277,85 +3277,85 @@ flappyNuvem26: beq $20, $0, fimFlappyNuvem26
 
 fimFlappyNuvem26: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -3365,7 +3365,7 @@ fimFlappyNuvem26: ori $9, $0, 0x67B72C #verde 4
 		
 flappyMontlado512:beq $20, $0, fimFlappyMontlado512
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3377,7 +3377,7 @@ fimFlappyMontlado512: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado522: beq $20, $0, fimflappyMontlado522
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3386,24 +3386,24 @@ flappyMontlado522: beq $20, $0, fimflappyMontlado522
 
 fimflappyMontlado522: ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -3413,7 +3413,7 @@ fimflappyMontlado522: ori $9, $0, 0xFBF1CE #branco
 
 flappyNuvem27: beq $20, $0, fimFlappyNuvem27
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3422,44 +3422,44 @@ flappyNuvem27: beq $20, $0, fimFlappyNuvem27
 
 fimFlappyNuvem27: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -3469,7 +3469,7 @@ fimFlappyNuvem27: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem28: beq $20, $0, fimFlappyNuvem28
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3478,119 +3478,119 @@ flappyNuvem28: beq $20, $0, fimFlappyNuvem28
 
 fimFlappyNuvem28: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -3600,7 +3600,7 @@ fimFlappyNuvem28: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem29: beq $20, $0, fimFlappyNuvem29
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3609,51 +3609,51 @@ flappyNuvem29: beq $20, $0, fimFlappyNuvem29
 
 fimFlappyNuvem29: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -3663,7 +3663,7 @@ fimFlappyNuvem29: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem30: beq $20, $0, fimFlappyNuvem30
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3672,91 +3672,91 @@ flappyNuvem30: beq $20, $0, fimFlappyNuvem30
 
 fimFlappyNuvem30: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -3767,7 +3767,7 @@ fimFlappyNuvem30: ori $9, $0, 0x67B72C #verde 4
 		
 flappyMontlado513:beq $20, $0, fimFlappyMontlado513
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3779,7 +3779,7 @@ fimFlappyMontlado513: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado523: beq $20, $0, fimflappyMontlado523
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3788,19 +3788,19 @@ flappyMontlado523: beq $20, $0, fimflappyMontlado523
 
 fimflappyMontlado523: ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -3810,7 +3810,7 @@ fimflappyMontlado523: ori $9, $0, 0xFBF1CE #branco
 
 flappyNuvem31: beq $20, $0, fimFlappyNuvem31
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3819,54 +3819,54 @@ flappyNuvem31: beq $20, $0, fimFlappyNuvem31
 
 fimFlappyNuvem31: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -3876,7 +3876,7 @@ fimFlappyNuvem31: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem32: beq $20, $0, fimFlappyNuvem32
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -3885,129 +3885,129 @@ flappyNuvem32: beq $20, $0, fimFlappyNuvem32
 
 fimFlappyNuvem32: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -4017,7 +4017,7 @@ fimFlappyNuvem32: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem33: beq $20, $0, fimFlappyNuvem33
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4026,56 +4026,56 @@ flappyNuvem33: beq $20, $0, fimFlappyNuvem33
 
 fimFlappyNuvem33: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -4085,7 +4085,7 @@ fimFlappyNuvem33: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem34: beq $20, $0, fimFlappyNuvem34
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4094,92 +4094,92 @@ flappyNuvem34: beq $20, $0, fimFlappyNuvem34
 
 fimFlappyNuvem34: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 				
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -4189,7 +4189,7 @@ fimFlappyNuvem34: ori $9, $0, 0x67B72C #verde 4
 		
 flappyMontlado514:beq $20, $0, fimFlappyMontlado514
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4201,7 +4201,7 @@ fimFlappyMontlado514: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado524: beq $20, $0, fimflappyMontlado524
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4210,14 +4210,14 @@ flappyMontlado524: beq $20, $0, fimflappyMontlado524
 
 fimflappyMontlado524: ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -4227,7 +4227,7 @@ fimflappyMontlado524: ori $9, $0, 0xFBF1CE #branco
 
 flappyNuvem35: beq $20, $0, fimFlappyNuvem35
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4236,64 +4236,64 @@ flappyNuvem35: beq $20, $0, fimFlappyNuvem35
 
 fimFlappyNuvem35: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 				
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -4303,7 +4303,7 @@ fimFlappyNuvem35: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem36: beq $20, $0, fimFlappyNuvem36
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4312,234 +4312,234 @@ flappyNuvem36: beq $20, $0, fimFlappyNuvem36
 
 fimFlappyNuvem36: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 				
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		
-		ori $9, $0, 0xFBF1CE #branco
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		
-		ori $9, $0, 0x67B72C #verde 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		
-		ori $9, $0, 0xD28F42 #marrom 3
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		
-		ori $9, $0, 0x67B72C #verde 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		
-		ori $9, $0, 0x307C71 #verde 5
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		
-		ori $9, $0, 0x307C71 #verde 5
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
-		sw $9, 32768($6)
-		addi $6, $6, 4
-		addi $8, $8, 4
-		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		
+		ori $9, $0, 0x67B72C #verde 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		
+		ori $9, $0, 0xFBF1CE #branco
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		
+		ori $9, $0, 0x67B72C #verde 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		
+		ori $9, $0, 0x307C71 #verde 5
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		
+		ori $9, $0, 0xD28F42 #marrom 3
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
+		sw $9, 32768($6)
+		addi $6, $6, 4
+		addi $8, $8, 4
+		
+		ori $9, $0, 0x307C71 #verde 5
+		sw $9, 0($8)
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -4549,7 +4549,7 @@ fimFlappyNuvem36: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem37: beq $20, $0, fimFlappyNuvem37
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4558,14 +4558,14 @@ flappyNuvem37: beq $20, $0, fimFlappyNuvem37
 
 fimFlappyNuvem37: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -4575,7 +4575,7 @@ fimFlappyNuvem37: ori $9, $0, 0x67B72C #verde 4
 
 flappyNuvem38: beq $20, $0, fimFlappyNuvem38
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4584,100 +4584,100 @@ flappyNuvem38: beq $20, $0, fimFlappyNuvem38
 
 fimFlappyNuvem38: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -4687,7 +4687,7 @@ fimFlappyNuvem38: ori $9, $0, 0x67B72C #verde 4
 		
 flappyMontlado515:beq $20, $0, fimFlappyMontlado515
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4699,7 +4699,7 @@ fimFlappyMontlado515: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado525: beq $20, $0, fimflappyMontlado525
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4708,33 +4708,33 @@ flappyMontlado525: beq $20, $0, fimflappyMontlado525
 
 fimflappyMontlado525: ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -4744,7 +4744,7 @@ fimflappyMontlado525: ori $9, $0, 0xD28F42 #marrom 3
 
 flappyNuvem39: beq $20, $0, fimFlappyNuvem39
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4756,7 +4756,7 @@ fimFlappyNuvem39: ori $9, $0, 0x67B72C #verde 4
 		
 flappyMontlado71:beq $20, $0, fimFlappyMontlado71
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4768,7 +4768,7 @@ fimFlappyMontlado71: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado72:beq $20, $0, fimflappyMontlado72
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4780,7 +4780,7 @@ fimflappyMontlado72: ori $9, $0, 0xFBF1CE #branco
 
 flappyNuvem40: beq $20, $0, fimFlappyNuvem40
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4789,164 +4789,164 @@ flappyNuvem40: beq $20, $0, fimFlappyNuvem40
 
 fimFlappyNuvem40: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -4956,7 +4956,7 @@ fimFlappyNuvem40: ori $9, $0, 0x67B72C #verde 4
 		
 flappyMontlado31:beq $20, $0, fimFlappyMontlado31
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -4965,99 +4965,99 @@ flappyMontlado31:beq $20, $0, fimFlappyMontlado31
 	
 fimFlappyMontlado31: ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -5067,7 +5067,7 @@ fimFlappyMontlado31: ori $9, $0, 0x307C71 #verde 5
 		
 flappyMontlado41:beq $20, $0, fimFlappyMontlado41
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5076,73 +5076,73 @@ flappyMontlado41:beq $20, $0, fimFlappyMontlado41
 	
 fimFlappyMontlado41: ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -5152,7 +5152,7 @@ fimFlappyMontlado41: ori $9, $0, 0x307C71 #verde 5
 		
 flappyMontlado516:beq $20, $0, fimFlappyMontlado516
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5164,7 +5164,7 @@ fimFlappyMontlado516: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado526: beq $20, $0, fimflappyMontlado526
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5173,65 +5173,65 @@ flappyMontlado526: beq $20, $0, fimflappyMontlado526
 
 fimflappyMontlado526: ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -5241,7 +5241,7 @@ fimflappyMontlado526: ori $9, $0, 0xDF9E44 #marrom 2
 		
 flappyMontlado711:beq $20, $0, fimFlappyMontlado711
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5253,7 +5253,7 @@ fimFlappyMontlado711: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado721:beq $20, $0, fimflappyMontlado721
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5262,59 +5262,59 @@ flappyMontlado721:beq $20, $0, fimflappyMontlado721
 
 fimflappyMontlado721: ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -5322,88 +5322,88 @@ fimflappyMontlado721: ori $9, $0, 0xFBF1CE #branco
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -5413,7 +5413,7 @@ fimflappyMontlado721: ori $9, $0, 0xFBF1CE #branco
 		
 flappyMontlado21:beq $20, $0, fimFlappyMontlado21
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5422,7 +5422,7 @@ flappyMontlado21:beq $20, $0, fimFlappyMontlado21
 	
 fimFlappyMontlado21:  ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -5432,7 +5432,7 @@ fimFlappyMontlado21:  ori $9, $0, 0xFBF1CE #branco
 		
 flappyMontlado311:beq $20, $0, fimFlappyMontlado311
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5441,94 +5441,94 @@ flappyMontlado311:beq $20, $0, fimFlappyMontlado311
 	
 fimFlappyMontlado311: ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4		
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4	
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4		
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -5538,7 +5538,7 @@ fimFlappyMontlado311: ori $9, $0, 0x307C71 #verde 5
 		
 flappyMontlado411:beq $20, $0, fimFlappyMontlado411
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5547,80 +5547,80 @@ flappyMontlado411:beq $20, $0, fimFlappyMontlado411
 	
 fimFlappyMontlado411: ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4		
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4		
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4	
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4	
@@ -5630,7 +5630,7 @@ fimFlappyMontlado411: ori $9, $0, 0x307C71 #verde 5
 		
 flappyMontlado517:beq $20, $0, fimFlappyMontlado517
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5642,7 +5642,7 @@ fimFlappyMontlado517: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado527: beq $20, $0, fimflappyMontlado527
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5651,58 +5651,58 @@ flappyMontlado527: beq $20, $0, fimflappyMontlado527
 
 fimflappyMontlado527: ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4		
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -5712,7 +5712,7 @@ fimflappyMontlado527: ori $9, $0, 0xD28F42 #marrom 3
 		
 flappyMontlado712:beq $20, $0, fimFlappyMontlado712
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5724,7 +5724,7 @@ fimFlappyMontlado712: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado722:beq $20, $0, fimflappyMontlado722
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5733,17 +5733,17 @@ flappyMontlado722:beq $20, $0, fimflappyMontlado722
 
 fimflappyMontlado722: ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -5753,7 +5753,7 @@ fimflappyMontlado722: ori $9, $0, 0xFBF1CE #branco
 		
 flappyMontlado11:beq $20, $0, fimFlappyMontlado11
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5765,7 +5765,7 @@ fimFlappyMontlado11: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado12: beq $20, $0, fimflappyMontlado12
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5774,61 +5774,61 @@ flappyMontlado12: beq $20, $0, fimflappyMontlado12
 
 fimflappyMontlado12: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -5838,7 +5838,7 @@ fimflappyMontlado12: ori $9, $0, 0x67B72C #verde 4
 		
 flappyMontlado211:beq $20, $0, fimFlappyMontlado211
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5850,7 +5850,7 @@ fimFlappyMontlado211: ori $9, $0, 0x67B72C #verde 4
 		
 flappyMontlado312:beq $20, $0, fimFlappyMontlado312
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5859,92 +5859,92 @@ flappyMontlado312:beq $20, $0, fimFlappyMontlado312
 	
 fimFlappyMontlado312: ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4	
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -5954,7 +5954,7 @@ fimFlappyMontlado312: ori $9, $0, 0x307C71 #verde 5
 		
 flappyMontlado412:beq $20, $0, fimFlappyMontlado412
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -5963,53 +5963,53 @@ flappyMontlado412:beq $20, $0, fimFlappyMontlado412
 	
 fimFlappyMontlado412: ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4		
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -6019,7 +6019,7 @@ fimFlappyMontlado412: ori $9, $0, 0x307C71 #verde 5
 		
 flappyMontlado62:beq $20, $0, fimFlappyMontlado62
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -6028,27 +6028,27 @@ flappyMontlado62:beq $20, $0, fimFlappyMontlado62
 	
 fimFlappyMontlado62: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -6058,7 +6058,7 @@ fimFlappyMontlado62: ori $9, $0, 0x67B72C #verde 4
   		     
 flappyMontlado528: beq $20, $0, fimflappyMontlado528
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -6067,53 +6067,53 @@ flappyMontlado528: beq $20, $0, fimflappyMontlado528
 
 fimflappyMontlado528: ori $9, $0, 0xDF9E44 #marrom 2
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		 
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4		
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4		
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4	
 		
 		ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -6123,7 +6123,7 @@ fimflappyMontlado528: ori $9, $0, 0xDF9E44 #marrom 2
 		
 flappyMontlado713:beq $20, $0, fimFlappyMontlado713
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -6135,7 +6135,7 @@ fimFlappyMontlado713: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado723:beq $20, $0, fimflappyMontlado723
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -6144,7 +6144,7 @@ flappyMontlado723:beq $20, $0, fimflappyMontlado723
 
 fimflappyMontlado723: ori $9, $0, 0xFBF1CE #branco
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -6154,7 +6154,7 @@ fimflappyMontlado723: ori $9, $0, 0xFBF1CE #branco
 		
 flappyMontlado111:beq $20, $0, fimFlappyMontlado111
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -6166,7 +6166,7 @@ fimFlappyMontlado111: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado121: beq $20, $0, fimflappyMontlado121
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -6175,56 +6175,56 @@ flappyMontlado121: beq $20, $0, fimflappyMontlado121
 
 fimflappyMontlado121: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -6234,7 +6234,7 @@ fimflappyMontlado121: ori $9, $0, 0x67B72C #verde 4
 		
 flappyMontlado212:beq $20, $0, fimFlappyMontlado212
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -6246,7 +6246,7 @@ fimFlappyMontlado212: ori $9, $0, 0x67B72C #verde 4
 		
 flappyMontlado313:beq $20, $0, fimFlappyMontlado313
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -6255,180 +6255,180 @@ flappyMontlado313:beq $20, $0, fimFlappyMontlado313
 	
 fimFlappyMontlado313: ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -6438,7 +6438,7 @@ fimFlappyMontlado313: ori $9, $0, 0x307C71 #verde 5
 		
 flappyMontlado621:beq $20, $0, fimFlappyMontlado621
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -6447,22 +6447,22 @@ flappyMontlado621:beq $20, $0, fimFlappyMontlado621
 	
 fimFlappyMontlado621: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
@@ -6472,7 +6472,7 @@ fimFlappyMontlado621: ori $9, $0, 0x67B72C #verde 4
   		     
 flappyMontlado529: beq $20, $0, fimflappyMontlado529
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -6481,58 +6481,58 @@ flappyMontlado529: beq $20, $0, fimflappyMontlado529
 
 fimflappyMontlado529: ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0xD28F42 #marrom 3
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4	
 		
 		ori $9, $0, 0x67B72C #verde 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		
 		ori $9, $0, 0x307C71 #verde 5
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4
 		sw $9, 0($8)
-		sw $9, 32768($8) #c髉ia do cen醨io
+		sw $9, 32768($8) #c贸pia do cen谩rio
 		sw $9, 32768($6)
 		addi $6, $6, 4
 		addi $8, $8, 4	
@@ -6542,7 +6542,7 @@ fimflappyMontlado529: ori $9, $0, 0x67B72C #verde 4
 		
 flappyMontlado714:beq $20, $0, fimFlappyMontlado714
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -6554,7 +6554,7 @@ fimFlappyMontlado714: ori $9, $0, 0x307C71 #verde 5
   		     
 flappyMontlado724:beq $20, $0, fimflappyMontlado724
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -6566,7 +6566,7 @@ fimflappyMontlado724: ori $9, $0, 0xFEE1A2 #areia 1
   		     
 flappyAreia1:beq $20, $0, fimflappyAreia1
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 		   sw $9, 32768($6)
 		   addi $6, $6, 4
            addi $8, $8, 4
@@ -6578,7 +6578,7 @@ fimflappyAreia1: ori $9, $0, 0xF1BD75 #areia 2
   		     
 flappyAreia2:beq $20, $0, fimflappyAreia2
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 	   sw $9, 32768($6)
 	   addi $6, $6, 4
            addi $8, $8, 4
@@ -6590,7 +6590,7 @@ fimflappyAreia2: ori $9, $0, 0xDF9E44 #areia 3
   		     
 flappyAreia3:beq $20, $0, fimflappyAreia3
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 	   sw $9, 32768($6)
 	   addi $6, $6, 4
            addi $8, $8, 4
@@ -6602,7 +6602,7 @@ fimflappyAreia3: ori $9, $0, 0xD28F42 #areia 4
   		     
 flappyAreia4:beq $20, $0, fimflappyAreia4
            sw $9, 0($8)
-           sw $9, 32768($8) #c髉ia do cen醨io
+           sw $9, 32768($8) #c贸pia do cen谩rio
 	   sw $9, 32768($6)
 	   addi $6, $6, 4
            addi $8, $8, 4
@@ -6610,41 +6610,38 @@ flappyAreia4:beq $20, $0, fimflappyAreia4
            j flappyAreia4
 
 fimflappyAreia4: 
-	         lui $8, 0x1001 #reg do pass醨o com o endere鏾 inicial
-	         addi $8, $8, 12384 # mover o pass醨o pro meio da tela
+	         lui $8, 0x1001 #reg do pass谩ro com o endere莽o inicial
+	         addi $8, $8, 12412 # mover o pass谩ro pro meio da tela
 	 	 
-	 	 lui $6, 0x1001 #endere鏾 do obstaculo
+	 	 lui $6, 0x1001 #endere莽o do obstaculo
 	       	 addi $6, $6, 452 #final da tela 		
 
 		 lui $21, 0xffff #teclado
-		 addi $13, $0, 512 #valor de diferen鏰
-		 addi $10, $0, 'v' #tecla pra levantar o pass醨o
+		 addi $13, $0, 512 #valor de diferen莽a
+		 addi $10, $0, 'w' #tecla pra levantar o pass谩ro
 		 
-		 ori $15, $0, 0xFEE1A2 #cor da areia para colis鉶
+		 ori $15, $0, 0xFEE1A2 #cor da areia para colis茫o
 		 ori $9, $0, 0xEB34B4 #cor do obstaculo 
 		 
 		 lui $24, 0x1001
-		 addi $24, $24, 360 #ponto pra gerar o outro obstaculo
-		 addi $27, $0, 29184
 		 
 		 jal flappyRandomico
-flappyCaindo:  #desenho do pass醨o
+flappyCaindo:  #desenho do pass谩ro
 	       jal desenhoFlappy
-	       
-	       jal timerFlappy
-		
-	       #c髉ia e print do cen醨io
-	       jal copiaFundoFlappy
-	       beq $12, $15, fimDesenhoFlappy #se a c髉ia do cenario naquela posi玢o for da cor da areia ele finaliza  
-
 	       jal flappyObstaculoTopo
 	       
-	       beq $6, $24, flappyDistanciaObstaculos
-
-	       #beq $6, $8, fimDesenhoFlappy #se a copia do cenario for a cor do obstaculo termina
+	       jal timerFlappy
+	       jal timerFlappyObstaculo
+	       
+	       #c贸pia e print do cen谩rio
+	       jal copiaFundoFlappy
+	       
+	       beq $12, $15, fimDesenhoFlappy #se a c贸pia do cenario naquela posi莽茫o for da cor da areia ele finaliza  
+	       beq $6, $24, flappyDistanciaObstaculos #se chegar em certa posi莽茫o gera outro obstaculo
+	       beq $6, $8, fimDesenhoFlappy #se o blue tiver no mesmo endere莽o que o obstaculo
 	       #------------------------
-	       add $8, $8, $13 #diferen鏰 entre os endere鏾s do passaro
-	       add $6, $6, -4 #diferen鏰 entre os endere鏾s do obstaculo
+	       add $8, $8, $13 #diferen莽a entre os endere莽os do passaro
+	       add $6, $6, -4 #diferen莽a entre os endere莽os do obstaculo
 	       
 	       
 	       lw $22, 0($21) #estado do teclado
@@ -6654,20 +6651,18 @@ flappyCaindo:  #desenho do pass醨o
 	       
 	       j continuacaoFlappy
 
-flappyVoar: addi $13, $0, -1024 # voltar o pass醨o dois endere鏾s
+flappyVoar: addi $13, $0, -1536 # voltar o pass谩ro dois endere莽os
 
-	     add $8, $8, $13 #diminui do endere鏾
+	     add $8, $8, $13 #diminui do endere莽o
 	     
-	     #desenho do pass醨o
+	     #desenho do pass谩ro
 	     jal desenhoFlappy
-	     
-	     jal timerFlappy  
-	    
-	     #c髉ia e print do cen醨io
+
+	     #c贸pia e print do cen谩rio
 	     jal copiaFundoFlappy
 	     
 	     #------------------
-	     addi $13, $0, 512 #volta a somar o endere鏾
+	     addi $13, $0, 512 #volta a somar o endere莽o
 	     j continuacaoFlappy
 
 continuacaoFlappy: j flappyCaindo
@@ -6677,7 +6672,7 @@ fimDesenhoFlappy: jal desenhoFlappy #desenhar boneco novamente
 	          addi $2, $0, 10
                   syscall
                   
-#fun玢o gerar valores randomicos
+#fun莽茫o gerar valores randomicos
 flappyRandomico: addi $5, $0, 35 #limite do intervalo
 	       	 addi $2, $0, 42 #gerar randomico
 	         syscall
@@ -6690,12 +6685,12 @@ flappyRandomico: addi $5, $0, 35 #limite do intervalo
 	         
 	         j flappyObstaculoTopo
 
-#fun玢o distancia dos obstaculos
-flappyDistanciaObstaculos: addi $27, $27, 104
-			   addi $6, $6, 108
+#fun莽茫o distancia dos obstaculos
+flappyDistanciaObstaculos: lui $6, 0x1001
+			   addi $6, $6, 452
 			   j flappyRandomico 
 			  	         
-#fun玢o desenhar obstaculo no topo
+#fun莽茫o desenhar obstaculo no topo
 flappyObstaculoTopo:beq $23, $20, flappyEspacoObstaculos
 		     
 		     sw $9, 0($6) 
@@ -6709,7 +6704,7 @@ flappyObstaculoTopo:beq $23, $20, flappyEspacoObstaculos
 		     
 		     j flappyObstaculoTopo
 		     
-flappyEspacoObstaculos: addi $6, $6, 6144 #diferen鏰 entre os obstaculos
+flappyEspacoObstaculos: addi $6, $6, 6144 #diferen莽a entre os obstaculos
 			addi $20, $0, 0
 			j flappyObstaculoInferior
 			
@@ -6725,14 +6720,14 @@ flappyObstaculoInferior: beq $25, $20, flappyObstaculoFim
 		         addi $20, $20, 1
 		         j flappyObstaculoInferior
 		         
-flappyObstaculoFim: sub $6, $6, $27
+flappyObstaculoFim: addi $6, $6, -29184
 		    addi $20, $0, 0
 		    j copiaFlappyObstaculoTopo
 
 
-#fun玢o desenhar c髉ia do fundo pros obstaculos
+#fun莽茫o desenhar c贸pia do fundo pros obstaculos
 copiaFlappyObstaculoTopo: beq $23, $20, copiaFlappyEspacoObstaculos
- 
+
  			 lw $7, 32784($6)
  			 sw $7, 16($6)
  
@@ -6740,7 +6735,7 @@ copiaFlappyObstaculoTopo: beq $23, $20, copiaFlappyEspacoObstaculos
  			 addi $20, $20, 1
  			 j copiaFlappyObstaculoTopo
  			
-copiaFlappyEspacoObstaculos:  addi $6, $6, 6144 #diferen鏰 entre os obstaculos
+copiaFlappyEspacoObstaculos:  addi $6, $6, 6144 #diferen莽a entre os obstaculos
 			      addi $20, $0, 0
 			      j copiaFlappyObstaculoInferior
 			
@@ -6753,12 +6748,12 @@ copiaFlappyObstaculoInferior: beq $25, $20, fimCopiaFlappyObstaculos
  			      addi $20, $20, 1
  			      j copiaFlappyObstaculoInferior
  			  
-fimCopiaFlappyObstaculos: sub $6, $6, $27
+fimCopiaFlappyObstaculos: addi $6, $6, -29184
 		          addi $20, $0, 0
 		          jr $31
 		          	  
-#fun玢o desenho do pass醨o
-desenhoFlappy: ori $11, $0, 0x546CF0 #azul do pass醨o
+#fun莽茫o desenho do pass谩ro
+desenhoFlappy: ori $11, $0, 0x546CF0 #azul do pass谩ro
 	       ori $14, $0, 0xFCFFFD #branco
 	       ori $17, $0, 0x0C0D0D #preto
 	       ori $18, $0, 0xB4B4B4 #cinza
@@ -6798,7 +6793,7 @@ desenhoFlappy: ori $11, $0, 0x546CF0 #azul do pass醨o
 	       
 	       jr $31
 	       
-#desenho do fundo com as c髉ias para a movimenta玢o do pass醨o 
+#desenho do fundo com as c贸pias para a movimenta莽茫o do pass谩ro 
 copiaFundoFlappy: lw $12, 32768($8) #0($8)
 	       sw $12, 0($8) 
   
@@ -6882,15 +6877,28 @@ copiaFundoFlappy: lw $12, 32768($8) #0($8)
 	       
 	       jr $31
 	       	       	       
-# fun玢o Timer
+# fun莽茫o Timer do blue
 timerFlappy: sw $16, 0($29)
        	     addi $29, $29, -4
-       	     addi $16, $0, 5000
+       	     addi $16, $0, 50000
 forTimerFlappy:  beq $16, $0, fimTimerFlappy
        		 nop
        		 nop
        		 addi $16, $16, -1      
        		 j forTimerFlappy                  
 fimTimerFlappy:  addi $29, $29, 4                                                    
+       		 lw $16, 0($29)          
+       		 jr $31
+
+# fun莽茫o Timer do obstaculo
+timerFlappyObstaculo: sw $16, 0($29)
+       	     addi $29, $29, -4
+       	     addi $16, $0, 30
+forTimerFlappyObstaculo:  beq $16, $0, fimTimerFlappyObstaculo
+       		 nop
+       		 nop
+       		 addi $16, $16, -1      
+       		 j forTimerFlappyObstaculo                 
+fimTimerFlappyObstaculo:  addi $29, $29, 4                                                    
        		 lw $16, 0($29)          
        		 jr $31
