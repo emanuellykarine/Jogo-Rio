@@ -55,7 +55,7 @@ Murosf1:
 		j parte_superior_inferior
 	fim_parte_superior_inferior:
 	lui $8, 0x1001
-	addi $15 $0 92
+	addi $15 $0 248
 	partes_laterais_p1:
 		beq $15 $0 parte_laterais_p2
 		sw $10 512($8)   # esq
@@ -68,15 +68,6 @@ Murosf1:
 	parte_laterais_p2:
 	lui $8, 0x1001
 	addi $15 $0 100
-	partes_laterais_p22:
-		beq $15 $0 fim_laterais
-		sw $10 19456($8)  # esq
-		sw $20 19460($8)  # esq sombra
-		sw $20 19960($8)  # dir sombra
-		sw $10 19964($8)  # dir
-		addi $8 $8 512
-		addi $15 $15 -4
-		j partes_laterais_p22
 	fim_laterais:
 	lui $8, 0x1001
 	addi $15 $0 24
@@ -464,15 +455,22 @@ gaiolas_passaros:
 			sw $12 29712($8)
 			sw $19 29716($8)
 			sw $19 29720($8)
+			
+####### Entrada saida
+		
+	
 # MOVIMENTO DO BLUE
 	dados_blue:
-     		ori $17, $0, 0x5353ec # bicos
      		ori $27, $0, 0xb4b4b5 # Cinza da gaiola
      		ori $9, $0,  0x141d29 # Cor de fundo para rastros
      		ori $20, $0, 0x2a3340 # azul escuro para detalhes
      		
-     		ori $11, $0, 0x0073ff  # Azul claro blue
+     		ori $16, $0, 0xfffffe # branco
+     		ori $18, $0, 0x0C0D0D # preto
+     		ori $11, $0, 0x546CF0 # Azul claro blue
      		ori $12, $0, 0x333597 # Azul escuro blue
+     		ori $17, $0, 0xB4B4B4 # bico
+  
      		lui $8, 0x1001        # memoria do blue
      		lui $21 0xffff
      		
@@ -483,7 +481,43 @@ gaiolas_passaros:
      		addi $22 $0 ' ' # pausa temporária
      		
      	desenho_blue:
-     		sw $11 14348($8) # ponto azul
+     		sw $11 14872($8) # L1**
+     		sw $11 14876($8) # L1*
+     		sw $11 14880($8) # L1*
+     		sw $11 14884($8) # L1**
+     		
+     		sw $11 15388($8) # L2*
+     		sw $16 15392($8) # L2 branco
+     		sw $16 15396($8) # L2 branco
+     		sw $17 15400($8) # L2** bico
+     		
+     		sw $11 15900($8) # L3*
+     		sw $16 15904($8) # L3
+     		sw $16 15908($8) # L3
+     		sw $18 15908($8) # L3 preto
+     		sw $17 15912($8) # L3** bico
+     		
+     		sw $11 16412($8) # L4
+     		sw $16 16416($8) # L4
+     		sw $16 16420($8) # L4
+     		sw $17 16424($8) # L4** bico
+     		
+     		
+     		sw $12 16916($8) # L5*
+     		sw $12 16920($8) # L5*
+     		sw $11 16924($8) # L5
+     		sw $11 16928($8) # L5
+     		sw $11 16932($8) # L5
+     		
+     		sw $11 17424($8) # L6***
+     		sw $11 17428($8) # L6
+     		sw $11 17432($8) # L6
+     		sw $12 17436($8) # L6
+     		sw $11 17440($8) # L6
+     		sw $11 17444($8) # L6
+     		
+     		
+     		
      		jal timerf1
 	 	lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
 		
@@ -495,36 +529,77 @@ gaiolas_passaros:
 		beq $23 $22 fim
 		# addi $8 $8 +4
 		j desenho_blue
-	dir:	lw $24 14356($8)  # colisao frente
+	dir:	lw $24 14852($8)  # colisao frente
 		beq $24 $20 colisao
 	   	beq $24 $10 colisao
 		beq $24 $27 colisao
      		addi $8 $8 +4
-     		sw $9 14344($8)  # rastro esq
+     		
+     	
+     		sw $9 14868($8)  # rastro esq
+     		sw $9 15384($8)  # rastro esq
+     		sw $9 15896($8)  # rastro esq
+     		sw $9 16408($8)  # rastro esq
+     		sw $9 16912($8)  # rastro esq
+     		sw $9 17420($8)  # rastro esq
+     		sw $9 17936($8)  # rastro esq
+     		
      		j desenho_blue
      		
-     	esq:	lw $24 14340($8)    # colisao atras
+     	esq:	lw $24 14852($8)    # colisao atras
 		beq $24 $20 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
      		addi $8 $8 -4
-     		sw $9 14352($8)     # rastro dir
+
+     		sw $9 14888($8)     # rastro dir
+     		sw $9 15404($8)     # rastro dir
+     		sw $9 15916($8)     # rastro dir
+     		sw $9 16428($8)     # rastro dir
+     		sw $9 16936($8)     # rastro dir
+     		sw $9 17448($8)     # rastro dir
+     		sw $9 17960($8)     # rastro dir
+     	
      		j desenho_blue
      		
-     	baixo:	lw $24 15372($8)    # colisao atras
+     	baixo:	lw $24 15884($8)    # colisao atras
 		beq $24 $20 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
      		addi $8 $8 +512
-     		sw $9 13836($8) # rastro baixo
+     		
+     		sw $9 14360($8) # rastro cima cabeca
+     		sw $9 14364($8) # rastro cima cabeca
+     		sw $9 14368($8) # rastro cima cabeca
+     		sw $9 14372($8) # rastro cima cabeca
+     		sw $9 14888($8) # rastro cima bico
+     		sw $9 14376($8) # rastro cima frente cabeca
+     		sw $9 16404($8) # rastro cima 
+     		sw $9 16408($8) # rastro cima 
+     		sw $9 16908($8) # rastro cima rabo
+     		sw $9 16912($8) # rastro cima rabo
      		j desenho_blue
      		
-     	cima:	lw $24 13324($8)    # colisao atras
+     	cima:	lw $24 13836($8)    # colisao atras
 		beq $24 $20 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
      		addi $8 $8 -512
-     		sw $9 14860($8)  # rastro cima
+
+     		sw $9 15384($8)  # rastro baixo
+     		sw $9 16424($8)  # rastro baixo bico
+     		sw $9 17448($8)  # rastro baixo bico
+     		sw $9 15400($8) # rastro cima bico
+     		sw $9 16936($8) # rastro cima bico
+     		sw $9 17448($8) # rastro cima bico
+     		sw $9 17960($8) # rastro cima bico
+     		sw $9 17936($8) # rastro cima rabo
+     		sw $9 17940($8)  # rastro cima embaixo
+     		sw $9 17944($8)  # rastro cima embaixo
+     		sw $9 17948($8)  # rastro cima embaixo
+     		sw $9 17952($8)  # rastro cima embaixo
+     		sw $9 17956($8)  # rastro cima embaixo
+   
      		j desenho_blue
      	fim:
      		addi $2 $0 10
@@ -533,7 +608,7 @@ colisao:
 	add $23 $0 $0
 	# lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
 	j desenho_blue
-##############################################################
+#####################s#########################################
 # função timer
 timerf1:
 	addi $15 $15 20000
@@ -545,7 +620,8 @@ timerf1:
 	fimT_f1:
 		jr $31
 	
-	
+# posição entrada 18.944
+# posição saída   18.948
 	
 
 	
