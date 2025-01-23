@@ -488,36 +488,29 @@ gaiolas_passaros:
      		
      		sw $11 15388($8) # L2*
      		sw $16 15392($8) # L2 branco
-     		sw $16 15396($8) # L2 branco
+     		sw $18 15396($8) # L2 branco
      		sw $17 15400($8) # L2** bico
      		
-     		sw $11 15900($8) # L3*
+     		sw $12 15892($8) # L3*
+     		sw $12 15896($8) # L3*
+     		sw $11 15900($8) # L3
      		sw $16 15904($8) # L3
-     		sw $16 15908($8) # L3
      		sw $18 15908($8) # L3 preto
      		sw $17 15912($8) # L3** bico
      		
-     		sw $11 16412($8) # L4
-     		sw $16 16416($8) # L4
-     		sw $16 16420($8) # L4
-     		sw $17 16424($8) # L4** bico
-     		
-     		
+     		sw $11 16400($8) # L4* rabo
+     		sw $11 16404($8) # L4
+     		sw $11 16408($8) # L4
+     		sw $12 16412($8) # L4
+     		sw $11 16416($8) # L4
+     		sw $11 16420($8) # L4
+
      		sw $12 16916($8) # L5*
-     		sw $12 16920($8) # L5*
+     		sw $12 16920($8) # L5
      		sw $11 16924($8) # L5
      		sw $11 16928($8) # L5
      		sw $11 16932($8) # L5
-     		
-     		sw $11 17424($8) # L6***
-     		sw $11 17428($8) # L6
-     		sw $11 17432($8) # L6
-     		sw $12 17436($8) # L6
-     		sw $11 17440($8) # L6
-     		sw $11 17444($8) # L6
-     		
-     		
-     		
+     	
      		jal timerf1
 	 	lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
 		
@@ -529,7 +522,7 @@ gaiolas_passaros:
 		beq $23 $22 fim
 		# addi $8 $8 +4
 		j desenho_blue
-	dir:	lw $24 14852($8)  # colisao frente
+	dir:	lw $24 15404($8)  # colisao frente
 		beq $24 $20 colisao
 	   	beq $24 $10 colisao
 		beq $24 $27 colisao
@@ -539,6 +532,7 @@ gaiolas_passaros:
      		sw $9 14868($8)  # rastro esq
      		sw $9 15384($8)  # rastro esq
      		sw $9 15896($8)  # rastro esq
+     		sw $9 16396($8)     # rastro dir
      		sw $9 16408($8)  # rastro esq
      		sw $9 16912($8)  # rastro esq
      		sw $9 17420($8)  # rastro esq
@@ -555,6 +549,7 @@ gaiolas_passaros:
      		sw $9 14888($8)     # rastro dir
      		sw $9 15404($8)     # rastro dir
      		sw $9 15916($8)     # rastro dir
+     		sw $9 16396($8)     # rastro dir
      		sw $9 16428($8)     # rastro dir
      		sw $9 16936($8)     # rastro dir
      		sw $9 17448($8)     # rastro dir
@@ -562,7 +557,7 @@ gaiolas_passaros:
      	
      		j desenho_blue
      		
-     	baixo:	lw $24 15884($8)    # colisao atras
+     	baixo:	lw $24 16396($8)    # colisao atras
 		beq $24 $20 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
@@ -574,6 +569,7 @@ gaiolas_passaros:
      		sw $9 14372($8) # rastro cima cabeca
      		sw $9 14888($8) # rastro cima bico
      		sw $9 14376($8) # rastro cima frente cabeca
+     		
      		sw $9 16404($8) # rastro cima 
      		sw $9 16408($8) # rastro cima 
      		sw $9 16908($8) # rastro cima rabo
@@ -584,21 +580,40 @@ gaiolas_passaros:
 		beq $24 $20 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
+		
+		lw $24 14888($8)    # colisao atras
+		beq $24 $20 colisao # detalhe bordas
+	   	beq $24 $10 colisao # colisao paredes
+		beq $24 $27 colisao # colisao jaulas
+		
+		lw $24 14376($8)    # colisao atras
+		beq $24 $20 colisao # detalhe bordas
+	   	beq $24 $10 colisao # colisao paredes
+		beq $24 $27 colisao # colisao jaulas
+		
+		lw $24 14364($8)    # colisao atras
+		beq $24 $20 colisao # detalhe bordas
+	   	beq $24 $10 colisao # colisao paredes
+		beq $24 $27 colisao # colisao jaulas
+		
+		
      		addi $8 $8 -512
 
      		sw $9 15384($8)  # rastro baixo
      		sw $9 16424($8)  # rastro baixo bico
      		sw $9 17448($8)  # rastro baixo bico
      		sw $9 15400($8) # rastro cima bico
+     		sw $9 16912($8) # rastro cima bico
      		sw $9 16936($8) # rastro cima bico
      		sw $9 17448($8) # rastro cima bico
      		sw $9 17960($8) # rastro cima bico
      		sw $9 17936($8) # rastro cima rabo
-     		sw $9 17940($8)  # rastro cima embaixo
-     		sw $9 17944($8)  # rastro cima embaixo
-     		sw $9 17948($8)  # rastro cima embaixo
-     		sw $9 17952($8)  # rastro cima embaixo
-     		sw $9 17956($8)  # rastro cima embaixo
+     		sw $9 17428($8)  # rastro cima embaixo
+     		sw $9 17432($8)  # rastro cima embaixo
+     		sw $9 17436($8)  # rastro cima embaixo
+     		sw $9 17440($8)  # rastro cima embaixo
+     		sw $9 17444($8)  # rastro cima embaixo
+     		
    
      		j desenho_blue
      	fim:
