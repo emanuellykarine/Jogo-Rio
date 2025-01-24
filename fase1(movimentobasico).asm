@@ -17,7 +17,7 @@
 # pq o blue é menor que o passáro branco no filme
 
 main:lui $8, 0x1001	   # fundo
-     lui $7, 0x1001	   # muros e gaiolas com passaros
+     
      # lui $6, 0x1001	   # gaiola com passaros
      ori $9, $0, 0x141d29  # Azul escuro
      ori $10, $0, 0x546d8f # muros
@@ -456,14 +456,27 @@ gaiolas_passaros:
 			sw $19 29716($8)
 			sw $19 29720($8)
 			
-####### Entrada saida
-		
+# frutas da função
+# Laranja
+			lui $6, 0x1001
+			ori $22, $0, 0xfca000 # vermelho morango
+			ori $7, $0, 0xfae050 # vermelho degrade mais escuro
+			
+			sw $22 29652($6) # l1
 	
+			sw $22 30164($6) # l2
+			sw $7 30168($6) # l2
+			sw $22 30676($6) # l3
+			sw $7 30680($6) # l3
+			sw $22 31192($6) # l4
+####### Entrada saida
 # MOVIMENTO DO BLUE
 	dados_blue:
      		ori $27, $0, 0xb4b4b5 # Cinza da gaiola
      		ori $9, $0,  0x141d29 # Cor de fundo para rastros
      		ori $25, $0, 0x2a3340 # azul escuro para detalhes
+     		ori $22, $0, 0xfff34d # amarelo normal
+     		
      		
      		ori $16, $0, 0xfffffe # branco
      		ori $18, $0, 0x0C0D0D # preto
@@ -473,15 +486,16 @@ gaiolas_passaros:
   
      		lui $8, 0x1001        # memoria do blue
      		lui $21 0xffff
-     		
+  	
      		addi $13 $0 'a' # move para a esquerda
      		addi $14 $0 's' # move para baixo
      		addi $20 $0 'w' # move para cima
      		addi $19 $0 'd' # move para a direita
-     		addi $22 $0 ' ' # pausa temporária
      		
-     	desenho_blue:
      		
+     	desenho_bluef1:
+     		
+	
      		sw $11 14872($8) # L1**
      		sw $11 14876($8) # L1*
      		sw $11 14880($8) # L1*
@@ -513,16 +527,18 @@ gaiolas_passaros:
      		sw $11 16932($8) # L5
 
 	 	lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
+	 	
 		jal timerf1
 		lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
-		beq $23 $19 dir
-		beq $23 $13 esq
-		beq $23 $14 baixo
-		beq $23 $20 cima
+		beq $23 $19 dirf1
+		beq $23 $13 esqf1
+		beq $23 $14 baixof1
+		beq $23 $20 cimaf1
 		beq $23 $22 fim
 		
-		j desenho_blue
-	dir:	
+		
+		j desenho_bluef1 
+	dirf1:	
 		lw $24 14888($8)  # colisao em cima do bico
 		beq $24 $25 colisao
 	   	beq $24 $10 colisao
@@ -564,9 +580,9 @@ gaiolas_passaros:
      		sw $9 16912($8)  # rastro esq
 
      		
-     		j desenho_blue
+     		j desenho_bluef1
      		
-     	esq:	
+     	esqf1:	
      		lw $24 15368($8)    # colisao atras rabo
 		beq $24 $25 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
@@ -606,9 +622,9 @@ gaiolas_passaros:
      		sw $9 16424($8)     # frente em baixo do bico
      		sw $9 16936($8)     # frente em baixo do bico
      	
-     		j desenho_blue
+     		j desenho_bluef1
      		
-     	baixo:	
+     	baixof1:	
 		lw $24 17428($8)    # colisao embaixo
 		beq $24 $25 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
@@ -644,6 +660,8 @@ gaiolas_passaros:
 	   	beq $24 $10 colisao # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 		
+		
+		
      		addi $8 $8 +512
      		
      		sw $9 14360($8) # rastro cima cabeca
@@ -656,10 +674,22 @@ gaiolas_passaros:
      		sw $9 15380($8) # rastro cima 
      		sw $9 15384($8) # rastro cima 
      		sw $9 15888($8) # rastro cima 
-
-     		j desenho_blue
      		
-     	cima:	
+		lw $24 17428($8)    # verificar fruta
+		beq $24 $22 verificar_fruta	
+		lw $24 17432($8)    # verificar fruta
+		beq $24 $22 verificar_fruta
+		lw $24 17436($8)    # verificar fruta
+		beq $24 $22 verificar_fruta
+		lw $24 17440($8)    # verificar fruta
+		beq $24 $22 verificar_fruta
+		lw $24 17444($8)    # verificar fruta
+		beq $24 $22 verificar_fruta
+		
+		
+     		j desenho_bluef1
+     		
+     	cimaf1:	
      		lw $24 15376($8)    # colisao atras rabo
 		beq $24 $25 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
@@ -710,9 +740,9 @@ gaiolas_passaros:
 
      		sw $9 15384($8)  # rastro baixo
      		sw $9 16424($8)  # rastro baixo bico	
-     		sw $9 15400($8) # rastro cima bico
-     		sw $9 16912($8) # rastro cima bico
-     		sw $9 16936($8) # rastro cima bico
+     		sw $9 15400($8)  # rastro cima bico
+     		sw $9 16912($8)  # rastro cima bico
+     		sw $9 16936($8)  # rastro cima bico
      		sw $9 17428($8)  # rastro cima embaixo
      		sw $9 17432($8)  # rastro cima embaixo
      		sw $9 17436($8)  # rastro cima embaixo
@@ -720,14 +750,34 @@ gaiolas_passaros:
      		sw $9 17444($8)  # rastro cima embaixo
      		
    
-     		j desenho_blue
+     		j desenho_bluef1
      	fim:
      		addi $2 $0 10
 		syscall
 colisao:
 	add $23 $0 $0
 	# lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
-	j desenho_blue
+	j desenho_bluef1
+
+verificar_fruta:
+	lui $6, 0x1001	  
+	beq $24 $22 p1f1 # cor da fruta banana
+	beq $24 $12 p2f1 # cor da fruta morango
+	#beq $24 $12 pontuaf1 # cor da fruta maçã
+	#beq $24 $12 pontuaf1 # cor da fruta mamão
+	#beq $24 $12 pontuaf1 # cor da fruta melancia
+	
+p1f1:	# desenha maçã do lado direito inferior
+	
+	
+	j desenho_bluef1
+p2f1:
+	# desenha maçã do lado esquerdo superior
+	j desenho_bluef1
+	
+	
+	
+	
 #####################s#########################################
 # função timer
 timerf1:
@@ -739,7 +789,8 @@ timerf1:
 		j forT_f1
 	fimT_f1:
 		jr $31
-	
+
+
 # posição entrada 18.944
 # posição saída   18.948
 	
