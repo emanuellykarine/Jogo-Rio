@@ -489,7 +489,7 @@ gaiolas_passaros:
      		
      		sw $11 15388($8) # L2*
      		sw $16 15392($8) # L2 branco
-     		sw $18 15396($8) # L2 branco
+     		sw $18 15396($8) # L2 preto
      		sw $17 15400($8) # L2** bico
      		
      		sw $12 15892($8) # L3*
@@ -511,8 +511,7 @@ gaiolas_passaros:
      		sw $11 16924($8) # L5
      		sw $11 16928($8) # L5
      		sw $11 16932($8) # L5
-     	
-     		
+
 	 	lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
 		jal timerf1
 		lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
@@ -553,15 +552,14 @@ gaiolas_passaros:
 		#beq $24 $25 colisao
 	   	#beq $24 $10 colisao
 		#beq $24 $27 colisao
-		
-   
+
    		addi $8 $8 +4
 
      		sw $9 14868($8)  # rastro esq
      		sw $9 15384($8)  # rastro esq
      		sw $9 15896($8)  # rastro esq
      		sw $9 15888($8)  # rastro dir
-     		sw $9 16396($8) # L4* rabo
+     		sw $9 16396($8)  # L4* rabo
      		sw $9 16404($8)  # rastro esq
      		sw $9 16912($8)  # rastro esq
 
@@ -569,6 +567,21 @@ gaiolas_passaros:
      		j desenho_blue
      		
      	esq:	
+     		lw $24 15368($8)    # colisao atras rabo
+		beq $24 $25 colisao # detalhe bordas
+	   	beq $24 $10 colisao # colisao paredes
+		beq $24 $27 colisao # colisao jaulas
+		
+     		lw $24 16392($8)    # colisao atras rabo
+		beq $24 $25 colisao # detalhe bordas
+	   	beq $24 $10 colisao # colisao paredes
+		beq $24 $27 colisao # colisao jaulas
+     		
+     		lw $24 16912($8)    # colisao atras rabo
+		beq $24 $25 colisao # detalhe bordas
+	   	beq $24 $10 colisao # colisao paredes
+		beq $24 $27 colisao # colisao jaulas
+
 		lw $24 14852($8)    # colisao atras
 		beq $24 $25 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
@@ -578,23 +591,12 @@ gaiolas_passaros:
 		beq $24 $25 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
-		
-		lw $24 16396($8)    # colisao atras
-		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
-		beq $24 $27 colisao # colisao jaulas
-		
-		lw $24 16400($8)    # colisao atras
-		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
-		beq $24 $27 colisao # colisao jaulas
-		
+
 		lw $24 16916($8)    # colisao atras
 		beq $24 $25 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
-		
-		
+
      		addi $8 $8 -4
 
      		sw $9 14888($8)     # rastro dir
@@ -650,16 +652,30 @@ gaiolas_passaros:
      		sw $9 14372($8) # rastro cima cabeca
      		sw $9 14888($8) # rastro cima bico
      		sw $9 14376($8) # rastro cima frente cabeca
-     		
-     		
+
      		sw $9 15380($8) # rastro cima 
      		sw $9 15384($8) # rastro cima 
      		sw $9 15888($8) # rastro cima 
-     		
-     		
+
      		j desenho_blue
      		
-     	cima:	lw $24 14360($8)    # colisao cima
+     	cima:	
+     		lw $24 15376($8)    # colisao atras rabo
+		beq $24 $25 colisao # detalhe bordas
+	   	beq $24 $10 colisao # colisao paredes
+		beq $24 $27 colisao # colisao jaulas
+     		
+     		lw $24 15380($8)    # colisao atras rabo
+		beq $24 $25 colisao # detalhe bordas
+	   	beq $24 $10 colisao # colisao paredes
+		beq $24 $27 colisao # colisao jaulas
+		
+     		lw $24 15884($8)    # colisao atras
+		beq $24 $25 colisao # detalhe bordas
+	   	beq $24 $10 colisao # colisao paredes
+		beq $24 $27 colisao # colisao jaulas
+     	
+     		lw $24 14360($8)    # colisao cima
 		beq $24 $25 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
