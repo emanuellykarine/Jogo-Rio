@@ -457,18 +457,9 @@ gaiolas_passaros:
 			sw $19 29720($8)
 			
 # frutas da função
-# Laranja
-			lui $6, 0x1001
-			ori $22, $0, 0xfca000 # vermelho morango
-			ori $7, $0, 0xfae050 # vermelho degrade mais escuro
-			
-			sw $22 29652($6) # l1
-	
-			sw $22 30164($6) # l2
-			sw $7 30168($6) # l2
-			sw $22 30676($6) # l3
-			sw $7 30680($6) # l3
-			sw $22 31192($6) # l4
+# fruta final
+		
+
 ####### Entrada saida
 # MOVIMENTO DO BLUE
 	dados_blue:
@@ -476,14 +467,17 @@ gaiolas_passaros:
      		ori $9, $0,  0x141d29 # Cor de fundo para rastros
      		ori $25, $0, 0x2a3340 # azul escuro para detalhes
      		ori $22, $0, 0xfff34d # amarelo normal
+     		addi $5 $0 2
      		
-     		
+     		ori $18, $0, 0xfa020c # vermelho maçã
+     		ori $7, $0, 0xfae050  # amarelo
      		ori $16, $0, 0xfffffe # branco
-     		ori $18, $0, 0x0C0D0D # preto
+     		#ori $18, $0, 0x0C0D0D # preto
      		ori $11, $0, 0x546CF0 # Azul claro blue
      		ori $12, $0, 0x333597 # Azul escuro blue
      		ori $17, $0, 0xB4B4B4 # bico
-  
+     		
+  		lui $6, 0x1001
      		lui $8, 0x1001        # memoria do blue
      		lui $21 0xffff
   	
@@ -495,7 +489,7 @@ gaiolas_passaros:
      		
      	desenho_bluef1:
      		
-	
+		
      		sw $11 14872($8) # L1**
      		sw $11 14876($8) # L1*
      		sw $11 14880($8) # L1*
@@ -503,14 +497,14 @@ gaiolas_passaros:
      		
      		sw $11 15388($8) # L2*
      		sw $16 15392($8) # L2 branco
-     		sw $18 15396($8) # L2 preto
+     		sw $9 15396($8) # L2 preto
      		sw $17 15400($8) # L2** bico
      		
      		sw $12 15892($8) # L3*
      		sw $12 15896($8) # L3*
      		sw $11 15900($8) # L3
      		sw $16 15904($8) # L3
-     		sw $18 15908($8) # L3 preto
+     		sw $9 15908($8) # L3 preto
      		sw $17 15912($8) # L3** bico
      		
      		sw $11 16400($8) # L4* rabo
@@ -525,7 +519,7 @@ gaiolas_passaros:
      		sw $11 16924($8) # L5
      		sw $11 16928($8) # L5
      		sw $11 16932($8) # L5
-
+		
 	 	lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
 	 	
 		jal timerf1
@@ -538,7 +532,8 @@ gaiolas_passaros:
 		
 		
 		j desenho_bluef1 
-	dirf1:	
+		
+	dirf1:	ori $27, $0, 0xb4b4b5 # Cinza da gaiola
 		lw $24 14888($8)  # colisao em cima do bico
 		beq $24 $25 colisao
 	   	beq $24 $10 colisao
@@ -578,14 +573,15 @@ gaiolas_passaros:
      		sw $9 16396($8)  # L4* rabo
      		sw $9 16404($8)  # rastro esq
      		sw $9 16912($8)  # rastro esq
-
+		
      		
      		j desenho_bluef1
      		
-     	esqf1:	
+     	esqf1:	ori $27, $0, 0xb4b4b5 # Cinza da gaiola
      		lw $24 15368($8)    # colisao atras rabo
 		beq $24 $25 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
+	   	
 		beq $24 $27 colisao # colisao jaulas
 		
      		lw $24 16392($8)    # colisao atras rabo
@@ -621,10 +617,34 @@ gaiolas_passaros:
      		sw $9 16396($8)     # rastro dir
      		sw $9 16424($8)     # frente em baixo do bico
      		sw $9 16936($8)     # frente em baixo do bico
-     	
+     		
+     		lw $24 16396($8)    # verificar fruta
+		beq $24 $22 verificar_fruta	
+		lw $24 16908($8)    # verificar fruta
+		beq $24 $22 verificar_fruta
+		lw $24 15884($8)    # verificar fruta
+		beq $24 $22 verificar_fruta
+		lw $24 15372($8)    # verificar fruta
+		beq $24 $22 verificar_fruta
+		lw $24 14860($8)    # verificar fruta
+		beq $24 $22 verificar_fruta
+		
+		# maçã
+		lw $24 16396($8)    # verificar fruta
+		beq $24 $18 fruta_final_f1	
+		lw $24 16908($8)    # verificar fruta
+		beq $24 $18 fruta_final_f1
+		lw $24 15884($8)    # verificar fruta
+		beq $24 $18 fruta_final_f1
+		lw $24 15372($8)    # verificar fruta
+		beq $24 $18 fruta_final_f1
+		lw $24 14860($8)    # verificar fruta
+		beq $24 $18 fruta_final_f1
+		
+     		
      		j desenho_bluef1
      		
-     	baixof1:	
+     	baixof1:ori $27, $0, 0xb4b4b5 # Cinza da gaiola
 		lw $24 17428($8)    # colisao embaixo
 		beq $24 $25 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
@@ -675,6 +695,7 @@ gaiolas_passaros:
      		sw $9 15384($8) # rastro cima 
      		sw $9 15888($8) # rastro cima 
      		
+     		# banana
 		lw $24 17428($8)    # verificar fruta
 		beq $24 $22 verificar_fruta	
 		lw $24 17432($8)    # verificar fruta
@@ -686,10 +707,40 @@ gaiolas_passaros:
 		lw $24 17444($8)    # verificar fruta
 		beq $24 $22 verificar_fruta
 		
+		# laranja
+		
+		lw $24 17428($8)    # verificar fruta
+		beq $24 $7 verificar_fruta	
+		lw $24 17432($8)    # verificar fruta
+		beq $24 $7 verificar_fruta
+		lw $24 17436($8)    # verificar fruta
+		beq $24 $7 verificar_fruta
+		lw $24 17440($8)    # verificar fruta
+		beq $24 $7 verificar_fruta
+		lw $24 17444($8)    # verificar fruta
+		beq $24 $7 verificar_fruta
+		lw $24 16908($8)    # verificar fruta
+		beq $24 $7 verificar_fruta	
+		
+		# fruta final
+		ori $27, $0, 0xe3413b # vermelho morango
+		lw $24 17428($8)    # verificar fruta
+		beq $24 $27 abrir_saida	
+		lw $24 17432($8)    # verificar fruta
+		beq $24 $27 abrir_saida	
+		lw $24 17436($8)    # verificar fruta
+		beq $24 $27 abrir_saida	
+		lw $24 17440($8)    # verificar fruta
+		beq $24 $27 abrir_saida	
+		lw $24 17444($8)    # verificar fruta
+		beq $24 $27 abrir_saida	
+		lw $24 16908($8)    # verificar fruta
+		beq $24 $27 abrir_saida		
+		
 		
      		j desenho_bluef1
      		
-     	cimaf1:	
+     	cimaf1:	ori $27, $0, 0xb4b4b5 # Cinza da gaiola
      		lw $24 15376($8)    # colisao atras rabo
 		beq $24 $25 colisao # detalhe bordas
 	   	beq $24 $10 colisao # colisao paredes
@@ -749,6 +800,18 @@ gaiolas_passaros:
      		sw $9 17440($8)  # rastro cima embaixo
      		sw $9 17444($8)  # rastro cima embaixo
      		
+     		lw $24 14360($8)    # verificar fruta
+		beq $24 $18 fruta_final_f1	
+		lw $24 14364($8)    # verificar fruta
+		beq $24 $18 fruta_final_f1
+		lw $24 14368($8)    # verificar fruta
+		beq $24 $18 fruta_final_f1
+		lw $24 14372($8)    # verificar fruta
+		beq $24 $18 fruta_final_f1
+		lw $24 14372($8)    # verificar fruta
+		beq $24 $18 fruta_final_f1
+		lw $24 14356($8)    # verificar fruta
+		beq $24 $18 fruta_final_f1
    
      		j desenho_bluef1
      	fim:
@@ -761,27 +824,126 @@ colisao:
 
 verificar_fruta:
 	lui $6, 0x1001	  
-	beq $24 $22 p1f1 # cor da fruta banana
-	beq $24 $12 p2f1 # cor da fruta morango
-	#beq $24 $12 pontuaf1 # cor da fruta maçã
-	#beq $24 $12 pontuaf1 # cor da fruta mamão
-	#beq $24 $12 pontuaf1 # cor da fruta melancia
+	beq $24 $22 p1f1  # cor da fruta banana
+	beq $24 $7  p2f1  # cor da fruta morango
 	
-p1f1:	# desenha maçã do lado direito inferior
 	
+p1f1:	# desenha laranja do lado direito inferior
+	beq $5 $0 desenho_bluef1
+	addi $5 $5 -1
+	lui $6, 0x1001
+	ori $22, $0, 0xfca000 # laranja
+	ori $7, $0, 0xfae050  # amarelo
+			
+	sw $22 29652($6) # l1
+	sw $22 30164($6) # l2
+	sw $7 30168($6) # l2
+	sw $22 30676($6) # l3
+	sw $7 30680($6) # l3
+	sw $7 30684($6) # l3
+	sw $22 31192($6) # l4
+	sw $7 31196($6) # l4
+	sw $7 31200($6) # l4
+	sw $22 31708($6) # l5
+	sw $22 31712($6) # l5
+	sw $22 31716($6) # l5
 	
 	j desenho_bluef1
-p2f1:
-	# desenha maçã do lado esquerdo superior
+p2f1: # desenha maçã do lado esquerda superior
+	beq $5 $0 desenho_bluef1
+	addi $5 $5 -1
+	lui $6, 0x1001
+	ori $27, $0, 0xfa020c # vermelho maçã
+	ori $7, $0, 0x736637  # marrom
+	
+	sw $7 1560($6) #L1
+	ori $7, $0, 0x4ea65e # verde
+	sw $7 1568($6) #L1
+	ori $7, $0, 0x736637 # marrom
+	sw $7 2072($6) #L2
+	ori $7, $0, 0x4ea65e # verde
+	sw $7 2076($6) #L2
+	
+	sw $27 2580($6) #L4
+	sw $27 2584($6) #L4
+	sw $27 2588($6) #L4
+	sw $27 3088($6) #L5
+	sw $27 3092($6) #L5
+	sw $27 3096($6) #L5
+	sw $27 3100($6) #L5
+	sw $27 3104($6) #L5
+	
+	sw $27 3604($6) #L6
+	sw $27 3608($6) #L6
+	sw $27 3612($6) #L6
+	
 	j desenho_bluef1
+
+fruta_final_f1: # desenha a fruta final
+		lui $6, 0x1001
+		ori $27, $0, 0xe3413b # vermelho morango
+		ori $7, $0, 0x4efc03  # verde claro
+		ori $5, $0, 0x0f7518  # verde escuro
 	
+		
+		sw $5 13552($6) # L1
+		sw $7 13556($6) # L1
+
+		sw $5 14060($6) # L2
+		sw $7 14064($6) # L2
+		sw $27 14068($6) # L2
+		
+
+		sw $5 14572($6) # L3
+		sw $7 14576($6) # L3
+		sw $27 14580($6) # L3
+		sw $27 14584($6) # L3
+		
+		sw $5 15084($6) # L4
+		sw $7 15088($6) # L4
+		sw $27 15092($6) # L4
+		sw $27 15096($6) # L4
+		sw $27 15100($6) # L4
+		
+		sw $5 15596($6) # L5
+		sw $5 15600($6) # L5
+		sw $7 15604($6) # L5
+		sw $27 15608($6) # L5
+		sw $27 15612($6) # L5
+		sw $27 15616($6) # L5
+		sw $7 15620($6) # L5
+		
+		sw $5 16112($6) # L6
+		sw $5 16116($6) # L6
+		sw $7 16120($6) # L6
+		sw $7 16124($6) # L6
+		sw $7 16128($6) # L6
+		sw $5 16132($6) # L6
 	
-	
+		sw $5 16632($6) # L7
+		sw $5 16636($6) # L7
+		sw $5 16640($6) # L7
+		sw $5 16644($6) # L7
+		
+		
+		addi $5 $0 0
+		j desenho_bluef1
+abrir_saida:
+	lui $6, 0x1001
+	addi $5 $0 12
+for_saidaf1:
+	beq $5 $0 desenho_bluef1
+	sw $9 13816($6)
+	sw $9 13820($6)
+	addi $5 $5 -1
+	addi $6 $6 512
+	j for_saidaf1
+	# posição saída   18.948
 	
 #####################s#########################################
 # função timer
 timerf1:
-	addi $15 $15 15000
+	addi $15 $15 2000
 	forT_f1:beq $15 $0 fimT_f1
 		nop
 		nop
