@@ -574,7 +574,19 @@ gaiolas_passaros:
      		sw $9 16404($8)  # rastro esq
      		sw $9 16912($8)  # rastro esq
 		
-     		
+		# laranja
+		lw $24 14888($8)    # verificar fruta
+		beq $24 $22 verificar_fruta	
+		lw $24 15404($8)    # verificar fruta
+		beq $24 $22 verificar_fruta
+		lw $24 15916($8)    # verificar fruta
+		beq $24 $22 verificar_fruta
+		lw $24 16424($8)    # verificar fruta
+		beq $24 $22 verificar_fruta
+		lw $24 16936($8)    # verificar fruta
+		beq $24 $22 verificar_fruta
+		
+		
      		j desenho_bluef1
      		
      	esqf1:	ori $27, $0, 0xb4b4b5 # Cinza da gaiola
@@ -722,21 +734,20 @@ gaiolas_passaros:
 		lw $24 16908($8)    # verificar fruta
 		beq $24 $7 verificar_fruta	
 		
-		# fruta final
+		# fruta final porcaria de merda
 		ori $27, $0, 0xe3413b # vermelho morango
 		lw $24 17428($8)    # verificar fruta
-		beq $24 $27 abrir_saida	
+		beq $24 $27 fruta_final_f1	
 		lw $24 17432($8)    # verificar fruta
-		beq $24 $27 abrir_saida	
+		beq $24 $27 fruta_final_f1
 		lw $24 17436($8)    # verificar fruta
-		beq $24 $27 abrir_saida	
+		beq $24 $27 fruta_final_f1
 		lw $24 17440($8)    # verificar fruta
-		beq $24 $27 abrir_saida	
+		beq $24 $27 fruta_final_f1
 		lw $24 17444($8)    # verificar fruta
-		beq $24 $27 abrir_saida	
+		beq $24 $27 fruta_final_f1
 		lw $24 16908($8)    # verificar fruta
-		beq $24 $27 abrir_saida		
-		
+		beq $24 $27 fruta_final_f1
 		
      		j desenho_bluef1
      		
@@ -834,7 +845,8 @@ p1f1:	# desenha laranja do lado direito inferior
 	lui $6, 0x1001
 	ori $22, $0, 0xfca000 # laranja
 	ori $7, $0, 0xfae050  # amarelo
-			
+	j apaga_banana
+desenha_laranja:
 	sw $22 29652($6) # l1
 	sw $22 30164($6) # l2
 	sw $7 30168($6) # l2
@@ -856,6 +868,8 @@ p2f1: # desenha maçã do lado esquerda superior
 	ori $27, $0, 0xfa020c # vermelho maçã
 	ori $7, $0, 0x736637  # marrom
 	
+	j apaga_laranja
+desenha_maça:
 	sw $7 1560($6) #L1
 	ori $7, $0, 0x4ea65e # verde
 	sw $7 1568($6) #L1
@@ -884,27 +898,22 @@ fruta_final_f1: # desenha a fruta final
 		ori $27, $0, 0xe3413b # vermelho morango
 		ori $7, $0, 0x4efc03  # verde claro
 		ori $5, $0, 0x0f7518  # verde escuro
-	
-		
+		j apaga_maça
+desenha_melancia:
 		sw $5 13552($6) # L1
 		sw $7 13556($6) # L1
-
 		sw $5 14060($6) # L2
 		sw $7 14064($6) # L2
 		sw $27 14068($6) # L2
-		
-
 		sw $5 14572($6) # L3
 		sw $7 14576($6) # L3
 		sw $27 14580($6) # L3
 		sw $27 14584($6) # L3
-		
 		sw $5 15084($6) # L4
 		sw $7 15088($6) # L4
 		sw $27 15092($6) # L4
 		sw $27 15096($6) # L4
 		sw $27 15100($6) # L4
-		
 		sw $5 15596($6) # L5
 		sw $5 15600($6) # L5
 		sw $7 15604($6) # L5
@@ -912,25 +921,56 @@ fruta_final_f1: # desenha a fruta final
 		sw $27 15612($6) # L5
 		sw $27 15616($6) # L5
 		sw $7 15620($6) # L5
-		
 		sw $5 16112($6) # L6
 		sw $5 16116($6) # L6
 		sw $7 16120($6) # L6
 		sw $7 16124($6) # L6
 		sw $7 16128($6) # L6
 		sw $5 16132($6) # L6
-	
 		sw $5 16632($6) # L7
 		sw $5 16636($6) # L7
 		sw $5 16640($6) # L7
 		sw $5 16644($6) # L7
-		
-		
+	
 		addi $5 $0 0
 		j desenho_bluef1
 abrir_saida:
 	lui $6, 0x1001
 	addi $5 $0 12
+	# Apaga a melancia quando encosta
+	
+		sw $9 13552($6) # L1
+		sw $9 13556($6) # L1
+		sw $9 14060($6) # L2
+		sw $9 14064($6) # L2
+		sw $9 14068($6) # L2
+		sw $9 14572($6) # L3
+		sw $9 14576($6) # L3
+		sw $9 14580($6) # L3
+		sw $9 14584($6) # L3
+		sw $9 15084($6) # L4
+		sw $9 15088($6) # L4
+		sw $9 15092($6) # L4
+		sw $9 15096($6) # L4
+		sw $9 15100($6) # L4
+		sw $9 15596($6) # L5
+		sw $9 15600($6) # L5
+		sw $9 15604($6) # L5
+		sw $9 15608($6) # L5
+		sw $9 15612($6) # L5
+		sw $9 15616($6) # L5
+		sw $9 15620($6) # L5
+		sw $9 16112($6) # L6
+		sw $9 16116($6) # L6
+		sw $9 16120($6) # L6
+		sw $9 16124($6) # L6
+		sw $9 16128($6) # L6
+		sw $9 16132($6) # L6
+		sw $9 16632($6) # L7
+		sw $9 16636($6) # L7
+		sw $9 16640($6) # L7
+		sw $9 16644($6) # L7
+		lui $6, 0x1001
 for_saidaf1:
 	beq $5 $0 desenho_bluef1
 	sw $9 13816($6)
@@ -939,7 +979,49 @@ for_saidaf1:
 	addi $6 $6 512
 	j for_saidaf1
 	# posição saída   18.948
+apaga_laranja:
+	sw $9 29652($6) # l1
+	sw $9 30164($6) # l2
+	sw $9 30168($6) # l2
+	sw $9 30676($6) # l3
+	sw $9 30680($6) # l3
+	sw $9 30684($6) # l3
+	sw $9 31192($6) # l4
+	sw $9 31196($6) # l4
+	sw $9 31200($6) # l4
+	sw $9 31708($6) # l5
+	sw $9 31712($6) # l5
+	sw $9 31716($6) # l5
+	j desenha_maça
 	
+apaga_banana:
+	sw $9 28192($8) # cacho
+	sw $9 28700($8)
+	sw $9 28704($8)
+	sw $9 29208($8)
+	sw $9 29212($8)
+	sw $9 29216($8)
+	sw $9 29712($8)
+	sw $9 29716($8)
+	sw $9 29720($8)
+	j desenha_laranja
+apaga_maça:
+	sw $9 1560($6) #L1
+	sw $9 1568($6) #L1
+	sw $9 2072($6) #L2
+	sw $9 2076($6) #L2
+	sw $9 2580($6) #L4
+	sw $9 2584($6) #L4
+	sw $9 2588($6) #L4
+	sw $9 3088($6) #L5
+	sw $9 3092($6) #L5
+	sw $9 3096($6) #L5
+	sw $9 3100($6) #L5
+	sw $9 3104($6) #L5
+	sw $9 3604($6) #L6
+	sw $9 3608($6) #L6
+	sw $9 3612($6) #L6
+	j desenha_melancia
 #####################s#########################################
 # função timer
 timerf1:
