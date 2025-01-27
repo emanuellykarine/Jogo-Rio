@@ -4817,6 +4817,7 @@ fimFightAreia14:
 #acao nigel
 	addi $21, $0, 12 #andar do Nigel
 	addi $10, $0, -4 #subtracao do endereco do Nigel
+	addi $27, $0, 1000
 	
 acaoNigel:
 	lui $20, 0x1001 #posicao inicial colisao do acai
@@ -4836,12 +4837,15 @@ acaoNigel:
 	addi $7, $7, -4 #mudanca de endereco Acai  	
 	
 	addi $21, $21, -1 #andar do Nigel -1
+	
+	addi $27, $27, -1
 
 	beq $7, $20, fimAcai #checar se o acao chegar na colisao vai pro fimAcai
 	beq $21, $0, voltaNigel #se o andar o Nigel chegar 12 a frente, ele volta
 	
 	beq $9, -5120, Descida
 	
+	beq $27, $0, fimDesenhoFight 
 	#lw $27, 0($7)
 	#beq $27, $15, fimDesenhoFight
 	
@@ -4850,8 +4854,8 @@ acaoNigel:
 	lw $20, 4($28)
 	beq $20, $25, bluePular
 	lw $20, 4($28)
-	beq $20, $26, blueAndarTras      
-	
+	beq $20, $26, blueAndarTras    
+
 	j acaoNigel
 	
 voltaNigel: 
@@ -4906,8 +4910,6 @@ blueAndarTras:
 continuacaoFight: j acaoNigel
 
 fimDesenhoFight:
-	jal desenhoNigel
-	jal desenhoAcai
 	jal desenhoBlue
 	addi $2, $0, 10
         syscall
