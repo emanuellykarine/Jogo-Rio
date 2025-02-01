@@ -53,7 +53,7 @@ D - Move forward</pre>
   <h3>Stage 3: Final Flight</h3>
     <p><strong>Objective:</strong> Blue must fly through the obstacles between the trees without colliding. If he overcomes all the obstacles, the player wins the game.</p>
     <p><strong>Movement Key:</strong></p>
-    <pre>V - Fly</pre>
+    <pre>W - Fly</pre>
     
   <h2>Developers</h2>
     <a href="https://github.com/emanuellykarine">@emanuellykarine</a>: Stage integration, Start screen, and Final stage<br>
