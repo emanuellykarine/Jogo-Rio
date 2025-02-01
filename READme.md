@@ -1,6 +1,7 @@
 <body>
-    <h1 align = "center">Aventura Carioca</h1>
-    <p><strong>Projeto desenvolvido como parte da disciplina de Arquitetura de Computadores</strong>, utilizando <strong>Assembly</strong> para o processador <strong>MIPS</strong>. O jogo conta com três fases inspiradas em clássicos dos videogames: a primeira baseada em <strong>Pac-Man</strong>, a segunda em <strong>Street Fighter</strong> e a terceira em <strong>Flappy Bird</strong>, oferecendo desafios variados e dinâmicos.</p>
+<p><a href= "https://github.com/becadev/Jogo-Rio/blob/main/READme.md"> Português</a> | <a href= "https://github.com/becadev/Jogo-Rio/blob/main/READme.en.md"> English</a></p>
+<h1 align = "center">Aventura Carioca</h1>
+    <p><strong>Projeto desenvolvido como parte da disciplina de Arquitetura de Computadores</strong>, utilizando <strong>Assembly</strong> para o processador <strong>MIPS</strong>. Inspirado no filme Rio, o jogo apresenta três fases baseadas em clássicos dos videogames: a primeira baseada em <strong>Pac-Man</strong>, a segunda em <strong>Street Fighter</strong> e a terceira em <strong>Flappy Bird</strong>, oferecendo desafios variados e dinâmicos.</p>
     <p>O objetivo do jogo é ajudar <strong>Blue</strong>, a arara-azul, a superar todos os desafios para finalmente reencontrar sua amada <strong>Jade</strong>.</p>
 <h2>Pré-requisitos</h2>
     <ul>
@@ -50,7 +51,7 @@ D - Andar para frente</pre>
   <h3>3ª Fase: Voo Final</h3>
     <p><strong>Objetivo:</strong> Blue deve atravessar os obstáculos voando entre as árvores sem colidir. Se ultrapassar todos os obstáculos, o jogador vence o jogo.</p>
     <p><strong>Tecla de movimento:</strong></p>
-    <pre>W - Voar</pre>
+
 <h2>Desenvolvedores</h2>
 <a  href = "https://github.com/emanuellykarine">@emanuellykarine</a>: Integração de fases, Tela inicial e fase final<br>
 <a  href = "https://github.com/josephyaraujo">@josephyaraujo</a>: 2ª Fase<br>
