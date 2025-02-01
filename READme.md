@@ -5,7 +5,7 @@
 <h2>Pré-requisitos</h2>
     <ul>
         <li>Certifique-se de que sua máquina possui a versão mais recente do Java.</li>
-        <li>Instale o simulador MARS 4.0: <a href="#">Baixar aqui</a></li>
+        <li>Instale o simulador MIPS MARS 4.5: <a href="https://drive.google.com/file/d/1na6RNWXEOFsi82-5QrT-2UvlXCWKMPPT/view?hl=pt-BR">Baixar aqui</a></li>
         <li>Realize o upload do arquivo <strong>Main.asm</strong> no MARS.</li>
     </ul>
     
