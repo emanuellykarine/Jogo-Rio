@@ -1,6 +1,5 @@
 <body>
-<p><a href= "https://github.com/becadev/Jogo-Rio/blob/main/READme.md"> Português</a></p>
-    <p><a href= "https://github.com/becadev/Jogo-Rio/blob/main/READme.en.md"> English</a></p>
+<p><a href= "https://github.com/becadev/Jogo-Rio/blob/main/READme.md"> Português</a> | <a href= "https://github.com/becadev/Jogo-Rio/blob/main/READme.en.md"> English</a></p>
 <h1 align = "center">Aventura Carioca</h1>
     <p><strong>Projeto desenvolvido como parte da disciplina de Arquitetura de Computadores</strong>, utilizando <strong>Assembly</strong> para o processador <strong>MIPS</strong>. O jogo conta com três fases inspiradas em clássicos dos videogames: a primeira baseada em <strong>Pac-Man</strong>, a segunda em <strong>Street Fighter</strong> e a terceira em <strong>Flappy Bird</strong>, oferecendo desafios variados e dinâmicos.</p>
     <p>O objetivo do jogo é ajudar <strong>Blue</strong>, a arara-azul, a superar todos os desafios para finalmente reencontrar sua amada <strong>Jade</strong>.</p>
