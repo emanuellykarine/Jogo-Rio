@@ -33,7 +33,7 @@
   <h2>Como jogar</h2>
     
   <h3>1ª Fase: Pac-Man Tropical</h3>
-    <p><strong>Objetivo:</strong> Blu deve comer todas as frutas sem colidir com as paredes cinzas. Após coletar todas as frutas, o jogador deve se dirigir à saída para avançar de fase.</p>
+    <p><strong>Objetivo:</strong> Blue deve comer todas as frutas sem colidir com as paredes cinzas. Após coletar todas as frutas, o jogador deve se dirigir à saída para avançar de fase.</p>
     <p><strong>Teclas de movimento:</strong></p>
     <pre>W - Cima
 A - Esquerda
@@ -41,16 +41,20 @@ S - Baixo
 D - Direita</pre>
     
    <h3>2ª Fase: Fuga do Nigel</h3>
-    <p><strong>Objetivo:</strong> Blu precisa desviar dos açaís lançados pela cacatua Nigel. Se conseguir passar sem encostar nele, avança para a próxima fase.</p>
+    <p><strong>Objetivo:</strong> Blue precisa desviar dos açaís lançados pela cacatua Nigel. Se conseguir passar sem encostar nele, avança para a próxima fase.</p>
     <p><strong>Teclas de movimento:</strong></p>
     <pre>W - Pular
 A - Andar para trás
 D - Andar para frente</pre>
     
   <h3>3ª Fase: Voo Final</h3>
-    <p><strong>Objetivo:</strong> Blu deve atravessar a floresta voando entre as árvores sem colidir. Se ultrapassar todos os obstáculos, o jogador vence o jogo.</p>
+    <p><strong>Objetivo:</strong> Blue deve atravessar os obstáculos voando entre as árvores sem colidir. Se ultrapassar todos os obstáculos, o jogador vence o jogo.</p>
     <p><strong>Tecla de movimento:</strong></p>
     <pre>V - Voar</pre>
-    
+<h2>Desenvolvedores</h2>
+<a  href = "https://github.com/emanuellykarine">@emanuellykarine</a>: Integração de fases, Tela incial e fase final<br>
+<a  href = "https://github.com/josephyaraujo">@josephyaraujo</a>: 2ª Fase<br>
+<a hred = "https://github.com/becadev">@becadev</a>: 1ª Fase<br>
+
 </body>
 </html>
