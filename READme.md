@@ -54,7 +54,7 @@ D - Andar para frente</pre>
 <h2>Desenvolvedores</h2>
 <a  href = "https://github.com/emanuellykarine">@emanuellykarine</a>: Integração de fases, Tela incial e fase final<br>
 <a  href = "https://github.com/josephyaraujo">@josephyaraujo</a>: 2ª Fase<br>
-<a hred = "https://github.com/becadev">@becadev</a>: 1ª Fase<br>
+<a href = "https://github.com/becadev">@becadev</a>: 1ª Fase<br>
 
 </body>
 </html>
