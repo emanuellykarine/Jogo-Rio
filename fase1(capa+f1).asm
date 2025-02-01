@@ -3550,15 +3550,16 @@ time_tela_preta:
 #			    $16, $17, $18, $11, $12 --> cores blue
 #			    $9 -> fundo/rastro
 #			    $19, $20, $13, $14 -> teclas do jogo   		
-# O passáro branco tem que ser do tamanho do espaço entre as paredes verdes, pra ele poder se locomover atrás do blue
-# pq o blue é menor que o passáro branco no filme
 
-fase1:lui $8, 0x1001	   # fundo
-     
+
+fase1:
+
+     lui $8, 0x1001	   # fundo
+    
      # lui $6, 0x1001	   # gaiola com passaros
      ori $9, $0, 0x141d29  # Azul escuro
      ori $10, $0, 0x546d8f # muros
-     ori $11, $0, 0x0000 # Cinza da gaiola
+     ori $11, $0, 0x0000   # Cinza da gaiola
      ori $12, $0, 0xfea3b1 # passaro da gaiola (rosa)
      ori $13, $0, 0xfff201 # passaro da gaiola (amarelo)
      ori $14, $0, 0xa8e61d # passaro da gaiola (verde)
@@ -4072,27 +4073,27 @@ gaiolas_passaros:
 		ori $10, $0, 0x546d8f # muros
 		lw $24 14888($8)  # colisao em cima do bico
 		beq $24 $25 colisao
-	   	beq $24 $10 colisao
+	   	beq $24 $10 perdeuf1
 		beq $24 $27 colisao
 		
 		lw $24 15408($8)  # colisao frente bico
 		beq $24 $25 colisao
-	   	beq $24 $10 colisao
+	   	beq $24 $10 perdeuf1
 		beq $24 $27 colisao
 		
 		lw $24 15916($8) # bico
 		beq $24 $25 colisao
-	   	beq $24 $10 colisao
+	   	beq $24 $10 perdeuf1
 		beq $24 $27 colisao
 		
 		lw $24 16428($8) # frente
 		beq $24 $25 colisao
-	   	beq $24 $10 colisao
+	   	beq $24 $10 perdeuf1
 		beq $24 $27 colisao
 		
 		lw $24 16940($8) # frente
 		beq $24 $25 colisao
-	   	beq $24 $10 colisao
+	   	beq $24 $10 perdeuf1
 		beq $24 $27 colisao
 		
    		#lw $24 17448($8) # frente
@@ -4168,33 +4169,33 @@ gaiolas_passaros:
      		ori $10, $0, 0x546d8f # muros
      		lw $24 15368($8)    # colisao atras rabo
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 	   	
 		beq $24 $27 colisao # colisao jaulas
 		
      		lw $24 16392($8)    # colisao atras rabo
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
      		
      		lw $24 16912($8)    # colisao atras rabo
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 
 		lw $24 14852($8)    # colisao atras
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 		
 		lw $24 15376($8)    # colisao atras
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 
 		lw $24 16916($8)    # colisao atras
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 
      		addi $8 $8 -4
@@ -4261,37 +4262,37 @@ gaiolas_passaros:
      		ori $10, $0, 0x546d8f # muros
 		lw $24 17428($8)    # colisao embaixo
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 		
      		lw $24 17432($8)    # colisao embaixo
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 
 		lw $24 17436($8)    # colisao embaixo
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 		
 		lw $24 17440($8)    # colisao embaixo
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 		
 		lw $24 17444($8)    # colisao embaixo
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 		
 		lw $24 16912($8)    # colisao em baixo do rabo
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 		
 		lw $24 16424($8)    # colisao em baixo do rabo
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 		
 		
@@ -4357,47 +4358,47 @@ gaiolas_passaros:
      		ori $10, $0, 0x546d8f # muros
      		lw $24 15376($8)    # colisao atras rabo
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
      		
      		lw $24 15380($8)    # colisao atras rabo
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 		
      		lw $24 15884($8)    # colisao atras
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
      	
      		lw $24 14360($8)    # colisao cima
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 
 		lw $24 14364($8)    # colisao cima
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 
 		lw $24 14368($8)    # colisao cima
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 		
 		lw $24 14372($8)    # colisao cima
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 		
 		lw $24 14376($8)    # colisao cima
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 		
 		lw $24 14380($8)    # colisao cima
 		beq $24 $25 colisao # detalhe bordas
-	   	beq $24 $10 colisao # colisao paredes
+	   	beq $24 $10 perdeuf1 # colisao paredes
 		beq $24 $27 colisao # colisao jaulas
 		
 		
@@ -4460,6 +4461,11 @@ gaiolas_passaros:
 		beq $24 $27 abrir_saida	
 	
      		j desenho_bluef1
+perdeuf1:
+	addi $23 $0 ' '
+	sw $24 4($21)
+	j fase1
+
 colisao:
 	add $23 $0 $0
 	# lw $23 4($21)    # recupera da memoria se alguma tecla foi pressionada
@@ -4773,7 +4779,7 @@ fase2:
 #####################s#########################################
 # função timer
 timerf1:
-	addi $15 $15 2000
+	addi $15 $15 3500
 	forT_f1:beq $15 $0 fimT_f1
 		nop
 		nop
@@ -4782,7 +4788,3 @@ timerf1:
 	fimT_f1:
 		jr $31
 
-
-# posição entrada 18.944
-# posição saída   18.948
-	
