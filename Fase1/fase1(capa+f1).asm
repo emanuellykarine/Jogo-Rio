@@ -4740,13 +4740,11 @@ apaga_maça:
 	j desenha_melancia
 	
 ftela_pretaf1:
-	lui $21, 0xffff    #ler teclado
-	addi $10, $0, 32   #guardar espaço
 	lui $8, 0x1001     #reinicar posição da memória
 	lui $9, 0x0000     #preto
 	addi $20, $0, 8192 #quantidade de vezes que vai pintar o fundo
 testTelaPretaf1: 
-		beq $20, $0, start_fase2
+		beq $20, $0, fase2
 	        sw $9, 0($8)
 	        addi $8, $8, 4
 	        addi $20, $20, -1 
@@ -4755,10 +4753,7 @@ testTelaPretaf1:
 	        beq $25 $0 time_tela_pretaf1
 	   vtf1: j testTelaPretaf1
 	   
-start_fase2:
-	 lw $22, 4($21)
-	 beq $22, $10, fase2
-	 j start_fase2
+
 time_tela_pretaf1:
 		addi $24 $0 30000
 	t1:
@@ -4766,15 +4761,6 @@ time_tela_pretaf1:
 		nop
 		addi $24 $24 -1
 		j t1
-
-	#Fim
-fase2:	
-	ori $27, $0, 0xe3413b # vermelho morango
-	lui $8, 0x1001  
-	sw $27 0($8)
-	
-	addi $2 $0 10
-	syscall
 	
 #####################s#########################################
 # função timer
