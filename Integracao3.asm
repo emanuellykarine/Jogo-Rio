@@ -10170,7 +10170,7 @@ copiaFundoBlue:
 #funcao timer Nigel
 timerFightNigel: sw $25, 0($29)
 	addi $29, $29, -4
-	addi $25, $0, 10000
+	addi $25, $0, 9000
 	
 forTimerFightNigel: beq $25, $0, fimTimerFightNigel
 	nop
@@ -16806,7 +16806,7 @@ fimflappyAreia4:
 		 
 		 lui $24, 0x1001 #endere?o de colis?o do obstaculo
 		 
-		 addi $26, $0, 11 #quantidade de obstaculos gerados
+		 addi $26, $0, 6 #quantidade de obstaculos gerados
 		 
 		 jal flappyRandomico
 flappyCaindo:  beq $26, $0, flappyWin #se gerar 10 obstaculos o blue ganha
@@ -17274,7 +17274,7 @@ desenhoFlappyJade: ori $11, $0, 0x4CADCD #azul do pass?ro
 # fun??o Timer do blue
 timerFlappy: sw $16, 0($29)
        	     addi $29, $29, -4
-       	     addi $16, $0, 30000
+       	     addi $16, $0, 10000
 forTimerFlappy:  beq $16, $0, fimTimerFlappy
        		 nop
        		 nop
@@ -17296,5 +17296,3 @@ forTimerFlappyObstaculo:  beq $16, $0, fimTimerFlappyObstaculo
 fimTimerFlappyObstaculo:  addi $29, $29, 4                                                    
        		 lw $16, 0($29)          
        		 jr $31
-
-	
