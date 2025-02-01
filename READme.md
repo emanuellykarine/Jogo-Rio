@@ -51,7 +51,7 @@ D - Andar para frente</pre>
   <h3>3ª Fase: Voo Final</h3>
     <p><strong>Objetivo:</strong> Blue deve atravessar os obstáculos voando entre as árvores sem colidir. Se ultrapassar todos os obstáculos, o jogador vence o jogo.</p>
     <p><strong>Tecla de movimento:</strong></p>
-    <pre>V - Voar</pre>
+    <pre> W - Voar</pre>
 <h2>Desenvolvedores</h2>
 <a  href = "https://github.com/emanuellykarine">@emanuellykarine</a>: Integração de fases, Tela inicial e fase final<br>
 <a  href = "https://github.com/josephyaraujo">@josephyaraujo</a>: 2ª Fase<br>
