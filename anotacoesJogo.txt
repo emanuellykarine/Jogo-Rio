@@ -8,7 +8,7 @@
 #                      $22 (estado do teclado)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-# Parte 2 - Fase 1 Jogo Rio
+# Parte 2 - Fase 1 - Pac Rio
 # Azul do fundo: 0x546c8f 
 # Preto das paredes: 0x000000
 # salva o fundo em outro lugar da memoria: 131084($8) 
@@ -25,7 +25,7 @@
 # O passáro branco tem que ser do tamanho do espaço entre as paredes verdes, pra ele poder se locomover atrás do blue
 # pq o blue é menor que o passáro branco no filme
 -----------------------------------------------------------------------------------------------------------------------------------------------
-#Parte 3 -  Fase 2 - Fight
+#Parte 3 -  Fase 2 - Fight Rio
 #Nome dos lacos/Localizadores: fightCeu, fimFightCeu, fightNuvemBr, fimFightNuvemBr, fightNuvemAz, fimFightNuvemAz, fightHorizonte, fimFightHorizonte, 
 #fightMar, fimFightMar, fightPedra, fimFightPedra, fightEspuma, fimFightEspuma, fightAreia, fimFightAreia   
 #Registradores usados: $6, $7, $8 (endereco de memoria), 
@@ -41,7 +41,7 @@
 #Cores personagens: Azul do Blue: 0x546CF0 - Azul escuro do Blue: 0x333597 - Branco: 0xFCFFFD - Preto: 0x0C0D0D - Cinza bico Blue e penas Nigel: 0xB4B4B4 
 #Cinza bico Nigel: 0x464646 - Rosa Nigel: 0xBD768E - Amarelo Nigel: 0xF9BB0B - Roxo acai�: 0x9D09A5 
 #------------------------------------------------------------------------------------------------------------
-#Parte 4 - Fase 3 - Flappy Bird
+#Parte 4 - Fase 3 - Flappy Rio
 #Nome dos lacos: flappyCeu, fimFlappyCeu, flappyNuvem, fimFlappyNuvem, flappyMontlado, fimFlappyMontlado, flappyAreia, fimflappyArea
 #Registradores usados: $6 (endereco de memoria obstaculos)
 #                      $8 (endereco de memoria blue), 
@@ -63,5 +63,5 @@
 #                      $26 (movimentacao blue), 
 #                      $27 (endereco colisao do blue)
 #                      $29 (timer)
-#Cores: Azul 1: 0x62ABD3 - Azul 2: 0x71AED0 - Azul 3: 0x79B1D0 - Verde 1: 0x398426 - Verde 2: 0x92D027 - Verde 3: 0x77BE68 - Verde 4: 0x67B72C - Verde 5: 0x307C71 - Branco: 0xFBF1CE
+#Cores cenário: Azul 1: 0x62ABD3 - Azul 2: 0x71AED0 - Azul 3: 0x79B1D0 - Verde 1: 0x398426 - Verde 2: 0x92D027 - Verde 3: 0x77BE68 - Verde 4: 0x67B72C - Verde 5: 0x307C71 - Branco: 0xFBF1CE
 #Marrom 1: 0xAF5F24 - Marrom 2: 0xDF9E44 - Marrom 3: 0xD28F42 - Areia 1: 0xFEE1A2 - Areia 2: 0xF1BD75 - Areia 3: 0xDF9E44 - Areia 4: 0xD28F42
