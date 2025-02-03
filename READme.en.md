@@ -1,5 +1,8 @@
 
 <body>
+    <div  align = "center" >
+        <img src="capa.png" alt="capa do jogo">
+    </div>
     <p><a href="https://github.com/becadev/Jogo-Rio/blob/main/READme.md">Português</a> | <a href="https://github.com/becadev/Jogo-Rio/blob/main/READme.en.md">English</a></p>
     <h1 align="center">Aventura Carioca</h1>
     <p><strong>Project developed as part of the Computer Architecture course</strong>, using <strong>Assembly</strong> for the <strong>MIPS</strong> processor. The game, based on the movie Rio, features three stages inspired by classic video games: the first based on <strong>Pac-Man</strong>, the second on <strong>Street Fighter</strong>, and the third on <strong>Flappy Bird</strong>, offering varied and dynamic challenges.</p>
