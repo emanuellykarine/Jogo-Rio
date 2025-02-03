@@ -1,7 +1,10 @@
 <body>
 <p><a href= "https://github.com/becadev/Jogo-Rio/blob/main/READme.md"> Português</a> | <a href= "https://github.com/becadev/Jogo-Rio/blob/main/READme.en.md"> English</a></p>
 <h1 align = "center">Aventura Carioca</h1>
-    <p><strong>Projeto desenvolvido como parte da disciplina de Arquitetura de Computadores</strong>, utilizando <strong>Assembly</strong> para o processador <strong>MIPS</strong>. Inspirado no filme Rio, o jogo apresenta três fases baseadas em clássicos dos videogames: a primeira baseada em <strong>Pac-Man</strong>, a segunda em <strong>Street Fighter</strong> e a terceira em <strong>Flappy Bird</strong>, oferecendo desafios variados e dinâmicos.</p>
+    <div  align = "center" >
+        <img src="capa.png" alt="capa do jogo">
+    </div>
+<p><strong>Projeto desenvolvido como parte da disciplina de Arquitetura de Computadores</strong>, utilizando <strong>Assembly</strong> para o processador <strong>MIPS</strong>. Inspirado no filme Rio, o jogo apresenta três fases baseadas em clássicos dos videogames: a primeira baseada em <strong>Pac-Man</strong>, a segunda em <strong>Street Fighter</strong> e a terceira em <strong>Flappy Bird</strong>, oferecendo desafios variados e dinâmicos.</p>
     <p>O objetivo do jogo é ajudar <strong>Blue</strong>, a arara-azul, a superar todos os desafios para finalmente reencontrar sua amada <strong>Jade</strong>.</p>
 <h2>Pré-requisitos</h2>
     <ul>
@@ -42,7 +45,7 @@ S - Baixo
 D - Direita</pre>
     
    <h3>2ª Fase: Fuga do Nigel</h3>
-    <p><strong>Objetivo:</strong> Blue precisa desviar dos açaís lançados pela cacatua Nigel. Se conseguir passar sem encostar nele, avança para a próxima fase.</p>
+    <p><strong>Objetivo:</strong> Blue precisa desviar dos açaís lançados pela cacatua Nigel. Se conseguir passar sem encostar no bico do Nigel e dando um pulo em cima da crista dele, avança para a próxima fase.</p>
     <p><strong>Teclas de movimento:</strong></p>
     <pre>W - Pular
 A - Andar para trás
