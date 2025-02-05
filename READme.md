@@ -13,9 +13,21 @@
         <li>Realize o upload do arquivo <strong>Main.asm</strong> no MARS.</li>
     </ul>
     
+    
    <h2>Como testar</h2>
     <ol>
         <li>Abra o arquivo <strong>Main.asm</strong> no simulador MARS.</li>
+        <p><strong>OBS:</strong> O funcionamento da velocidade do jogo é alterada de computador para computador, caso no seu computador as fases estejam funcionando em uma velocidade acima do desejado, realize os seguintes passos para alterar o timer do jogador e NPCs:          </p><br>
+            <ul>
+                <li>Pressione a tecla <strong>Ctrl + F</strong></li>
+                <li>No campo <strong>"Find What"</strong> digite os seguintes rótulos e os alterem de acordo com a velocidade de dados do seu computador(se for alto, maior será o timer, se for lento, menor será)
+                    <ul>
+                        <li> timerf1: 8000 (valor recomendável)</li>
+                        <li> timerf2: 8000 (valor recomendável)</li>
+                        <li> timerf3: 8000 (valor recomendável)</li>
+                    </ul>
+                </li>
+            </ul>
         <li>Pressione a tecla <strong>F3</strong> para montar o código.</li>
         <li>No menu <strong>Tools</strong>, selecione:
             <ul>
