@@ -1,0 +1,44 @@
+.data
+# C# / Db	61
+# D	62
+# D# / Eb	63
+# E / Fb	64
+# E# / F	65
+# F# / Gb	66
+# G	67
+# G# / Ab	68
+# A	69
+# A# / Bb	70
+# B / Cb	71
+# B# / C	72
+
+    notas:  .byte 64 64 62 62 62 60 64 64 62 62 62 60 64 64 65 67 65 64 62 65 67 69 65 62 62 64 65 64 62 62 64 60 60 69 71 72 71 69 71 67 69 71 69 67 69 65 67 69 67 65 64 62 65 67 69 69 71 72 74 72 74 76 76 77 79 77 76 74 69 72 71
+    duracao: .word 300  # 500 ms de duração para cada nota 
+    instrumento: .byte 88  # Piano Acústico
+    volume: .byte 500  # Volume médio-alto
+
+    .text
+    .globl main
+
+main:
+    la $t0, notas       # Carregar endereço da tabela de notas
+    li $t1, 55        # Número de notas a serem tocadas
+
+loop:
+    lb $a0, 0($t0)      # Carregar nota atual (pitch)
+    lw $a1, duracao     # Definir duração (500ms)
+    lb $a2, instrumento # Definir instrumento (Piano)
+    
+    
+    
+    lb $a3, volume      # Definir volume (100)
+    
+    li $v0, 31          # Chamar syscall 33 (toca nota e aguarda)
+    syscall
+
+    addi $t0, $t0, 1    # Avançar para a próxima nota
+    subi $t1, $t1, 1    # Decrementar contador
+    bgtz $t1, loop      # Se ainda houver notas, repetir
+
+    li $v0, 10          # Encerrar programa
+    syscall
