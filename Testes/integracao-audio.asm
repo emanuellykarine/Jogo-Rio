@@ -11,15 +11,15 @@
 # A# / Bb	70
 # B / Cb	71
 # B# / C	72
-# $a1: Duração
+# $a1: DuraÃ§Ã£o
 # $a2: Instrumento
 # $a3: Volume
-#  Load Byte -> carrega um byte da memória para um registrador.  Load Immediate -> carrega um valor constante (imediato) diretamente para um registrador.
+#  Load Byte -> carrega um byte da memÃ³ria para um registrador.  Load Immediate -> carrega um valor constante (imediato) diretamente para um registrador.
     notas:  .byte 72 64 67 69 144 
-    duracao: .word 1000  # 1000 ms de duração para cada nota 
+    duracao: .word 1000  # 1000 ms de duraÃ§Ã£o para cada nota 
     instrumento: .byte 96 # Ensemble
     prato: .byte 103
-    volume: .byte 500  # Volume médio-alto
+    volume: .byte 500  # Volume mÃ©dio-alto
 
 
 # .globl main
@@ -809,7 +809,7 @@ fimPart40: ori $9, $0, 0x53B7E6 #azul escuro
            addi $8, $8, 4 
            
            ori $9, $0, 0xA7E0F0 #azul claro
-           addi $20, $0, 6 #Ç
+           addi $20, $0, 6 #Ã‡
            
 capaTest41: beq $20, $0, fimPart41
         sw $9, 0($8)
@@ -926,7 +926,7 @@ fimPart47: ori $9, $0, 0xA7E0F0 #azul claro
            addi $8, $8, 4 
            
            ori $9, $0, 0x53B7E6 #azul escuro
-           addi $20, $0, 7 #Ç
+           addi $20, $0, 7 #Ã‡
 
 capaTest48: beq $20, $0, fimPart48
         sw $9, 0($8)
@@ -1045,7 +1045,7 @@ fimPart54: ori $9, $0, 0xA7E0F0 #azul claro
            addi $8, $8, 4
            
            ori $9, $0, 0x53B7E6 #azul escuro
-           addi $20, $0, 6 #Ç
+           addi $20, $0, 6 #Ã‡
            
 capaTest55: beq $20, $0, fimPart55
         sw $9, 0($8)
@@ -1154,7 +1154,7 @@ fimPart61: ori $9, $0, 0x53B7E6 #azul escuro
            addi $8, $8, 4 
            
            ori $9, $0, 0x53B7E6 #azul escuro                  
-           addi $20, $0, 7 #Ç
+           addi $20, $0, 7 #Ã‡
            
 capaTest62: beq $20, $0, fimPart62
         sw $9, 0($8)
@@ -1261,7 +1261,7 @@ fimPart67: ori $9, $0, 0xA7E0F0 #azul claro
            addi $8, $8, 4
            
 	   ori $9, $0, 0x53B7E6 #azul escuro                  
-           addi $20, $0, 7 #Ç
+           addi $20, $0, 7 #Ã‡
            
 capaTest68: beq $20, $0, fimPart68
         sw $9, 0($8)
@@ -1368,7 +1368,7 @@ fimPart73: ori $9, $0, 0xA7E0F0 #azul claro
            addi $8, $8, 4
            
 	   ori $9, $0, 0x53B7E6 #azul escuro                  
-           addi $20, $0, 7 #Ç
+           addi $20, $0, 7 #Ã‡
            
 capaTest74: beq $20, $0, fimPart74
         sw $9, 0($8)
@@ -1478,7 +1478,7 @@ fimPart80: ori $9, $0, 0xA7E0F0 #azul claro
            addi $8, $8, 4
            
            ori $9, $0, 0xA7E0F0 #azul claro
-           addi $20, $0, 7 #Ç
+           addi $20, $0, 7 #Ã‡
            
 capaTest81: beq $20, $0, fimPart81
         sw $9, 0($8)
@@ -3530,8 +3530,8 @@ capaTest200: beq $20, $0, fimPart200
         j capaTest200
  
 fimPart200: lui $21, 0xffff #ler teclado
-	    addi $10, $0, 32 #guardar espaço
-	    lui $8, 0x1001 #reinicar posição da memória
+	    addi $10, $0, 32 #guardar espaÃ§o
+	    lui $8, 0x1001 #reinicar posiÃ§Ã£o da memÃ³ria
 	    lui $9, 0x0 #preto
 	    addi $20, $0, 8192 #quantidade de vezes que vai pintar o fundo
 	    
@@ -3738,27 +3738,27 @@ fim_muros:
 	lui $8, 0x1001
 # PASSARO ROSA
 	ori $14, $0, 0xf77287 # detalhe passaro rosa
-	sw $14 12424($8)# parte rosa da cabeça1
-	sw $12 12428($8)# parte rosa da cabeça1
-	sw $12 12432($8)# parte rosa da cabeça1
-	sw $12 12436($8)# parte rosa da cabeça1
-	sw $12 12440($8)# parte rosa da cabeça1
-	sw $12 12444($8)# parte rosa da cabeça1
-	sw $14 12940($8)# parte rosa da cabeça2
-	sw $12 12944($8)# parte rosa da cabeça2
-	sw $16 12948($8)# parte rosa da cabeça2
-	sw $17 12956($8)# parte rosa da cabeça2
-	sw $17 12960($8)# parte rosa da cabeça2
-	sw $14 13456($8)# parte rosa da cabeça3
-	sw $12 13460($8)# parte rosa da cabeça3
-	sw $12 13464($8)# parte rosa da cabeça3
-	sw $12 13468($8)# parte rosa da cabeça3
-	sw $17 13468($8)# parte rosa da cabeça3
-	sw $17 13472($8)# parte rosa da cabeça3
-	sw $14 13968($8)# parte rosa da cabeça4
-	sw $12 13972($8)# parte rosa da cabeça4
-	sw $12 13976($8)# parte rosa da cabeça4
-	sw $12 13980($8)# parte rosa da cabeça4
+	sw $14 12424($8)# parte rosa da cabeÃ§a1
+	sw $12 12428($8)# parte rosa da cabeÃ§a1
+	sw $12 12432($8)# parte rosa da cabeÃ§a1
+	sw $12 12436($8)# parte rosa da cabeÃ§a1
+	sw $12 12440($8)# parte rosa da cabeÃ§a1
+	sw $12 12444($8)# parte rosa da cabeÃ§a1
+	sw $14 12940($8)# parte rosa da cabeÃ§a2
+	sw $12 12944($8)# parte rosa da cabeÃ§a2
+	sw $16 12948($8)# parte rosa da cabeÃ§a2
+	sw $17 12956($8)# parte rosa da cabeÃ§a2
+	sw $17 12960($8)# parte rosa da cabeÃ§a2
+	sw $14 13456($8)# parte rosa da cabeÃ§a3
+	sw $12 13460($8)# parte rosa da cabeÃ§a3
+	sw $12 13464($8)# parte rosa da cabeÃ§a3
+	sw $12 13468($8)# parte rosa da cabeÃ§a3
+	sw $17 13468($8)# parte rosa da cabeÃ§a3
+	sw $17 13472($8)# parte rosa da cabeÃ§a3
+	sw $14 13968($8)# parte rosa da cabeÃ§a4
+	sw $12 13972($8)# parte rosa da cabeÃ§a4
+	sw $12 13976($8)# parte rosa da cabeÃ§a4
+	sw $12 13980($8)# parte rosa da cabeÃ§a4
 	sw $14 14476($8)# parte rosa 5
 	sw $12 14480($8)# parte rosa 5
 	sw $12 14484($8)# parte rosa 5
@@ -3779,10 +3779,10 @@ fim_muros:
 	sw $18 16024($8)# pata
 # PASSARO AMARELO
 	ori $14, $0, 0xd19a02 # detalhe passaro amarelo
-	sw $13 17556($8)# parte cabeça1
-	sw $14 18064($8)# parte cabeça1
-	sw $13 18068($8)# parte cabeça1
-	sw $13 18072($8)# parte cabeça1
+	sw $13 17556($8)# parte cabeÃ§a1
+	sw $14 18064($8)# parte cabeÃ§a1
+	sw $13 18068($8)# parte cabeÃ§a1
+	sw $13 18072($8)# parte cabeÃ§a1
 	
 	sw $14 18576($8)# parte amarela 2
 	sw $16 18580($8)# parte branca olho
@@ -4016,7 +4016,7 @@ gaiolas_passaros:
      		ori $22, $0, 0xfff34d # amarelo normal
      		addi $5 $0 2
      		
-     		ori $18, $0, 0xfa020c # vermelho maçã
+     		ori $18, $0, 0xfa020c # vermelho maÃ§Ã£
      		ori $7, $0, 0xfae050  # amarelo
      		ori $16, $0, 0xfffffe # branco
      		#ori $18, $0, 0x0C0D0D # preto
@@ -4240,7 +4240,7 @@ gaiolas_passaros:
 		lw $24 14860($8)    # verificar fruta
 		beq $24 $10 apaga_morango	
 		
-		# maçã
+		# maÃ§Ã£
 		lw $24 16396($8)    # verificar fruta
 		beq $24 $18 fruta_final_f1	
 		lw $24 16908($8)    # verificar fruta
@@ -4682,7 +4682,7 @@ for_saidaf1:
 	addi $5 $5 -1
 	addi $6 $6 512
 	j for_saidaf1
-	# posição saída   18.948
+	# posiÃ§Ã£o saÃ­da   18.948
 apaga_laranja:
 	sw $9 29652($6) # l1
 	sw $9 30164($6) # l2
@@ -4749,7 +4749,7 @@ apaga_maca:
 	j desenha_melancia
 	
 ftela_pretaf1:
-	lui $8, 0x1001     #reinicar posição da memoria
+	lui $8, 0x1001     #reinicar posiÃ§Ã£o da memoria
 	lui $9, 0x0000     #preto
 	addi $20, $0, 8192 #quantidade de vezes que vai pintar o fundo
 testTelaPretaf1: 
@@ -17538,17 +17538,17 @@ fimTimerFlappyObstaculo:  addi $29, $29, 4
        		 lw $16, 0($29)          
        		 jr $31
 som:
-    la $t0, notas       # Carregar endereço da tabela de notas
-    li $t1, 55        # Número de notas a serem tocadas
+    la $t0, notas       # Carregar endereco da tabela de notas
+    li $t1, 55        # Numero de notas a serem tocadas
+
+
+    la $t0, notas       # Carregar endereco da tabela de notas
+    li $t1, 5      # Numero de notas a serem tocadas
+    li $t1, 5      # Numero de notas a serem tocadas
 
 loop:
-    la $t0, notas       # Carregar endereço da tabela de notas
-    li $t1, 5      # Número de notas a serem tocadas
-    li $t1, 5      # Número de notas a serem tocadas
-
-loop:
-    lb $a0, 0($t0)      # crrega nota atual (pitch)
-    lw $a1, duracao     # duração (500ms)
+    lb $a0, 0($t0)      # carrega nota atual (pitch)
+    lw $a1, duracao     # duracao (500ms)
     lb $a2, instrumento # piano
     lb $a3, volume      #  volume (100)
     
@@ -17559,7 +17559,7 @@ loop:
     li $v0, 31         #  syscall 33 (toca nota e aguarda)
     syscall
 
-    addi $t0, $t0, 1    # Avai para a próxima nota
+    addi $t0, $t0, 1    # vai para a proxima nota
     subi $t1, $t1, 1    # decrementa contador
     bgtz $t1, loop      # Se ainda houver notas, repetir
     jr $31
